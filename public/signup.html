@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WTF: Sign Up</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,400" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="css/stylesheetSignup.css">
+</head>
+
+<body>
+
+    <body>
+        <div class="pusher">
+            <div class="ui inverted vertical masthead center aligned segment">
+
+                <div class="ui container">
+                    <nav class="ui inverted pointing  menu">
+                        <a class="item" href="/">Home</a>
+                        <a class="item" href="/about">About</a>
+                        <a class="item" href="/contact">Contact</a>
+                        <a class="item right floated" href="/login">Sign In</a>
+
+                        <a class="active item" href="/signup">Sign Up</a>
+                    </nav>
+                </div>
+
+                <div class="ui text container">
+                    <h1 class="header" style="margin:10%;">
+                        What the Fact?
+                    </h1>
+                    <div class="ui inverted divider"></div>
+
+                    <!-- FORM!! -->
+                    <div class="ui inverted segment" id="mainContainer">
+
+                        <h2>Sign Up Form</h2>
+                        <div class="ui inverted divider"></div>
+                        <form class="signup">
+                            <div class="form-group">
+                                <label for="username">
+                <h4> Username </h4>
+            </label>
+                                <input type="username" class="form-control" id="username-input" placeholder="Username">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">
+                <h4>Email address</h4>
+            </label>
+                                <input type="email" class="form-control" id="email-input" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">
+                <h4>Password</h4>
+            </label>
+                                <input type="password" class="form-control" id="password-input" placeholder="Password">
+                            </div>
+                            </br>
+                            <div style="display: none" id="alert" class="alert alert-danger" role="alert" style="margin-top: 10px;">
+                                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                <span class="sr-only">Error:</span> <span class="msg"></span>
+                            </div>
+                            </br>
+                            <button type="submit" class="ui inverted teal basic button" style="margin-top: 15px;">Sign Up</button>
+                        </form>
+                        </br>
+                        <h4 class="ui horizontal inverted divider">
+                            <p>WTF</p>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <!-- Footer -->
+        <!-- 
+        <div class="ui inverted vertical footer segment">
+            <div class="ui container">
+                <div class="ui inverted equal height grid">
+                    <div class="column">
+                        <h4 class="ui inverted centered header" style="text-align: center; padding:10px; font-weight: 100;">Copyright 2020</h4>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+        <script type="text/javascript" src="js/signup.js"></script>
+    </body>
+
+</html>

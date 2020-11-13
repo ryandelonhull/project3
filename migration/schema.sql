@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS factcheck_db;
-CREATE DATABASE factcheck_db;
+DROP DATABASE IF EXISTS game_db;
+CREATE DATABASE game_db;
 

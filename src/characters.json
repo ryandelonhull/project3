@@ -1,0 +1,138 @@
+[
+    {
+        "id": 1,
+        "name": "Batman",
+        "attacks": {
+            "one": {
+                "name": "Bat Mobile",
+                "type": "Blunt Force"
+            },
+            "Two": {
+                "name": "Crying",
+                "type": "Psychological"
+            }
+        },
+        "strongAgainst": ["Blunt Force", "Funny Costumes"],
+        "weaknesses": ["Pretty", "Psychological"],
+        "image": "https://media2.giphy.com/media/26vUCH220kcToAYPS/giphy.gif"
+    },
+    {
+        "id": 2,
+        "name": "House Plant",
+        "attacks": {
+            "one": {
+                "name": "Roots",
+                "type": "Slow Force"
+            },
+            "Two": {
+                "name": "Green Cover",
+                "type": "Pretty"
+            }
+        },
+        "strongAgainst": ["Psychological", "Stealth"],
+        "weaknesses": ["Blunt Force"],
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRgITFpVbSNOVWCrVgtoBD1CidxqH0hm4eOeA&usqp=CAU"
+    },
+    {
+        "id": 3,
+        "name": "Barack Obama",
+        "attacks": {
+            "one": {
+                "name": "Dad Jokes",
+                "type": "Psychological"
+            },
+            "Two": {
+                "name": "DunksOnYOU",
+                "type": "Slow Force"
+            }
+        },
+        "strongAgainst": ["Pretty", "Slow Force"],
+        "weaknesses": ["Funny Costumes", "Psychological"],
+        "image": "https://image.cnbcfm.com/api/v1/image/104656161-GettyImages-688156110.jpg?v=1532563778&w=1400&h=950"
+
+    },
+    {
+        "id": 4,
+        "name": "Ninja",
+        "attacks": {
+            "one": {
+                "name": "Sneaky Sneaky",
+                "type": "Stealth"
+            },
+            "Two": {
+                "name": "Black Death",
+                "type": "Stealth Force"
+            }
+        },
+        "strongAgainst": ["Blunt Force", "Funny Costumes"],
+        "weaknesses": ["Psychological"],
+        "image": "https://pbs.twimg.com/profile_images/1168269614058311680/qVZrY0PL_400x400.jpg"
+    },
+    {
+        "id": 5,
+        "name": "LA Drivers",
+        "attacks": {
+            "one": {
+                "name": "Cut Off",
+                "type": "Stealth"
+            },
+            "Two": {
+                "name": "Quick Brake",
+                "type": "Blunt Force"
+            }
+        },
+        "strongAgainst": ["Psychological", "Blunt Force"],
+        "weaknesses": ["Pretty", "Slow Force"]
+    },
+    {
+        "id": 6,
+        "name": "Stationary Exercise Bike",
+        "attacks": {
+            "one": {
+                "name": "Butt Cramps",
+                "type": "Slow Force"
+            },
+            "Two": {
+                "name": "Tow Stub",
+                "type": "Stealth Force"
+            }
+        },
+        "strongAgainst": ["Funny Costumes", "Blunt Force"],
+        "weaknesses": ["Psychological","Stealth"],
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRmj9TIKZiDTKp8hx22bUHWV6W9ESkFFWk6qA&usqp=CAU"
+    },
+    {
+        "id": 7,
+        "name": "Seth Rogan (and friend)",
+        "attacks": {
+            "one": {
+                "name": "Blaze Up",
+                "type": "Blunt Force"
+            },
+            "Two": {
+                "name": "Laugh",
+                "type": "Psychological"
+            }
+        },
+        "strongAgainst": ["Blunt Force", "Psychological"],
+        "weaknesses": ["Blunt Force","Stealth"],
+        "image": "https://hips.hearstapps.com/esquireuk.cdnds.net/15/37/original/original-seth-rogan-james-franco-kanye-west-parody-43-jpg-f09da4b6.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Hot Dog",
+        "attacks": {
+            "one": {
+                "name": "Overly Delicious",
+                "type": "Stealth"
+            },
+            "Two": {
+                "name": "KetchupOnYourShirt",
+                "type": "Funny Costume"
+            }
+        },
+        "strongAgainst": ["Psychological", "Pretty"],
+        "weaknesses": ["Blunt Force"],
+        "image": "https://hips.hearstapps.com/esquireuk.cdnds.net/15/37/original/original-seth-rogan-james-franco-kanye-west-parody-43-jpg-f09da4b6.jpg"
+    }
+]

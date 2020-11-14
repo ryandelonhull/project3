@@ -60,26 +60,26 @@
                                
                             <div class="card inverted searchCard">
                                 <div class="ui inverted segment">
-                                        <p id="title-${i}">${title}</p>
+                                        <p id="name-${i}">${name}</p>
                                         <div class="ui inverted divider"></div>
-                                        <p id="body-${i}">${body}</p>
-                                        <i id="rating-${i}">Rating: ${rating}</i>
-                                        <h4><a href=${url} data-url${i}="${url}"><p>Read Article Here</p></a><h4>
-                                        <button type="submit" id ="saveBtn" class="ui inverted teal basic button" data-id="${i}">SAVE FACT</button>
+                                        <p id="attacks-${i}">${attackOne,attackTwo}</p>
+                                        <i id="Strong Against-${i}">Strong Against Attack Types: ${strongAgainst}</i>
+                                        <i id="Weak Against-${i}">Weak Against Attack Types ${weaknesses}</i>
+                                        <h4><a href=${image} data-url${i}="${image}"></a><h4>
+                                        <button type="Add to my Arsenal" id ="saveBtn" class="ui inverted teal basic button" data-id="${i}">SAVE FACT</button>
                                     </div>   
-                                    </div>   
-
-                                        
-                            <div class="card inverted searchCard">
-                                <div class="ui inverted segment">
-                                        <p id="title-${i}">${title}</p>
-                                        <div class="ui inverted divider"></div>
-                                        <p id="body-${i}">${body}</p>
-                                        <i id="rating-${i}">Rating: ${rating}</i>
-                                        <h4><a href=${url} data-url${i}="${url}"><p>Read Article Here</p></a><h4>
-                                        <button type="submit" id ="saveBtn" class="ui inverted teal basic button" data-id="${i}">SAVE FACT</button>
-                                    </div>   
-                                    </div>   
+                                    </div> 
+                                    <div class="card inverted searchCard">
+                                        <div class="ui inverted segment">
+                                                <p id="name-${i}">${name}</p>
+                                                <div class="ui inverted divider"></div>
+                                                <p id="attacks-${i}">${attackOne,attackTwo}</p>
+                                                <i id="Strong Against-${i}">Strong Against Attack Types: ${strongAgainst}</i>
+                                                <i id="Weak Against-${i}">Weak Against Attack Types ${weaknesses}</i>
+                                                <h4><a href=${image} data-url${i}="${image}"></a><h4>
+                                                <button type="Add to my Arsenal" id ="saveBtn" class="ui inverted teal basic button" data-id="${i}">SAVE FACT</button>
+                                            </div>   
+                                            </div>    
                             <div class="ui inverted three stackable cards userSearches">
                             </div>
                         </div>

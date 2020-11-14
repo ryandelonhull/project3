@@ -8,11 +8,12 @@ module.exports = function(app) {
     // when user clicks the save button, saves the search data into the database
     app.post("/api/user/:id/search", function(req, res) {
         db.Search.create({
-            title: req.body.title,
-            body: req.body.body,
-            url: req.body.url,
-            rating: req.body.rating,
-            UserId: req.params.id
+            name: req.body.name,
+            attackOne: req.body.attackOne,
+            attackTwo: req.body.attackTwo,
+            strongAgainst: req.body.strongAgainst,
+            weaknesses: req.body.weaknesses,
+            image: req.body.image
         }).then(function(dbSearch) {
             res.json(dbSearch);
         });

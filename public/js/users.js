@@ -17,33 +17,37 @@ $(document).ready(function() {
         // variable for user input
         var userInput = $("#search-input").val();
         // variables for api key and query url for API
-        let apiKey = "AIzaSyAYJ05r2WOK34MO9zLkmaz0Ux9NWnYTCcI"
-        var queryURL = "https://factchecktools.googleapis.com/v1alpha1/claims:search?languageCode=en&query=" + userInput + "&key=" + apiKey;
+        var queryURL = "../src/characters.json"
+        // let apiKey = "AIzaSyAYJ05r2WOK34MO9zLkmaz0Ux9NWnYTCcI"
+        // var queryURL = "https://factchecktools.googleapis.com/v1alpha1/claims:search?languageCode=en&query=" + userInput + "&key=" + apiKey;
 
         event.preventDefault();
 
         // grabs and displays the information from the API
         $.get(queryURL, function(response) {
             // loops through the responses
-            if (response.claims.length !== 0) {
+            if (response.length !== 0) {
                 for (var i = 0; i < 6; i++) {
-                    var data = response.claims[i];
-                    var title = data.claimReview[0].title;
-                    var body = data.text;
-                    var url = data.claimReview[0].url;
-                    var rating = data.claimReview[0].textualRating;
-
+                    var id = response[i].id;
+                    var name = response[i].name;
+                    var attackOne = response[i].attacks.one
+                    var attackTwo =  response[i].attacks.Two;
+                    var strongAgainst = response[i].strongAgainst[i];
+                    var weaknesses = response[i].weaknesses[i];
+                    var image = response[i].image
+                    console.log(name)
                     // displays the facts in cards
                     var fact =
                         `    
                             <div class="card inverted searchCard">
                         <div class="ui inverted segment">
-                                <p id="title-${i}">${title}</p>
+                                <p id="name-${i}">${name}</p>
                                 <div class="ui inverted divider"></div>
-                                <p id="body-${i}">${body}</p>
-                                <i id="rating-${i}">Rating: ${rating}</i>
-                                <h4><a href=${url} data-url${i}="${url}"><p>Read Article Here</p></a><h4>
-                                <button type="submit" id ="saveBtn" class="ui inverted teal basic button" data-id="${i}">SAVE FACT</button>
+                                <p id="attacks-${i}">${attackOne,attackTwo}</p>
+                                <i id="Strong Against-${i}">Strong Against Attack Types: ${strongAgainst}</i>
+                                <i id="Weak Against-${i}">Weak Against Attack Types ${weaknesses}</i>
+                                <h4><a href=${image} data-url${i}="${image}"></a><h4>
+                                <button type="Add to my Arsenal" id ="saveBtn" class="ui inverted teal basic button" data-id="${i}">SAVE FACT</button>
                             </div>   
                             </div>    
                         `
@@ -57,17 +61,23 @@ $(document).ready(function() {
     // event listener for save button
     $(document).on('click', "#saveBtn", function(event) {
         event.preventDefault();
-        // grabs the clicked card data that will be saved to the user's profile page where you will find the user's saved facts
-        var savedTitle = $("#title-" + $(this).data("id"));
-        var savedBody = $("#body-" + $(this).data("id"));
-        var savedRating = $("#rating-" + $(this).data("id"));
-        var savedURL = $("#title-" + $(this).data("id"));
+        // grabs the clicked card data that will be saved to the user's profile page where you will find the user's saved characters
+        var savedname =$("#name-" + $(this).data("id"));
+        var savedAttackOne = $("#AttackOne-" + $(this).data("id"));
+        var savedAttackTwo = $("#AttackTwo-" + $(this).data("id"));
+        var savedStrong = $("#Strong-" + $(this).data("id"));
+        var savedWeak = $("#Weakness-" + $(this).data("id"));
+        var savedimage = $("#image-" + $(this).data("id"));
 
         // an object to hold our results to be passed into our route
         var savedResults = {
-            title: savedTitle[0].innerHTML,
-            body: savedBody[0].innerHTML,
-            url: savedURL[0].parentElement.children[4].outerHTML,
+            id: savedid[0].innerHTML,
+            name: savedname[0].innerHTML,
+            attackOne: savedAttackOne[0].innerHTML,
+            attackTwo: savedAttackTwo[0].innerHTML,
+            strongAgainst: savedstrongAgainst[0].innerHTML,
+            weaknesses: savedweaknesses[0].innerHTML
+            image: savedimage[0].parentElement.children[4].outerHTML,
             rating: savedRating[0].innerHTML,
         };
 

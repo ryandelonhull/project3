@@ -1,3 +1,5 @@
+// For displaying YOUR USERS
+
 $(document).ready(function() {
     // Container where we append our saved cards on the profile.html
     var savedSearchContainer = $(".savedSearches");

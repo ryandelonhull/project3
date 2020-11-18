@@ -1,3 +1,5 @@
+import characters from '../src/characters.json'
+
 $(document).ready(function() {
     // hide the container
     $(".searchCardsContainer").css("display", "none");
@@ -77,6 +79,7 @@ $(document).ready(function() {
             attackTwo: savedAttackTwo[0].innerHTML,
             strongAgainst: savedStrong[0].innerHTML,
             weaknesses: savedWeak[0].innerHTML,
+            // image seems to have some issues
             image: savedimage[0].parentElement.children[4].outerHTML,
             rating: savedRating[0].innerHTML,
         };

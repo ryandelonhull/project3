@@ -35,7 +35,7 @@ module.exports = function(sequelize, DataTypes) {
 
 
 Attack.associate = function(models) {
-    Attack.belongsTo(models.Character, {
+    Attack.belongsTo(models.Characters, {
         // onDelete: "cascade"
     });
     //may beed another belongs to here for computer -probably not

@@ -11,7 +11,7 @@
 
 // Creating our User model
 module.exports = function(sequelize, DataTypes) {
-    var Character = sequelize.define("Character", {
+    var Characters = sequelize.define("Characters", {
     
         // name cannot be null and should be unique
         //DO WE NEED AN ID--PROBABLY NOT
@@ -58,13 +58,13 @@ module.exports = function(sequelize, DataTypes) {
 // In this case, before a User is created, we will automatically hash their password
 
 
-Character.associate = function(models) {
-    Character.hasMany(models.Games, {
+Characters.associate = function(models) {
+    Characters.hasMany(models.Games, {
         // onDelete: "cascade"
     });
-    Character.hasMany(models.Attacks, {
+    Characters.hasMany(models.Attacks, {
         // onDelete: "cascade"
     });
 };
-return CharacterStatus;
+return Characters;
 };

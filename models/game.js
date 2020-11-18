@@ -58,9 +58,12 @@ module.exports = function(sequelize, DataTypes) {
 
 Game.associate = function(models) {
     Game.belongsTo(models.User, {
+        // foreignKey: {
+        //     allowNull: false
+        // }
         // onDelete: "cascade"
     });
-    Game.hasOne(models.Character, {
+    Game.hasOne(models.Characters, {
         // onDelete: "cascade"
     });
     Game.hasOne(models.CharacterStatus, {

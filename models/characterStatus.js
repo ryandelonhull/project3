@@ -36,16 +36,16 @@ module.exports = function(sequelize, DataTypes) {
             // }
         },
     
-        attacks: {
-            type: DataTypes.STRING,
+        userScore: {
+            type: DataTypes.INTEGER,
             allowNull: false,
             // validate: {
             //     len: [8, 30]
             // }
         },
     
-        hitpoints: {
-            type: DataTypes.STRING,
+        computerScore: {
+            type: DataTypes.INTEGER,
             allowNull: false,
             validate: {
                 len: [0, 10]
@@ -58,8 +58,8 @@ module.exports = function(sequelize, DataTypes) {
 // In this case, before a User is created, we will automatically hash their password
 
 
-Character.associate = function(models) {
-    Character.hasMany(models.Games, {
+CharacterStatus.associate = function(models) {
+    CharacterStatus.belongsTo(models.Games, {
         // onDelete: "cascade"
     });
     Character.hasMany(models.Attacks, {

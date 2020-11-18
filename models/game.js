@@ -63,6 +63,9 @@ Game.associate = function(models) {
     Game.hasOne(models.Character, {
         // onDelete: "cascade"
     });
+    Game.hasOne(models.CharacterStatus, {
+        // onDelete: "cascade"
+    });
 };
 return Game;
 };

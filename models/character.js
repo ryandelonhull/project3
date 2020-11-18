@@ -66,5 +66,5 @@ Character.associate = function(models) {
         // onDelete: "cascade"
     });
 };
-return Character;
+return CharacterStatus;
 };

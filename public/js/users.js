@@ -17,12 +17,12 @@ $(document).ready(function() {
         // variable for user input
         var userInput = $("#search-input").val();
         // variables for api key and query url for API
-        var queryURL = "../src/characters.json"
+        // var queryURL = require "../src/characters.json"
         // let apiKey = "AIzaSyAYJ05r2WOK34MO9zLkmaz0Ux9NWnYTCcI"
         // var queryURL = "https://factchecktools.googleapis.com/v1alpha1/claims:search?languageCode=en&query=" + userInput + "&key=" + apiKey;
-
+        console.log(queryURL);
         event.preventDefault();
-
+//turn into json file get
         // grabs and displays the information from the API
         $.get(queryURL, function(response) {
             // loops through the responses
@@ -57,7 +57,7 @@ $(document).ready(function() {
             };
         });
     });
-
+// ---------------------------------------------------------KEEEEEPP!-------------------------------//
     // event listener for save button
     $(document).on('click', "#saveBtn", function(event) {
         event.preventDefault();
@@ -75,8 +75,8 @@ $(document).ready(function() {
             name: savedname[0].innerHTML,
             attackOne: savedAttackOne[0].innerHTML,
             attackTwo: savedAttackTwo[0].innerHTML,
-            strongAgainst: savedstrongAgainst[0].innerHTML,
-            weaknesses: savedweaknesses[0].innerHTML
+            strongAgainst: savedStrong[0].innerHTML,
+            weaknesses: savedWeak[0].innerHTML,
             image: savedimage[0].parentElement.children[4].outerHTML,
             rating: savedRating[0].innerHTML,
         };

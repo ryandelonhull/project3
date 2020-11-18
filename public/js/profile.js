@@ -45,7 +45,7 @@ $(document).ready(function() {
         let title = $(this).find(".title")[0].innerHTML;
         deleteSearch(title);
     });
-
+//does this work? I don't know
     // passes in the title we grabbed and this function will then delete a specific clicked saved search
     function deleteSearch(title) {
         // grabs the currently logged in user's id as our identifier to delete searches in the route as well as the title

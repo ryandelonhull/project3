@@ -75,7 +75,7 @@ class Battle extends Component {
 
         return (
             <div>
-                
+                <h2>Life'll kill ya</h2>
             </div>
         )
     }

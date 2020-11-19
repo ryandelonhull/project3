@@ -1,5 +1,5 @@
-Id
-Name
-characterId
+// Id
+// Name
+// characterId
 
-attacks belongs to character
+// attacks belongs to character

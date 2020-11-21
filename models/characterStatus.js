@@ -22,11 +22,11 @@ module.exports = function(sequelize, DataTypes) {
         //     allowNull: false,
         //     unique: true,
         // },
-        gameId: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            unique: true,
-        },
+        // gameId: {
+        //     type: DataTypes.INTEGER,
+        //     allowNull: false,
+        //     unique: true,
+        // },
         userId: {
             type: DataTypes.INTEGER,
             allowNull: false,
@@ -59,10 +59,10 @@ module.exports = function(sequelize, DataTypes) {
 
 
 CharacterStatus.associate = function(models) {
-    CharacterStatus.belongsTo(models.Games, {
+    CharacterStatus.belongsTo(models.Game, {foreignKey: 'GameId' 
         // onDelete: "cascade"
     });
-    CharacterStatus.hasMany(models.Attacks, {
+    CharacterStatus.hasMany(models.Attack, {
         // onDelete: "cascade"
     });
 };

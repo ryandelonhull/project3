@@ -26,13 +26,14 @@
     "mysql2": "^2.2.5",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.0",
     "semantic-ui-calendar": "0.0.8",
     "semantic-ui-css": "^2.4.1",
     "sequelize": "^6.3.5",
     "sequelize-cli": "^6.2.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-scripts": "4.0.0",
     "web-vitals": "^0.2.4"
   },
   "browserslist": {
@@ -47,5 +48,4 @@
       "last 1 safari version"
     ]
   }
-
 }

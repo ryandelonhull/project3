@@ -14,13 +14,20 @@ class Battle extends Component {
         winner: ""
     };
 
+    selectWinner(){
+        console.log("Winner Winner Chicken Dinner!")
+        //takes in game data
+        //takes in characterstatus and determines if winner exists?
+    }
+
     startBattle = () => {
         event.preventDefault();
-        // let userHealth = 7;
-        // let cpuHealth = 7;
+        let userHealth = 7;
+        let cpuHealth = 7;
         //what is gameInterval?
         let gameInterval = setInterval(() => {
-            counter--;
+            //counter is not defined -error gotten when button clicked -what is the counter? why is not defined?
+            // counter--;
             this.setState({
                 CPU: attack[Math.floor(Math.random() * attack.length)],
                 
@@ -33,16 +40,18 @@ class Battle extends Component {
                     winner: !this.selectWinner()
                 });
             }
+            //what is 125?
         }, 125);
     };
 
     attackRound = () => {
         //how are we using cpu/user in this context? 
         //how can user be equal to cpu is that user and cpu health???
-        //if user is refering to user attack, it should be called userAttack and cpuAttack 
+        //if user is referring to user attack, it should be called userAttack and cpuAttack 
         const { user, CPU } = this.state;
 
         if (user === CPU) {
+            
             return "This round is a draw partner";
         } else if (
             (user === "x" && CPU === "y") ||

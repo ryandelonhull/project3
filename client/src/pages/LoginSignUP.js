@@ -1,16 +1,28 @@
 import React, { Component } from 'react';
+import './page.css';
 
-import Login from '../components/Login/Login'
 
-class LoginSignUp extends Component{
-    render(){
-        return(
-            <div>
-                {/* Login sign up components go here */}
-                <Login/>
-            </div>
-        )
-    }
+// components
+import Login from '../components/Login/Login';
+import SignUp from '../components/SignUp/SignUp';
+
+class LoginSignUp extends Component {
+  render() {
+    return (
+      <div>
+          
+        {/* Login sign up components go here */}
+        <div className="wrapper">
+          <div className='login'>
+            <Login />
+          </div>
+          <div className='signUp'>
+          <SignUp />
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default LoginSignUp;

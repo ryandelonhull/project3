@@ -1,18 +1,22 @@
 import React, { Component } from "react";
 import "./Battle.css";
 //set variables for attack
-const attack = ["x", "y", "z", "a", "b"];
 //are attacks going to be randomly set === variable with attack name associated with character?
 //how are building attack buttons?
+const attack = ["x", "y", "z", "a", "b"];
+
 
 class Battle extends Component {
-    state = {
+    constructor(props){
+    super(props)
+    this.state = {
         user: attack[{}],
         CPU: attack[{}],
         userHealth: 7,
         cpuHealth: 7,
         winner: ""
     };
+}
 
     selectWinner(){
         console.log("Winner Winner Chicken Dinner!")
@@ -20,10 +24,8 @@ class Battle extends Component {
         //takes in characterstatus and determines if winner exists?
     }
 
-    startBattle = () => {
+    startBattle = (event) => {
         event.preventDefault();
-        let userHealth = 7;
-        let cpuHealth = 7;
         //what is gameInterval?
         let gameInterval = setInterval(() => {
             //counter is not defined -error gotten when button clicked -what is the counter? why is not defined?
@@ -34,7 +36,7 @@ class Battle extends Component {
             });
             //if either user or computer lost, clearInterval(gameInterval) --what does that mean
             //then set state winner --
-            if (userHealth || cpuHealth === 0) {
+            if (this.state.userHealth || this.state.cpuHealth === 0) {
                 clearInterval(gameInterval);
                 this.setState({
                     winner: !this.selectWinner()
@@ -61,7 +63,7 @@ class Battle extends Component {
             (user === "b" && CPU === "x")
         ) {
             return "YOU DEALT A MIGHTY BLOW!"
-            (cpuHealth - 1);
+            (this.state.cpuHealth - 1);
         } else if (
             (user === "x" && CPU === "z") ||
             (user === "y" && CPU === "a") ||
@@ -69,7 +71,7 @@ class Battle extends Component {
             (user === "a" && CPU === "x") ||
             (user === "b" && CPU === "y")
         ) {
-            return (cpuHealth - 2);
+            return (this.state.cpuHealth - 2);
         } else if (
             (user === "x" && CPU === "a") ||
             (user === "y" && CPU === "b") ||
@@ -77,7 +79,7 @@ class Battle extends Component {
             (user === "a" && CPU === "y") ||
             (user === "b" && CPU === "z")
         ) {
-            return (userHealth - 1);
+            return (this.state.userHealth - 1);
         } else if (
             (user === "x" && CPU === "b") ||
             (user === "y" && CPU === "x") ||
@@ -85,7 +87,7 @@ class Battle extends Component {
             (user === "a" && CPU === "z") ||
             (user === "b" && CPU === "a")
         ) {
-            return (userHealth - 2);
+            return (this.state.userHealth - 2);
         }
 
     }

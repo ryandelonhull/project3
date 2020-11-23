@@ -1,0 +1,7 @@
+.wrapper{
+    display: flex;
+}
+
+.login, .signUp{
+    width: 500px
+}

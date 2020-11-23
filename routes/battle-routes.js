@@ -9,7 +9,7 @@ module.exports = function(app) {
             res.json(attack);
         }).catch(err => {res.json(err)});
     });
-
+//find the attacks during the battle
 app.get("/api/attack/:id", function(req, res){
     db.Attack.findOne().then(function(attack){
         res.json(attack);
@@ -29,7 +29,18 @@ app.get("/api/attack/:id", function(req, res){
             res.json(dbChar);
         });
     });
-
+//update game status
+    app.put("/api/game", function(req, res) {
+        db.Game.update(req.body,
+          {
+            where: {
+              id: req.body.id
+            }
+          })
+          .then(function(dbGame) {
+            res.json(dbGame);
+          });
+      });
 //whenever we need the game data, we go here
     app.get("/api/game/", function(req, res) {
         db.Game.findAll().then(function(gameData) {
@@ -45,24 +56,44 @@ app.get("/api/attack/:id", function(req, res){
     });
 
     //update the character status during the game play
-    app.post("/api/characterStatus/", function(req, res) {
+    app.put("/api/characterStatus/", function(req, res) {
         db.CharacterStatus.update({
-            userId: req.body.userId,
-            userScore: req.body.userScore,
-            computerScore: req.body.computerScore
-        }).catch(err => {res.json(err)});
-    });
+            where: {
+                userId: req.body.id
+              }
+            })
+            .then(function(dbGame) {
+              res.json(dbGame);
+           
 
-   // when user clicks the save button, saves the  data into the database
-   app.post("/api/user/:id/", function(req, res) {
-    db.Char.create({
-        // id:req.name.id,
-        name: req.body.name,
-        attacks: req.body.attacks,
-        hitpoints: req.body.hitpoints,
-        image: req.body.image
-    }).then(function(dbChar) {
-        res.json(dbChar);
-    });
-});
+            // userId: req.body.userId,
+            // userScore: req.body.userScore,
+            // computerScore: req.body.computerScore
+        }).catch(err => {res.json(err)});
+    })
+
+//for delete routes -if needed
+    // app.delete("/api/posts/:id", function(req, res) {
+    //     db.Post.destroy({
+    //       where: {
+    //         id: req.params.id
+    //       }
+    //     })
+    //       .then(function(dbPost) {
+    //         res.json(dbPost);
+    //       });
+    //   });
+
+//    // when user clicks the save button, saves the  data into the database
+//    app.post("/api/user/:id/", function(req, res) {
+//     db.Char.create({
+//         // id:req.name.id,
+//         name: req.body.name,
+//         attacks: req.body.attacks,
+//         hitpoints: req.body.hitpoints,
+//         image: req.body.image
+//     }).then(function(dbChar) {
+//         res.json(dbChar);
+//     });
+// });
 }

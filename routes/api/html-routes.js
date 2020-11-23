@@ -1,6 +1,6 @@
 // require path and our authentication.js file for users
 var path = require("path");
-var authentication = require("../config/middleware/authentication");
+var authentication = require("../../config/middleware/authentication");
 
 module.exports = function(app) {
 
@@ -11,7 +11,7 @@ module.exports = function(app) {
         if (req.user) {
             res.redirect("/user");
         }
-        res.sendFile(path.join(__dirname, "../public/index.html"));
+        res.sendFile(path.join(__dirname, "../client/public.index.html"));
     });
 
     // about route loads about.html

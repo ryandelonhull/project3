@@ -1,6 +1,6 @@
 // require path and our authentication.js file for users
 var path = require("path");
-var authentication = require("../../config/middleware/authentication");
+var authentication = require("./config/middleware/authentication");
 
 module.exports = function(app) {
 

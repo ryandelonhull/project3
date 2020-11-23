@@ -1,25 +1,8 @@
-// Id
-// userId 1
-// characterId 1
-// ComputerCharacterId
-
-// Game belongs to user
-
-// Game has one character
 
 
 module.exports = function(sequelize, DataTypes) {
     var Game = sequelize.define("Game", {
     
-        // name cannot be null and should be unique
-        //DO WE NEED AN ID--PROBABLY NOT
-        // id: {
-        //     //make it auto??
-        //     type: DataTypes.INTEGER,
-        //     autoIncrement: true,
-        //     allowNull: false,
-        //     unique: true,
-        // },
         UserId: {
             type: DataTypes.INTEGER,
             allowNull: false,

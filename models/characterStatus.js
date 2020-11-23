@@ -13,20 +13,6 @@
 module.exports = function(sequelize, DataTypes) {
     var CharacterStatus = sequelize.define("CharacterStatus", {
     
-        // name cannot be null and should be unique
-        //DO WE NEED AN ID--PROBABLY NOT
-        // id: {
-        //     //make it auto??
-        //     type: DataTypes.INTEGER,
-        //     autoIncrement: true, 
-        //     allowNull: false,
-        //     unique: true,
-        // },
-        // gameId: {
-        //     type: DataTypes.INTEGER,
-        //     allowNull: false,
-        //     unique: true,
-        // },
         userId: {
             type: DataTypes.INTEGER,
             allowNull: false,

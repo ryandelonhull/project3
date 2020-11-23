@@ -1,54 +1,36 @@
 var db = require("../models");
 
-// Routes
+// Routes For Character saving/viewing
 module.exports = function(app) {
-    // this route grabs the data of a specific user
+    //needs a route that deletes data
+
+    // this route grabs the data for all characters
     app.get("/api/characters/", function(req, res) {
         db.Characters.findAll().then(function(characterData) {
             res.json(characterData);
         }).catch(err => {res.json(err)});
     });
-
-    // If the user has valid login credentials, send them to the user page
-    // Otherwise the user will be sent an error
-    app.post("/api/login", function(req, res) {
-        res.json(req.user);
+    //I think this will work for getting a character for battle -unsure will need to be tested
+    app.get("/api/user/characters/", function(req, res) {
+        db.Characters.findOne().then(function(characterData) {
+            res.json(characterData);
+        }).catch(err => {res.json(err)});
     });
 
-    // when the user signs up, save their credentials into the user database
-    app.post("/api/signup", function(req, res) {
-        db.User.create({
-                username: req.body.username,
-                email: req.body.email,
-                password: req.body.password
-            })
-            // after that redirect to the login 
-            .then(function() {
-                res.redirect(307, "/api/login");
-            }, function(err) {
-                res.status(401).json({ msg: "Invalid email or password. Password must be 8 characters long" });
-            });
+   // when user clicks the save button, saves the  data into the database
+   // I am unsure if this will work - maybe needs to be tested first
+   app.post("/api/user/:id/", function(req, res) {
+    db.Char.create({
+        // id:req.name.id,
+        name: req.body.name,
+        attacks: req.body.attacks,
+        hitpoints: req.body.hitpoints,
+        image: req.body.image
+    }).then(function(dbChar) {
+        res.json(dbChar);
     });
+});
 
-    // Route for logging the user out
-    app.get("/logout", function(req, res) {
-        req.logout();
-        res.redirect("/");
-    });
-
-    // grabs the info of a user who is currently logged in
-    app.get("/api/user_data", function(req, res) {
-        if (!req.user) {
-            // The user is not logged in, send back an empty object
-            res.json({});
-        } else {
-            // Otherwise send back the user's email and id
-            res.json({
-                username: req.user.username,
-                email: req.user.email,
-                id: req.user.id
-            });
-        };
-    });
+   
     //END OF MODULES, DELETE AND SOMEONE MIGHT CRY!!!
 }

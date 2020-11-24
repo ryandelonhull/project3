@@ -13,23 +13,23 @@ CREATE TABLE Characters
 );
 
 Insert into Characters (name, image, attacks)
-VALUES("Batman","https://media2.giphy.com/media/26vUCH220kcToAYPS/giphy.gif", "1");
+VALUES("Batman","./Images-char/batperson.png", "1");
 Insert into Characters (name, image, attacks)
-VALUES("House Plant","https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRgITFpVbSNOVWCrVgtoBD1CidxqH0hm4eOeA&usqp=CAU", "2");
+VALUES("House Plant","./Images-char/houseplant.png", "2");
 Insert into Characters (name, image, attacks)
-VALUES("Barack Obama","https://image.cnbcfm.com/api/v1/image/104656161-GettyImages-688156110.jpg?v=1532563778&w=1400&h=950", "3");
+VALUES("Barack Obama","./Images-char/obama.png", "3");
 Insert into Characters (name, image, attacks)
 VALUES("Ninja","https://pbs.twimg.com/profile_images/1168269614058311680/qVZrY0PL_400x400.jpg", "4");
 Insert into Characters (name, image, attacks)
 VALUES("LA DRIVER","none", "5");
 Insert into Characters (name, image, attacks)
-VALUES("Stationary Exericse Bike","https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRmj9TIKZiDTKp8hx22bUHWV6W9ESkFFWk6qA&usqp=CAU", "6");
+VALUES("Stationary Exericse Bike","./Images-char/statbike.png", "6");
 Insert into Characters (name, image, attacks)
-VALUES("Hot Dog","https://www.ballparkbrand.com/sites/default/files/Hero_Dog_0.png", "7");
+VALUES("Hot Dog","./Images-char/hotdog.png", "7");
 Insert into Characters (name, image, attacks)
 VALUES("Seth Rogan (and friend)","https://hips.hearstapps.com/esquireuk.cdnds.net/15/37/original/original-seth-rogan-james-franco-kanye-west-parody-43-jpg-f09da4b6.jpg", "8");
 Insert into Characters (name, image, attacks)
-VALUES("Rick Astley","https://imgs.smoothradio.com/images/191589?crop=16_9&width=660&relax=1&signature=Rz93ikqcAz7BcX6SKiEC94zJnqo=", "9");
+VALUES("Rick Astley","./Images-char/rickya.png", "9");
 Insert into Characters (name, image, attacks)
 VALUES("Wess","https://avatars0.githubusercontent.com/u/70366408?s=460&u=3e7affbb1dd65a64e2aaebfaa65272951dd598d5&v=4", "10");
 Insert into Characters (name, image, attacks)

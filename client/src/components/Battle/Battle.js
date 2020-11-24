@@ -1,20 +1,23 @@
 import React, { Component } from "react";
 import "./Battle.css";
 //set variables for attack
-const attack = ["x", "y", "z", "a", "b"];
 //are attacks going to be randomly set === variable with attack name associated with character?
 //how are building attack buttons?
+const attack = ["x", "y", "z", "a", "b"];
+
 
 class Battle extends Component {
     state = {
         userAttack: "",
         cpuAttack: "",
+
         userHealth: 7,
         cpuHealth: 7,
         winner: "",
         inPlay: false,
         message: ""
     };
+
 
     // selectWinner(){
     //     console.log("Winner Winner Chicken Dinner!")

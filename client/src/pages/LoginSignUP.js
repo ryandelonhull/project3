@@ -4,7 +4,7 @@ import './page.css';
 
 // components
 import Login from '../components/Login/Login';
-import SignUp from '../components/SignUp/SignUp';
+
 
 class LoginSignUp extends Component {
   render() {
@@ -17,7 +17,7 @@ class LoginSignUp extends Component {
             <Login />
           </div>
           <div className='signUp'>
-          <SignUp />
+          {/* <SignUp /> */}
           </div>
         </div>
       </div>

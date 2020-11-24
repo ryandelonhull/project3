@@ -7,103 +7,145 @@ const attack = ["x", "y", "z", "a", "b"];
 
 
 class Battle extends Component {
-    constructor(props){
-    super(props)
-    this.state = {
-        user: attack[{}],
-        CPU: attack[{}],
+    state = {
+        userAttack: "",
+        cpuAttack: "",
+
         userHealth: 7,
         cpuHealth: 7,
-        winner: ""
+        winner: "",
+        inPlay: false,
+        message: ""
     };
-}
 
-    selectWinner(){
-        console.log("Winner Winner Chicken Dinner!")
-        //takes in game data
-        //takes in characterstatus and determines if winner exists?
+
+    // selectWinner(){
+    //     console.log("Winner Winner Chicken Dinner!")
+    //     //takes in game data
+    //     //takes in characterstatus and determines if winner exists?
+    // }
+
+    startBattle = () =>{
+        this.setState({userAttack: "", cpuAttack: "",inPlay: true, userHealth: 7, cpuHealth: 7} );
     }
 
-    startBattle = (event) => {
-        event.preventDefault();
-        //what is gameInterval?
-        let gameInterval = setInterval(() => {
-            //counter is not defined -error gotten when button clicked -what is the counter? why is not defined?
-            // counter--;
-            this.setState({
-                CPU: attack[Math.floor(Math.random() * attack.length)],
+    attack = (event, attackIndex) =>{
+        this.setState({userAttack: attack[attackIndex], cpuAttack: attack[Math.floor(Math.random() * attack.length)]},
+            this.attackRound
+        );
+   }
+
+    attackButtons = () =>{
+        return (
+        <div>
+            <button onClick={ () => this.attack("x", 0)}>X</button>
+            <button onClick={ () => this.attack("y", 1)}>Y</button>
+            <button onClick={ () => this.attack("z", 2)}>Z</button>
+            <button onClick={ () => this.attack("a", 3)}>A</button>
+            <button onClick={ () => this.attack("b", 4)}>A</button>
+        </div>);
+    }
+
+    // startBattle = () => {
+    //     event.preventDefault();
+    //     // let userAttackHealth = 7;
+    //     // let cpuAttackHealth = 7;
+    //     //what is gameInterval?
+    //     let gameInterval = setInterval(() => {
+    //         //counter is not defined -error gotten when button clicked -what is the counter? why is not defined?
+    //         // counter--;
+    //         this.setState({
+    //             cpuAttack: attack[Math.floor(Math.random() * attack.length)],
                 
-            });
-            //if either user or computer lost, clearInterval(gameInterval) --what does that mean
-            //then set state winner --
-            if (this.state.userHealth || this.state.cpuHealth === 0) {
-                clearInterval(gameInterval);
-                this.setState({
-                    winner: !this.selectWinner()
-                });
-            }
-            //what is 125?
-        }, 125);
-    };
+    //         });
+    //         //if either userAttack or computer lost, clearInterval(gameInterval) --what does that mean
+    //         //then set state winner --
+    //         if (userAttackHealth || cpuAttackHealth === 0) {
+    //             clearInterval(gameInterval);
+    //             this.setState({
+    //                 winner: !this.selectWinner()
+    //             });
+    //         }
+    //         //what is 125?
+    //     }, 125);
+    // };
+
+   // cpuAttack: attack[Math.floor(Math.random() * attack.length)],
+
+   checkWinner = () =>{
+       const {cpuHealth, userHealth} = this.state;
+    if (cpuHealth <= 0 && userHealth > 0){
+        this.setState({winner: "Player", message: "Player wins"});
+    }
+    else if(userHealth <= 0 && cpuHealth > 0){
+        this.setState({winner:  "cpu", message: "Computer wins"});
+    }
+
+   }
 
     attackRound = () => {
-        //how are we using cpu/user in this context? 
-        //how can user be equal to cpu is that user and cpu health???
-        //if user is referring to user attack, it should be called userAttack and cpuAttack 
-        const { user, CPU } = this.state;
+        //how are we using cpuAttack/userAttack in this context? 
+        //how can userAttack be equal to cpuAttack is that userAttack and cpuAttack health???
+        //if userAttack is referring to userAttack attack, it should be called userAttackAttack and cpuAttackAttack 
+        const { userAttack, cpuAttack, userHealth, cpuHealth } = this.state;
+        const { checkWinner } = this;
 
-        if (user === CPU) {
+        if (userAttack === cpuAttack) {
             
             return "This round is a draw partner";
         } else if (
-            (user === "x" && CPU === "y") ||
-            (user === "y" && CPU === "z") ||
-            (user === "z" && CPU === "a") ||
-            (user === "a" && CPU === "b") ||
-            (user === "b" && CPU === "x")
+            (userAttack === "x" && cpuAttack === "y") ||
+            (userAttack === "y" && cpuAttack === "z") ||
+            (userAttack === "z" && cpuAttack === "a") ||
+            (userAttack === "a" && cpuAttack === "b") ||
+            (userAttack === "b" && cpuAttack === "x")
         ) {
-            return "YOU DEALT A MIGHTY BLOW!"
-            (this.state.cpuHealth - 1);
+            this.setState( {cpuHealth: cpuHealth-1, message: "YOU DEALT A MIGHTY BLOW! MINUS ONE TO YOUR OPPONENT!"}, checkWinner);
         } else if (
-            (user === "x" && CPU === "z") ||
-            (user === "y" && CPU === "a") ||
-            (user === "z" && CPU === "b") ||
-            (user === "a" && CPU === "x") ||
-            (user === "b" && CPU === "y")
+            (userAttack === "x" && cpuAttack === "z") ||
+            (userAttack === "y" && cpuAttack === "a") ||
+            (userAttack === "z" && cpuAttack === "b") ||
+            (userAttack === "a" && cpuAttack === "x") ||
+            (userAttack === "b" && cpuAttack === "y")
         ) {
-            return (this.state.cpuHealth - 2);
+            this.setState( { cpuHealth: cpuHealth-2, message: "A CRUCIAL"});
         } else if (
-            (user === "x" && CPU === "a") ||
-            (user === "y" && CPU === "b") ||
-            (user === "z" && CPU === "x") ||
-            (user === "a" && CPU === "y") ||
-            (user === "b" && CPU === "z")
+            (userAttack === "x" && cpuAttack === "a") ||
+            (userAttack === "y" && cpuAttack === "b") ||
+            (userAttack === "z" && cpuAttack === "x") ||
+            (userAttack === "a" && cpuAttack === "y") ||
+            (userAttack === "b" && cpuAttack === "z")
         ) {
-            return (this.state.userHealth - 1);
+            this.setState({userHealth: userHealth-1, message: "YOU DEALT A MIGHTY BLOW! MINUS ONE TO YOUR OPPONENT!"}, checkWinner);
         } else if (
-            (user === "x" && CPU === "b") ||
-            (user === "y" && CPU === "x") ||
-            (user === "z" && CPU === "y") ||
-            (user === "a" && CPU === "z") ||
-            (user === "b" && CPU === "a")
+            (userAttack === "x" && cpuAttack === "b") ||
+            (userAttack === "y" && cpuAttack === "x") ||
+            (userAttack === "z" && cpuAttack === "y") ||
+            (userAttack === "a" && cpuAttack === "z") ||
+            (userAttack === "b" && cpuAttack === "a")
         ) {
-            return (this.state.userHealth - 2);
+            this.setState({userHealth: userHealth-2, message: "YOU DEALT A MIGHTY BLOW! MINUS ONE TO YOUR OPPONENT!"}, checkWinner);
         }
 
     }
 
 //need a function to link attack variables to buttons
-//need a function to display users named attacks as buttons link those bad boys up
+//need a function to display userAttacks named attacks as buttons link those bad boys up
 //need to write battle results into the database as they happen
 //reminder when game is over we need to clear game data/ and character status data (on the databases)
 
 
     render() {
 
+        // const { inPlay } = this.state;
+        // const  { attackButtons } = this.attackButtons;
+
         return (
             <div>
                 <h2>Life'll kill ya</h2>
-                <button onClick={event => this.startBattle(event)}>Start Battle</button>
+                <button onClick={this.startBattle}>Start Battle</button>
+                {this.state.inPlay? (attackbuttons()): ""};
+                
             </div>
         )
     }

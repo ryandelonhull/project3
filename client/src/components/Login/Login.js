@@ -41,7 +41,7 @@ function Login() {
         <span className="sr-only">Error:</span> <span className="msg"></span>
       </div>
 
-      <button type="submit" className="btn">
+      <button type="submit" className="btn btn-secondary">
         Login
       </button>
     </div>

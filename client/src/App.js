@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Battle from './components/Battle/Battle';
-import LoginSignUp from './pages/LoginSignUP';
+import LoginSignUP from './pages/LoginSignUP';
 import Navbar from './components/Navbar/Navbar';
+import Contact from './pages/Contact'
 
 class App extends Component {
   render() {
@@ -10,14 +11,15 @@ class App extends Component {
       <Router>
         <div className="container">
           <Navbar />
+          <Contact />
           <Switch>
-            <Route path="/" exact component={LoginSignUp} />
-            {/* <Route path="/Profile" component={Profile} />
-          <Route path="/Signup" component={Signup} />
-          <Route path="/Contact" component={Contact} />
-          <Route path="/About" component={About} />
-          <Route path="/User" component={User} />
-          <Route path="/Battle" component={Battle} /> */}
+            <Route path="/" exact component={LoginSignUP} />
+           {/* <Route path="/Profile" component={Profile} />
+          <Route path="/Signup" component={Signup} /> */}
+          {/* <Route path="/Contact" component={Contact} /> */}
+          {/* <Route path="/About" component={About} /> */}
+          {/* <Route path="/User" component={User} /> */}
+          <Route path="/Battle" component={Battle} />
           </Switch>
         </div>
       </Router>

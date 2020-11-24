@@ -58,7 +58,7 @@ function SignUp() {
           </div>
           <button
             type="submit"
-            className="btn"
+            className="btn btn-secondary"
             // style="margin-top: 15px;"
           >
             Sign Up

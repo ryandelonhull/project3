@@ -8,19 +8,19 @@ const attack = ["x", "y", "z", "a", "b"];
 class Battle extends Component {
     state = {
         userAttack: "",
-     cpuAttack: "",
+        cpuAttack: "",
         userHealth: 7,
-     cpuHealth: 7,
+        cpuHealth: 7,
         winner: "",
         inPlay: false,
         message: ""
     };
 
-    selectWinner(){
-        console.log("Winner Winner Chicken Dinner!")
-        //takes in game data
-        //takes in characterstatus and determines if winner exists?
-    }
+    // selectWinner(){
+    //     console.log("Winner Winner Chicken Dinner!")
+    //     //takes in game data
+    //     //takes in characterstatus and determines if winner exists?
+    // }
 
     startBattle = () =>{
         this.setState({userAttack: "", cpuAttack: "",inPlay: true, userHealth: 7, cpuHealth: 7} );
@@ -35,10 +35,11 @@ class Battle extends Component {
     attackButtons = () =>{
         return (
         <div>
-            <button onClick={event => this.attack(event, 0)}>X</button>
-            <button onClick={event => this.attack(event, 1)}>Y</button>
-            <button onClick={event => this.attack(event, 2)}>Z</button>
-            <button onClick={event => this.attack(event, 3)}>A</button>
+            <button onClick={ () => this.attack("x", 0)}>X</button>
+            <button onClick={ () => this.attack("y", 1)}>Y</button>
+            <button onClick={ () => this.attack("z", 2)}>Z</button>
+            <button onClick={ () => this.attack("a", 3)}>A</button>
+            <button onClick={ () => this.attack("b", 4)}>A</button>
         </div>);
     }
 
@@ -104,7 +105,7 @@ class Battle extends Component {
             (userAttack === "a" && cpuAttack === "x") ||
             (userAttack === "b" && cpuAttack === "y")
         ) {
-            this.setState( { cpuHealth: cpuHealth-2, message: "whatever"});
+            this.setState( { cpuHealth: cpuHealth-2, message: "A CRUCIAL"});
         } else if (
             (userAttack === "x" && cpuAttack === "a") ||
             (userAttack === "y" && cpuAttack === "b") ||
@@ -133,15 +134,15 @@ class Battle extends Component {
 
     render() {
 
-        const { inPlay } = this.state;
-        const  { attackButtons } = this.attackButtons;
+        // const { inPlay } = this.state;
+        // const  { attackButtons } = this.attackButtons;
 
         return (
             <div>
                 <h2>Life'll kill ya</h2>
-                <button onClick={event => this.startBattle(event)}>Start Battle</button>
-                {inPlay && attackButtons()}
-
+                <button onClick={this.startBattle}>Start Battle</button>
+                {this.state.inPlay? (attackbuttons()): ""};
+                
             </div>
         )
     }

@@ -1,7 +1,12 @@
-.wrapper{
-    display: flex;
+.wrapper {
+  display: flex;
+  border: solid;
+  border-color: black;
 }
 
-.login, .signUp{
-    width: 500px
+.login {
+  width: 100%;
+}
+.signUp {
+  width: 100%;
 }

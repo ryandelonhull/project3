@@ -44,7 +44,7 @@ class Contact extends Component {
             <hr className="my-4" />
             <h5>Ry Hull</h5>
             <p>
-              Email: rkelmsouthworth@gmail.com
+              Email: Ryandelonhull@gmail.com
             </p>
           
             <p>Oakland, California</p>

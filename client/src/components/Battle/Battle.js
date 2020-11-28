@@ -53,7 +53,7 @@ class Battle extends Component {
     attackRound = () => {
         //how are we using cpuAttack/userAttack in this context? 
         //how can userAttack be equal to cpuAttack is that userAttack and cpuAttack health???
-        //if userAttack is referring to userAttack attack, it should be called userAttackAttack and cpuAttackAttack 
+        //if userAttack is referring to userAttack attack, it should be called userAttack and cpuAttack 
         const { userAttack, cpuAttack, userHealth, cpuHealth } = this.state;
         const { checkWinner } = this;
 

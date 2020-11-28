@@ -7,7 +7,7 @@ module.exports = function(app) {
     // this route grabs the data for all characters
     app.get("/api/characters/", function(req, res) {
         db.Characters.findAll().then(function(characterData) {
-            res.json(characterData);
+            res.send(characterData);
         }).catch(err => {res.json(err)});
     });
     //I think this will work for getting a character for battle -unsure will need to be tested

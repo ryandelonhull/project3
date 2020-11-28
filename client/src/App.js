@@ -5,6 +5,7 @@ import LoginSignUP from './pages/LoginSignUP';
 import Navbar from './components/Navbar/Navbar';
 import Contact from './pages/Contact'
 import Profile from './pages/Profile'
+import Jumbo from './components/Jumbo/Jumbo'
 
 class App extends Component {
   render() {
@@ -12,7 +13,9 @@ class App extends Component {
       <Router>
         <div className="container">
           <Navbar />
+          <Jumbo />
           <Contact />
+         
           <Switch>
             <Route path="/" exact component={LoginSignUP} />
             <Route path="/Profile" component={Profile} />

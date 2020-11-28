@@ -1,18 +1,19 @@
 import React from 'react';
-import "./Navbar";
+import './Navbar.css';
 
 
 function Navbar() {
   return (
-    <div>
+   <div>
       
-      <div className="App">
-        <img src={require('./projectxlogo.png')} />
       
       <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-      
+      <div className="App">
+        {/* <img src={require("./projectxlogo.png")} alt="Navbar Image" /> */}
+        <img src="https://i.ibb.co/2WsXzGW/projectxlogo.png" />
+        {/* <img src="./projectxlogo.png" thumbnail /> */}
         
-      <ul className="nav justify-content-end">
+      <ul className="nav justify-content-end ml-auto">
         <li className="nav-item">
           {/* <a className="nav-link active" href="#">
             About
@@ -32,9 +33,9 @@ function Navbar() {
         </li>
       </ul>
       
-     
-      </nav>
       </div>
+      </nav>
+      
     </div>
   );
 }

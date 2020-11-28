@@ -3,7 +3,11 @@ import React from 'react';
 function Navbar() {
   return (
     <div>
-        <h2>Project X</h2>
+      
+      <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <a class="navbar-brand" href="#">
+      <img src="https://i.ibb.co/2WsXzGW/projectxlogo.png" alt="logo" style="width:40px;"> 
+        
       <ul className="nav justify-content-end">
         <li className="nav-item">
           {/* <a className="nav-link active" href="#">
@@ -20,8 +24,12 @@ function Navbar() {
           <a className="nav-link" href="#Contact">
             Contact
           </a>
+         
         </li>
       </ul>
+      </img>
+      </a>
+      </nav>
     </div>
   );
 }

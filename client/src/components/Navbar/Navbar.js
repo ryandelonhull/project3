@@ -1,12 +1,15 @@
 import React from 'react';
+import "./Navbar";
+
 
 function Navbar() {
   return (
     <div>
       
+
       <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
       <a class="navbar-brand" href="#">
-      <img src="https://i.ibb.co/2WsXzGW/projectxlogo.png" alt="logo" style="width:40px;"> 
+      <img src="https://i.ibb.co/2WsXzGW/projectxlogo.png" alt="logo" style={{width:75}}/> 
         
       <ul className="nav justify-content-end">
         <li className="nav-item">
@@ -27,7 +30,7 @@ function Navbar() {
          
         </li>
       </ul>
-      </img>
+      
       </a>
       </nav>
     </div>

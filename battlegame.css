@@ -1,0 +1,54 @@
+/* 
+
+   .jumbotron {
+    background-image:url('https://i.ibb.co/gPfgg0v/Game-On.png');
+    height: 100rem;
+    background-repeat: no-repeat;
+    
+    background-size: 50%;
+    border-bottom:1px solid #ff6a00
+    
+  }
+ 
+
+
+  /* .jumbotron {
+    background-image:url('https://i.ibb.co/gPfgg0v/Game-On.png');
+    height: 800px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+  }
+  
+  .jumbotron .container {
+    position: center;
+    top:100px;
+  } */
+
+
+  /* html {
+    background: url("/images/gameOn.png");
+    background-size: 300px 100px; 
+  } */
+
+  /* .jumbotron {
+    background-image: url("/img/gameOn");
+    
+    margin-bottom: 0;`enter code here`
+    min-height: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    background-size: cover;
+} */ 
+
+.jumbotron {
+    margin-top: 20px;
+    height: 800px;
+    
+    /* background-image:url("/images/gameOn.png"); */
+    background-size: cover;
+    color: white;
+    background-repeat: no-repeat;
+}

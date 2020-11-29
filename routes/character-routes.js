@@ -23,7 +23,7 @@ module.exports = function(app) {
     db.Char.create({
         // id:req.name.id,
         name: req.body.name,
-        attacks: req.body.attacks,
+        attack: req.body.attack,
         hitpoints: req.body.hitpoints,
         image: req.body.image
     }).then(function(dbChar) {

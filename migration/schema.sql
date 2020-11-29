@@ -23,7 +23,7 @@ VALUES("Ninja","https://pbs.twimg.com/profile_images/1168269614058311680/qVZrY0P
 Insert into Characters (name, image, attack)
 VALUES("LA DRIVER","none", "5");
 Insert into Characters (name, image, attack)
-VALUES("Stationary Exericse Bike","./Images-char/statbike.png", "6");
+VALUES("Stationary Exercise Bike","./Images-char/statbike.png", "6");
 Insert into Characters (name, image, attack)
 VALUES("Hot Dog","./Images-char/hotdog.png", "7");
 Insert into Characters (name, image, attack)
@@ -31,11 +31,11 @@ VALUES("Seth Rogan (and friend)","https://hips.hearstapps.com/esquireuk.cdnds.ne
 Insert into Characters (name, image, attack)
 VALUES("Rick Astley","./Images-char/rickya.png", "9");
 Insert into Characters (name, image, attack)
-VALUES("Wess","https://avatars0.githubusercontent.com/u/70366408?s=460&u=3e7affbb1dd65a64e2aaebfaa65272951dd598d5&v=4", "10");
+VALUES("Wess","https://avatars0.githubusercontent.com/u/70366408?s=460&u=3e7affbb1dd65a64e2aaebfaa65272951dd598d5&v=3", "10");
 Insert into Characters (name, image, attack)
 VALUES("HypnoToad","https://avatars0.githubusercontent.com/u/70366408?s=460&u=3e7affbb1dd65a64e2aaebfaa65272951dd598d5&v=4", "11");
 Insert into Characters (name, image, attack)
-VALUES("PE Teacher","https://avatars0.githubusercontent.com/u/70366408?s=460&u=3e7affbb1dd65a64e2aaebfaa65272951dd598d5&v=4", "12");
+VALUES("PE Teacher","https://avatars0.githubusercontent.com/u/70366408?s=460&u=3e7affbb1dd65a64e2aaebfaa65272951dd598d5&v=5", "12");
 Select * from Characters;
 
 CREATE TABLE Attack

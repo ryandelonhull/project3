@@ -4,19 +4,19 @@ function Navbar() {
   return (
     <div>
         <h2>Project X</h2>
-      <ul class="nav justify-content-end">
-        <li class="nav-item">
-          <a class="nav-link active" href="#">
+      <ul className="nav justify-content-end">
+        <li className="nav-item">
+          <a className="nav-link active" href="#">
             About
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
+        <li className="nav-item">
+          <a className="nav-link" href="#">
             Leaderboard
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
+        <li className="nav-item">
+          <a className="nav-link" href="#">
             Contact
           </a>
         </li>

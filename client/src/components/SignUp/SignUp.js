@@ -10,7 +10,7 @@ function SignUp() {
         <div className="ui inverted divider"></div>
         <form className="signup">
           <div className="form-group">
-            <label for="username">
+            <label form="username">
               <h4> Username </h4>
             </label>
             <input
@@ -21,7 +21,7 @@ function SignUp() {
             />
           </div>
           <div className="form-group">
-            <label for="exampleInputEmail1">
+            <label form="exampleInputEmail1">
               <h4>Email address</h4>
             </label>
             <input
@@ -32,7 +32,7 @@ function SignUp() {
             />
           </div>
           <div className="form-group">
-            <label for="exampleInputPassword1">
+            <label form="exampleInputPassword1">
               <h4>Password</h4>
             </label>
             <input

@@ -28,7 +28,7 @@ module.exports = function(sequelize, DataTypes) {
             unique: true,
         },
         image: {
-            type: DataTypes.BLOB,
+            type: DataTypes.STRING,
             allowNull: false,
             unique: true,
             // validate: {
@@ -47,6 +47,7 @@ module.exports = function(sequelize, DataTypes) {
         hitpoints: {
             type: DataTypes.STRING,
             allowNull: false,
+            defaultValue: 20,
             validate: {
                 len: [0, 10]
             }
@@ -59,10 +60,10 @@ module.exports = function(sequelize, DataTypes) {
 
 
 Characters.associate = function(models) {
-    Characters.hasMany(models.Games, {
-        // onDelete: "cascade"
-    });
-    Characters.hasMany(models.Attacks, {
+    // Characters.hasMany(models.Game, {
+    //     // onDelete: "cascade"
+    // });
+    Characters.hasMany(models.Attack, {
         // onDelete: "cascade"
     });
 };

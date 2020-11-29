@@ -52,7 +52,7 @@ module.exports = function(sequelize, DataTypes) {
             onDelete: "cascade"
         });
         
-        User.hasMany(models.Character, {
+        User.hasMany(models.Characters, {
             onDelete: "cascade"
         });
         

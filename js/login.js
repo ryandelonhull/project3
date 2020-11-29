@@ -1,4 +1,4 @@
-import login from "./login.css"
+import "./login.css"
 
 
 $(document).ready(function() {

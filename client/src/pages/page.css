@@ -1,0 +1,12 @@
+.wrapper {
+  display: flex;
+  border: solid;
+  border-color: black;
+}
+
+.login {
+  width: 100%;
+}
+.signUp {
+  width: 100%;
+}

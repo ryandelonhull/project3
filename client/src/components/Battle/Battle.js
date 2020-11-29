@@ -19,12 +19,6 @@ class Battle extends Component {
     };
 
 
-    // selectWinner(){
-    //     console.log("Winner Winner Chicken Dinner!")
-    //     //takes in game data
-    //     //takes in characterstatus and determines if winner exists?
-    // }
-
     startBattle = () =>{
         this.setState({userAttack: "", cpuAttack: "",inPlay: true, userHealth: 7, cpuHealth: 7} );
     }
@@ -38,39 +32,15 @@ class Battle extends Component {
     attackButtons = () =>{
         return (
         <div>
-            <button onClick={ () => this.attack("x", 0)}>X</button>
-            <button onClick={ () => this.attack("y", 1)}>Y</button>
-            <button onClick={ () => this.attack("z", 2)}>Z</button>
-            <button onClick={ () => this.attack("a", 3)}>A</button>
-            <button onClick={ () => this.attack("b", 4)}>A</button>
+
+            <button onClick={ () => this.attack("x", 0)}>X HOOK</button>
+            <button onClick={ () => this.attack("y", 1)}>Y HOOK</button>
+            <button onClick={ () => this.attack("z", 2)}>Z HOOK</button>
+            <button onClick={ () => this.attack("a", 3)}>A HOOK</button>
+            <button onClick={ () => this.attack("b", 4)}>B HOOK</button>
         </div>);
     }
 
-    // startBattle = () => {
-    //     event.preventDefault();
-    //     // let userAttackHealth = 7;
-    //     // let cpuAttackHealth = 7;
-    //     //what is gameInterval?
-    //     let gameInterval = setInterval(() => {
-    //         //counter is not defined -error gotten when button clicked -what is the counter? why is not defined?
-    //         // counter--;
-    //         this.setState({
-    //             cpuAttack: attack[Math.floor(Math.random() * attack.length)],
-                
-    //         });
-    //         //if either userAttack or computer lost, clearInterval(gameInterval) --what does that mean
-    //         //then set state winner --
-    //         if (userAttackHealth || cpuAttackHealth === 0) {
-    //             clearInterval(gameInterval);
-    //             this.setState({
-    //                 winner: !this.selectWinner()
-    //             });
-    //         }
-    //         //what is 125?
-    //     }, 125);
-    // };
-
-   // cpuAttack: attack[Math.floor(Math.random() * attack.length)],
 
    checkWinner = () =>{
        const {cpuHealth, userHealth} = this.state;
@@ -86,7 +56,9 @@ class Battle extends Component {
     attackRound = () => {
         //how are we using cpuAttack/userAttack in this context? 
         //how can userAttack be equal to cpuAttack is that userAttack and cpuAttack health???
-        //if userAttack is referring to userAttack attack, it should be called userAttackAttack and cpuAttackAttack 
+
+        //if userAttack is referring to userAttack attack, it should be called userAttack and cpuAttack 
+
         const { userAttack, cpuAttack, userHealth, cpuHealth } = this.state;
         const { checkWinner } = this;
 
@@ -108,7 +80,9 @@ class Battle extends Component {
             (userAttack === "a" && cpuAttack === "x") ||
             (userAttack === "b" && cpuAttack === "y")
         ) {
-            this.setState( { cpuHealth: cpuHealth-2, message: "A CRUCIAL"});
+
+            this.setState( { cpuHealth: cpuHealth-2, message: "A LEGENDARY STRIKE! MINUS TWO TO YOUR OPPONENT!"}, checkWinner);
+
         } else if (
             (userAttack === "x" && cpuAttack === "a") ||
             (userAttack === "y" && cpuAttack === "b") ||
@@ -116,7 +90,9 @@ class Battle extends Component {
             (userAttack === "a" && cpuAttack === "y") ||
             (userAttack === "b" && cpuAttack === "z")
         ) {
-            this.setState({userHealth: userHealth-1, message: "YOU DEALT A MIGHTY BLOW! MINUS ONE TO YOUR OPPONENT!"}, checkWinner);
+
+            this.setState({userHealth: userHealth-1, message: "YOUR ATTACK HAS BEEN FOILED! MINUS ONE TO YOU!"}, checkWinner);
+
         } else if (
             (userAttack === "x" && cpuAttack === "b") ||
             (userAttack === "y" && cpuAttack === "x") ||
@@ -124,7 +100,9 @@ class Battle extends Component {
             (userAttack === "a" && cpuAttack === "z") ||
             (userAttack === "b" && cpuAttack === "a")
         ) {
-            this.setState({userHealth: userHealth-2, message: "YOU DEALT A MIGHTY BLOW! MINUS ONE TO YOUR OPPONENT!"}, checkWinner);
+
+            this.setState({userHealth: userHealth-2, message: "A STUNNING WALLOP BY YOUR OPPONENT! MINUS TWO TO YOU!"}, checkWinner);
+
         }
 
     }
@@ -144,8 +122,11 @@ class Battle extends Component {
             <div>
                 <h2>Life'll kill ya</h2>
                 <button onClick={this.startBattle}>Start Battle</button>
-                {/* {this.state.inPlay? (attackbuttons()): ""}; */}
-                
+
+
+                {this.state.inPlay? (this.attackButtons()): ""};
+
+
             </div>
         )
     }

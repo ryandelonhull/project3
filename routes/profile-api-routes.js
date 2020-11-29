@@ -10,7 +10,7 @@ module.exports = function(app) {
             where: {
                 id: req.params.id
             },
-          
+
 
         }).then(function(dbchar) {
             res.json(dbchar);

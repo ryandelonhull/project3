@@ -1,7 +1,42 @@
-import React from 'react';
+
+import React, {Component} from 'react';
 import './SignUp.css';
 
-function SignUp() {
+class SignUp extends Component {
+  constructor(props){
+    super(props);
+    this.state ={
+      username: '',
+      email: '',
+      password: ''
+    }
+  }
+
+
+  //changes the state based on the input 
+  addUsername = (event) => {
+    this.setState({username: event.target.value})
+  }
+  addEmail = (event) => {
+    this.setState({email: event.target.value})
+  }
+  addPassword = (event) => {
+    this.setState({password: event.target.value})
+  }
+
+
+  singUp = () => {
+
+
+  }
+
+  handleSignUp = () => {
+    
+  }
+
+
+render(){
+
   return (
     <div className="ui text container">
       <div className="ui inverted divider"></div>
@@ -10,7 +45,9 @@ function SignUp() {
         <div className="ui inverted divider"></div>
         <form className="signup">
           <div className="form-group">
-            <label for="username">
+
+            <label form="username">
+
               <h4> Username </h4>
             </label>
             <input
@@ -18,10 +55,13 @@ function SignUp() {
               className="form-control"
               id="username-input"
               placeholder="Username"
+
+              onChange={this.addUsername}
             />
           </div>
           <div className="form-group">
-            <label for="exampleInputEmail1">
+            <label form="exampleInputEmail1">
+
               <h4>Email address</h4>
             </label>
             <input
@@ -29,10 +69,13 @@ function SignUp() {
               className="form-control"
               id="email-input"
               placeholder="Email"
+
+              onChange={this.addEmail}
             />
           </div>
           <div className="form-group">
-            <label for="exampleInputPassword1">
+            <label form="exampleInputPassword1">
+
               <h4>Password</h4>
             </label>
             <input
@@ -40,6 +83,9 @@ function SignUp() {
               className="form-control"
               id="password-input"
               placeholder="Password"
+
+              onChange={this.addPassword}
+
             />
           </div>
           <div
@@ -48,7 +94,7 @@ function SignUp() {
             className="alert alert-danger"
             role="alert"
             // style="margin-top: 10px;"
-          >
+          
             <span
               className="glyphicon glyphicon-exclamation-sign"
               aria-hidden="true"
@@ -68,5 +114,8 @@ function SignUp() {
     </div>
   );
 }
+
+}
+
 
 export default SignUp;

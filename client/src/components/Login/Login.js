@@ -6,7 +6,9 @@ function Login() {
       <h2>Login</h2>
 
       <div className="form-group">
+
         <label for="username">
+
           <h4> Username </h4>
         </label>
         <input
@@ -22,7 +24,9 @@ function Login() {
         className="form-group"
         // style="margin-top: 10px"
       >
-        <label for="password">
+
+        <label form="password">
+
           <h4>Password</h4>
         </label>
         <input

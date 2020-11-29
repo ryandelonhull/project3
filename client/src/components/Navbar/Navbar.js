@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './Navbar.css';
 
 
@@ -19,6 +20,7 @@ function Navbar() {
           <a className="nav-link active" href="#">
             About
           </a>
+
         </li>
         <li className="nav-item">
           {/* /I just added profile here for now can change it later */}
@@ -30,6 +32,7 @@ function Navbar() {
           <a className="nav-link" href="#Contact">
             Contact
           </a>
+
          
         </li>
       </ul>
@@ -45,6 +48,7 @@ function Navbar() {
       </nav>
       </div>
   
+
   );
 }
 

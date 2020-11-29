@@ -3,8 +3,7 @@ var express = require("express");
 var session = require("express-session");
 // Requiring passport as we've configured it
 var passport = require("./config/passport");
-const bodyParser = require("body-parser");
-const cors = require("cors");
+
 
 // Setting up port and requiring models for syncing
 
@@ -14,17 +13,15 @@ var db = require("./models");
 
 // Creating express app and configuring middleware needed for authentication
 var app = express();
-var corsOptions = {
-    origin: "http://localhost:8081"
-  };
+
   
-  app.use(cors(corsOptions));
+  
   
   // parse requests of content-type - application/json
-  app.use(bodyParser.json());
+  
   
   // parse requests of content-type - application/x-www-form-urlencoded
-  app.use(bodyParser.urlencoded({ extended: true }));
+  
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
@@ -38,7 +35,6 @@ app.use(passport.session());
 
 require("./routes/battle-routes.js")(app);
 require("./routes/api-routes.js")(app);
-require("./routes/character-routes.js")(app);
 require("./routes/profile-api-routes.js")(app);
 require("./routes/character-routes.js")(app);
 

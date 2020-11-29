@@ -94,11 +94,11 @@ render(){
             className="alert alert-danger"
             role="alert"
             // style="margin-top: 10px;"
-          
+            >
+            
             <span
               className="glyphicon glyphicon-exclamation-sign"
-              aria-hidden="true"
-            ></span>
+              aria-hidden="true"></span>
             <span className="sr-only">Error:</span>{' '}
             <span className="msg"></span>
           </div>
@@ -110,8 +110,10 @@ render(){
             Sign Up
           </button>
         </form>
+
       </div>
     </div>
+    
   );
 }
 

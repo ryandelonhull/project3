@@ -7,13 +7,13 @@ function Navbar() {
    <div>
       
       
-      <nav className="navbar fixed-top navbar-toggleable-md">
+      <nav className="navbar navbar-expand-sm">
       <div className="App">
         {/* <img src={require("./projectxlogo.png")} alt="Navbar Image" /> */}
         <img src="https://i.ibb.co/VMjK21c/projectxlogo150x51.png" />
         {/* <img src="./projectxlogo.png" thumbnail /> */}
         
-      <ul className="nav justify-content-end nav-toggler-right">
+      <ul className="nav justify-content-end">
         <li className="nav-item">
           {/* <a className="nav-link active" href="#">
             About

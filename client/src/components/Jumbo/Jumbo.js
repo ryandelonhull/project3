@@ -5,8 +5,10 @@ import './Jumbo.css'
 const Jumbo = () => {
     return (
         <div>
-           <div class="jumbotron">
-            <a class="btn btn-primary btn-lg" href="#" role="button">Start Game</a>
+           <div className="jumbotron">
+           {/* <img src="https://i.ibb.co/PhV3Jwx/project-Xjumbo.png" /> */}
+            <a className="btn btn-primary btn-lg" href="#" role="button">Sign In</a>
+            
             </div> 
         </div>
     );

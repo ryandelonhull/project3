@@ -6,17 +6,18 @@ function Navbar() {
         <h2>Project X</h2>
       <ul className="nav justify-content-end">
         <li className="nav-item">
-          <a className="nav-link active" href="#">
+          {/* <a className="nav-link active" href="#">
             About
+          </a> */}
+        </li>
+        <li className="nav-item">
+          {/* /I just added profile here for now can change it later */}
+          <a className="nav-link" href="#Profile">
+            Profile
           </a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">
-            Leaderboard
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#">
+          <a className="nav-link" href="#Contact">
             Contact
           </a>
         </li>

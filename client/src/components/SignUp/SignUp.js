@@ -1,7 +1,40 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './SignUp.css';
 
-function SignUp() {
+class SignUp extends Component {
+  constructor(props){
+    super(props);
+    this.state ={
+      username: '',
+      email: '',
+      password: ''
+    }
+  }
+
+
+  //changes the state based on the input 
+  addUsername = (event) => {
+    this.setState({username: event.target.value})
+  }
+  addEmail = (event) => {
+    this.setState({email: event.target.value})
+  }
+  addPassword = (event) => {
+    this.setState({password: event.target.value})
+  }
+
+
+  singUp = () => {
+
+
+  }
+
+  handleSignUp = () => {
+    
+  }
+
+
+render(){
   return (
     <div className="ui text container">
       <div className="ui inverted divider"></div>
@@ -18,6 +51,7 @@ function SignUp() {
               className="form-control"
               id="username-input"
               placeholder="Username"
+              onChange={this.addUsername}
             />
           </div>
           <div className="form-group">
@@ -29,6 +63,7 @@ function SignUp() {
               className="form-control"
               id="email-input"
               placeholder="Email"
+              onChange={this.addEmail}
             />
           </div>
           <div className="form-group">
@@ -40,6 +75,7 @@ function SignUp() {
               className="form-control"
               id="password-input"
               placeholder="Password"
+              onChange={this.addPassword}
             />
           </div>
           <div
@@ -67,6 +103,7 @@ function SignUp() {
       </div>
     </div>
   );
+}
 }
 
 export default SignUp;

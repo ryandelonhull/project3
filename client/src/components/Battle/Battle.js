@@ -111,7 +111,9 @@ class Battle extends Component {
             <div>
                 <h2>Life'll kill ya</h2>
                 <button onClick={this.startBattle}>Start Battle</button>
+
                 {this.state.inPlay? (this.attackButtons()): ""};
+
                 
             </div>
         )

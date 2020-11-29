@@ -18,24 +18,27 @@ Insert into Characters (name, image, attack)
 VALUES("House Plant","./Images-char/houseplant.png", "2");
 Insert into Characters (name, image, attack)
 VALUES("Barack Obama","./Images-char/obama.png", "3");
+
 Insert into Characters (name, image, attack)
-VALUES("Ninja","https://pbs.twimg.com/profile_images/1168269614058311680/qVZrY0PL_400x400.jpg", "4");
+VALUES("Ninja","./Images-char/ninja.png", "4");
 Insert into Characters (name, image, attack)
 VALUES("LA DRIVER","none", "5");
 Insert into Characters (name, image, attack)
 VALUES("Stationary Exercise Bike","./Images-char/statbike.png", "6");
 Insert into Characters (name, image, attack)
 VALUES("Hot Dog","./Images-char/hotdog.png", "7");
+
 Insert into Characters (name, image, attack)
-VALUES("Seth Rogan (and friend)","https://hips.hearstapps.com/esquireuk.cdnds.net/15/37/original/original-seth-rogan-james-franco-kanye-west-parody-43-jpg-f09da4b6.jpg", "8");
+VALUES("Seth Rogan (and friend)","./Images-char/SethandJames.png", "8");
 Insert into Characters (name, image, attack)
 VALUES("Rick Astley","./Images-char/rickya.png", "9");
 Insert into Characters (name, image, attack)
-VALUES("Wess","https://avatars0.githubusercontent.com/u/70366408?s=460&u=3e7affbb1dd65a64e2aaebfaa65272951dd598d5&v=3", "10");
+VALUES("Wess","./Images-char/Wess.png", "10");
 Insert into Characters (name, image, attack)
-VALUES("HypnoToad","https://avatars0.githubusercontent.com/u/70366408?s=460&u=3e7affbb1dd65a64e2aaebfaa65272951dd598d5&v=4", "11");
+VALUES("HypnoToad","./Images-char/hypnotoad.png", "11");
 Insert into Characters (name, image, attack)
-VALUES("PE Teacher","https://avatars0.githubusercontent.com/u/70366408?s=460&u=3e7affbb1dd65a64e2aaebfaa65272951dd598d5&v=5", "12");
+VALUES("PE Teacher","./Images-char/PETeacher.png", "12");
+
 Select * from Characters;
 
 CREATE TABLE Attack

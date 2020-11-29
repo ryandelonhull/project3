@@ -26,6 +26,20 @@ class Contact extends Component {
               <span> || </span>
               <a href="https://morning-ridge-20215.herokuapp.com/" id ="Portfolio">View Portfolio</a>
             
+              <hr className="my-4" />
+            <h5>Ry Hull</h5>
+            <p>
+              Email: Ryandelonhull@gmail.com
+            </p>
+          
+            <p>Oakland, California</p>
+            <a href="https://github.com/ryandelonhull">Github</a>
+              <span> || </span>
+              <a href="https://linkedin.com/in/ryan-hull-94003144">Connect on Linkedin</a>
+              <span> || </span>
+              <a href="https://ryandelonhull.github.io/Repo-React-ion/" id ="Portfolio">View Portfolio</a>
+            
+         
          
             <hr/>
             <h5>Rachael Kelm-Southworth</h5>
@@ -41,20 +55,7 @@ class Contact extends Component {
               <a href="https://rksouth.github.io/React-Portfolio/" id ="Portfolio">View Portfolio</a>
             
          
-            <hr className="my-4" />
-            <h5>Ry Hull</h5>
-            <p>
-              Email: rkelmsouthworth@gmail.com
-            </p>
-          
-            <p>Oakland, California</p>
-            <a href="https://github.com/ryandelonhull">Github</a>
-              <span> || </span>
-              <a href="https://linkedin.com/in/ryan-hull-94003144">Connect on Linkedin</a>
-              <span> || </span>
-              <a href="https://ryandelonhull.github.io/Repo-React-ion/" id ="Portfolio">View Portfolio</a>
-            
-         
+           
      
             <hr className="my-4" />
             <h5>Earnest Wesson</h5>

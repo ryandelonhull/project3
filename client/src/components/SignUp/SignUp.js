@@ -1,3 +1,4 @@
+
 import React, {Component} from 'react';
 import './SignUp.css';
 
@@ -35,6 +36,7 @@ class SignUp extends Component {
 
 
 render(){
+
   return (
     <div className="ui text container">
       <div className="ui inverted divider"></div>
@@ -43,7 +45,9 @@ render(){
         <div className="ui inverted divider"></div>
         <form className="signup">
           <div className="form-group">
+
             <label form="username">
+
               <h4> Username </h4>
             </label>
             <input
@@ -51,11 +55,13 @@ render(){
               className="form-control"
               id="username-input"
               placeholder="Username"
+
               onChange={this.addUsername}
             />
           </div>
           <div className="form-group">
             <label form="exampleInputEmail1">
+
               <h4>Email address</h4>
             </label>
             <input
@@ -63,11 +69,13 @@ render(){
               className="form-control"
               id="email-input"
               placeholder="Email"
+
               onChange={this.addEmail}
             />
           </div>
           <div className="form-group">
             <label form="exampleInputPassword1">
+
               <h4>Password</h4>
             </label>
             <input
@@ -75,7 +83,9 @@ render(){
               className="form-control"
               id="password-input"
               placeholder="Password"
+
               onChange={this.addPassword}
+
             />
           </div>
           <div
@@ -84,7 +94,7 @@ render(){
             className="alert alert-danger"
             role="alert"
             // style="margin-top: 10px;"
-          >
+          
             <span
               className="glyphicon glyphicon-exclamation-sign"
               aria-hidden="true"
@@ -104,6 +114,8 @@ render(){
     </div>
   );
 }
+
 }
+
 
 export default SignUp;

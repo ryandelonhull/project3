@@ -7,13 +7,13 @@ function Navbar() {
    <div>
       
       
-      <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <nav className="navbar fixed-top navbar-toggleable-md">
       <div className="App">
         {/* <img src={require("./projectxlogo.png")} alt="Navbar Image" /> */}
-        <img src="https://i.ibb.co/2WsXzGW/projectxlogo.png" />
+        <img src="https://i.ibb.co/VMjK21c/projectxlogo150x51.png" />
         {/* <img src="./projectxlogo.png" thumbnail /> */}
         
-      <ul className="nav justify-content-end ml-auto">
+      <ul className="nav justify-content-end nav-toggler-right">
         <li className="nav-item">
           {/* <a className="nav-link active" href="#">
             About
@@ -35,8 +35,8 @@ function Navbar() {
       
       </div>
       </nav>
-      
-    </div>
+      </div>
+  
   );
 }
 

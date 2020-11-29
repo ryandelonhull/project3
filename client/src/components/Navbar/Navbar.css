@@ -1,9 +1,15 @@
-.img {
-    width: 50;
+img {
+    width: 150px;
+    height: 51px;
 }
 
 
-.Navbar {
-    width: 100;
+nav {
+    width: 100%;
+    height: 17%;
 }
 
+.navbar {
+background-color: black;
+
+}

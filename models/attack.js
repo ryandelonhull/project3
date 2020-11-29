@@ -35,5 +35,6 @@ Attack.associate = function(models) {
     //may beed another belongs to here for computer -probably not
 };
 return Attack;
+
 };
 

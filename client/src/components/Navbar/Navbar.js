@@ -4,19 +4,20 @@ function Navbar() {
   return (
     <div>
         <h2>Project X</h2>
-      <ul class="nav justify-content-end">
-        <li class="nav-item">
-          <a class="nav-link active" href="#">
+      <ul className="nav justify-content-end">
+        <li className="nav-item">
+          {/* <a className="nav-link active" href="#">
             About
+          </a> */}
+        </li>
+        <li className="nav-item">
+          {/* /I just added profile here for now can change it later */}
+          <a className="nav-link" href="#Profile">
+            Profile
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            Leaderboard
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
+        <li className="nav-item">
+          <a className="nav-link" href="#Contact">
             Contact
           </a>
         </li>

@@ -1,5 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
     var Attack = sequelize.define("Attack", {
+
         // name cannot be null and should be unique
         //DO WE NEED AN ID--PROBABLY NOT
         // id: {
@@ -26,6 +27,7 @@ module.exports = function(sequelize, DataTypes) {
     });
 // Hooks are automatic methods that run during various phases of the User Model lifecycle
 // In this case, before a User is created, we will automatically hash their password
+
 Attack.associate = function(models) {
     Attack.belongsTo(models.Characters, {
         // onDelete: "cascade"
@@ -34,3 +36,4 @@ Attack.associate = function(models) {
 };
 return Attack;
 };
+

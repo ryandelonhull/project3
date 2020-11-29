@@ -111,11 +111,7 @@ class Battle extends Component {
             <div>
                 <h2>Life'll kill ya</h2>
                 <button onClick={this.startBattle}>Start Battle</button>
-<<<<<<< HEAD
-                {/* {this.state.inPlay? (attackbuttons()): ""}; */}
-=======
-                {this.state.inPlay? (this.attackButtons()): ""};
->>>>>>> Battle4
+                {this.state.inPlay? (attackButtons()): ""};
                 
             </div>
         )

@@ -134,10 +134,10 @@ class Battle extends Component {
                 <h2>Life'll Kill Ya</h2>
                 {/* <button onClick={this.startBattle}>Start Battle</button> */}
                 <div>
-                    <img src={playerCharacter.image} alt="user character image"></img>
+                    <img src={playerCharacter.image} alt="user character "></img>
                 </div>
                 <div>
-                    <img src={cpuCharacter.image} alt="computer character image" ></img>
+                    <img src={cpuCharacter.image} alt="computer character " ></img>
                 </div>
                 {this.state.inPlay? (this.attackButtons()): ""};
 

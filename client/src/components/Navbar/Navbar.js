@@ -13,10 +13,10 @@ function Navbar(props) {
   </button>
   <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div className="navbar-nav">
-      <a className="nav-link active mr-sm-2" href="#">Home <span className="sr-only">(current)</span></a>
-      <a className="nav-link" href="#">Features</a>
-      <a className="nav-link" href="#">Pricing</a>
-      <a className="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+      <a className="nav-link active mr-sm-2" href="/">Home <span className="sr-only">(current)</span></a>
+      <a className="nav-link" href="/">Features</a>
+      <a className="nav-link" href="/">Pricing</a>
+      <a className="nav-link disabled" href="/" tabindex="-1" aria-disabled="true">Disabled</a>
     </div>
   </div>
       {/* <ul className="nav">

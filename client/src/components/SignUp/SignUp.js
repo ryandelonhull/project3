@@ -26,11 +26,6 @@ class SignUp extends Component {
   }
 
 
-  singUp = () => {
-
-
-  }
-
    handleSignUp = (event) => {
     event.preventDefault();
     API.saveUserData({
@@ -39,6 +34,7 @@ class SignUp extends Component {
       password: this.state.password
     })
     console.log('CLICKED')
+    
   }
 
 

@@ -24,7 +24,11 @@ h3, h5, p {
 }
 
 .photo {
-  width: 150px;
-  height: 150px;
-  margin-left: 5px;
+  width: 320px;
+  height: 320px;
+  margin-left: 105px;
+}
+
+div.card-row {
+  margin-left: 190px;
 }

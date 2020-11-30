@@ -100,7 +100,7 @@ render(){
           </div>
           <button
             type="submit"
-            className="btn btn-secondary"
+            
             // style="margin-top: 15px;"
             onClick={() => {
               this.handleSignUp();
@@ -108,12 +108,10 @@ render(){
             }}
 
           >
-              <button
-            type="submit"
-             >
+           
             Sign Up
           </button>
-          </div>
+          
         </form>
       </div>
     </div>

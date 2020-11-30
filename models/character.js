@@ -42,7 +42,7 @@ module.exports = function(sequelize, DataTypes) {
             // validate: {
             //     len: [8, 30]
             // }
-        },
+        }// },
     
         // hitpoints: {
         //     type: DataTypes.STRING,

@@ -19,6 +19,7 @@ class App extends Component {
 
           {/* Switch paths for the URL */}
           <Switch>
+
             <Route path="/" exact component={LoginSignUP} />
             <Route path="/Profile" component={Profile} />
             {/*<Route path="/Signup" component={Signup} /> */}
@@ -26,6 +27,7 @@ class App extends Component {
             {/* <Route path="/About" component={About} /> */}
             {/* <Route path="/User" component={User} /> */}
             <Route path="/Battle" component={Battle} />
+
           </Switch>
         </div>
       </Router>

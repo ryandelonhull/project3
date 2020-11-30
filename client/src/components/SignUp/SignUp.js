@@ -1,6 +1,7 @@
 
 import React, {Component} from 'react';
 import './SignUp.css';
+import API from '../../utils/API'
 
 class SignUp extends Component {
   constructor(props){
@@ -30,8 +31,14 @@ class SignUp extends Component {
 
   }
 
-  handleSignUp = () => {
-    
+   handleSignUp = (event) => {
+    event.preventDefault();
+    API.saveUserData({
+      username: this.state.username,
+      email: this.state.email,
+      password: this.state.password
+    })
+    console.log('CLICKED')
   }
 
 
@@ -94,7 +101,7 @@ render(){
             className="alert alert-danger"
             role="alert"
             // style="margin-top: 10px;"
-          
+          >
             <span
               className="glyphicon glyphicon-exclamation-sign"
               aria-hidden="true"
@@ -106,6 +113,7 @@ render(){
             type="submit"
             className="btn btn-secondary"
             // style="margin-top: 15px;"
+            onClick={ this.handleSignUp }
           >
             Sign Up
           </button>

@@ -3,7 +3,10 @@
 
 
 .jumbotron {
+  /* batman obama jumbotron */
   background-image: url("https://i.ibb.co/PhV3Jwx/project-Xjumbo.png");
+  /* project x jumbotron */
+  /* background-image: url("https://i.ibb.co/m4Qn5hK/project-x-jumbo.png"); */
   background-repeat: no-repeat, repeat;
   background-position: center;
   background-size: 101%;
@@ -17,3 +20,4 @@
   margin-top: 350px;
   margin-left: 445px;
 }
+

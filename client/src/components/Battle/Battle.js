@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Battle.css";
+import axios from "axios";
 //set variables for attack
 //are attacks going to be randomly set === variable with attack name associated with character?
 //how are building attack buttons?
@@ -7,16 +8,25 @@ const attack = ["x", "y", "z", "a", "b"];
 
 
 class Battle extends Component {
-    state = {
-        userAttack: "",
-        cpuAttack: "",
 
-        userHealth: 7,
-        cpuHealth: 7,
-        winner: "",
-        inPlay: false,
-        message: ""
-    };
+
+    constructor(props){
+        super(props);
+
+        this.state = {
+            userAttack: "",
+            cpuAttack: "",
+    
+            userHealth: 7,
+            cpuHealth: 7,
+            winner: "",
+            inPlay: true,
+            message: "",
+            playerCharacter: props.playerCharacter,
+            cpuCharacter: props.cpuCharacter
+        };
+
+    }
 
     startBattle = () =>{
         this.setState({userAttack: "", cpuAttack: "",inPlay: true, userHealth: 7, cpuHealth: 7} );
@@ -106,12 +116,18 @@ class Battle extends Component {
 
         // const { inPlay } = this.state;
         // const  { attackButtons } = this.attackButtons;
+        const {cpuCharacter, playerCharacter} = this.state;
 
         return (
             <div>
                 <h2>Life'll kill ya</h2>
-                <button onClick={this.startBattle}>Start Battle</button>
-
+                {/* <button onClick={this.startBattle}>Start Battle</button> */}
+                <div>
+                    <img src={playerCharacter.image}></img>
+                </div>
+                <div>
+                    <img src={cpuCharacter.image}></img>
+                </div>
                 {this.state.inPlay? (this.attackButtons()): ""};
 
                 

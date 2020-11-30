@@ -8,9 +8,12 @@ var passport = require("./config/passport");
 var PORT = process.env.PORT || 5555;
 var db = require("./models");
 
+var cors = require('cors');
+
 // Creating express app and configuring middleware needed for authentication
 var app = express();
 
+app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));

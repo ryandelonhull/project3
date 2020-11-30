@@ -12,10 +12,10 @@ class App extends Component {
       <Router>
         <div className="container">
           <Navbar />
-          <Battle/>
+          <Profile/>
           <Switch>
-            <Route path="/" exact component={LoginSignUP} />
-            <Route path="/Profile" component={Profile} />
+            {/* <Route path="/" exact component={LoginSignUP} />
+            <Route path="/Profile" component={Profile} /> */}
           {/*<Route path="/Signup" component={Signup} /> */}
           {/* <Route path="/Contact" component={Contact} /> */}
           {/* <Route path="/About" component={About} /> */}

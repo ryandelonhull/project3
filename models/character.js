@@ -36,22 +36,22 @@ module.exports = function(sequelize, DataTypes) {
             // }
         },
     
-        attacks: {
+        attack: {
             type: DataTypes.STRING,
             allowNull: false,
             // validate: {
             //     len: [8, 30]
             // }
-        },
+        }// },
     
-        hitpoints: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            defaultValue: 20,
-            validate: {
-                len: [0, 10]
-            }
-        }
+        // hitpoints: {
+        //     type: DataTypes.STRING,
+        //     allowNull: false,
+        //     defaultValue: 20,
+        //     validate: {
+        //         len: [0, 10]
+        //     }
+        // }
     });
   
 

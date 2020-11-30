@@ -103,17 +103,10 @@ render(){
               this.redirectToProfile();
             }}
 
-<<<<<<< HEAD
-          >
-        
-          </button>
-        
-=======
           >  
             Sign Up
           </button>
 
->>>>>>> 6c914e182e0e20738afc39a26639416efe2d95d3
         </form>
       </div>
     </div>

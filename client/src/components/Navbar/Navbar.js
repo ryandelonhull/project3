@@ -6,11 +6,6 @@ function Navbar(props) {
   return ( 
    <div>
      
-<<<<<<< HEAD
-      <nav className="navbar">
-      <img src="https://i.ibb.co/VMjK21c/projectxlogo150x51.png" alt="project x"/>
-      <ul className="nav">
-=======
       <nav className="navbar fixed-top navbar-expand-lg">
       <img src="https://i.ibb.co/VMjK21c/projectxlogo150x51.png"/>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,7 +20,6 @@ function Navbar(props) {
     </div>
   </div>
       {/* <ul className="nav">
->>>>>>> 6c914e182e0e20738afc39a26639416efe2d95d3
         <li className="nav-item">
           <a className="nav-link active" href="#Profile">
             About

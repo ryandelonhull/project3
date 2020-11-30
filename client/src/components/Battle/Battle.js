@@ -117,10 +117,6 @@ class Battle extends Component {
 
     }
 
-//need a function to link attack variables to buttons
-//need a function to display userAttacks named attacks as buttons link those bad boys up
-//need to write battle results into the database as they happen
-//reminder when game is over we need to clear game data/ and character status data (on the databases)
 
 
     render() {

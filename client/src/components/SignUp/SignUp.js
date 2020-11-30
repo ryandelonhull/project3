@@ -102,11 +102,10 @@ render(){
               this.handleSignUp();
               this.redirectToProfile();
             }}
-
-          >  
+          > 
             Sign Up
           </button>
-
+         
         </form>
       </div>
     </div>

@@ -5,7 +5,7 @@ function About() {
     return(
         <div className="About">
             
-            <p> Here is where we are going to place the about</p>
+            {/* <p> Here is where we are going to place the about</p> */}
             
         </div>
     )

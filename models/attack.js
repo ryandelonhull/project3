@@ -1,14 +1,7 @@
 module.exports = function(sequelize, DataTypes) {
     var Attack = sequelize.define("Attack", {
         // name cannot be null and should be unique
-        //DO WE NEED AN ID--PROBABLY NOT
-        // id: {
-        //     //make it auto??
-        //     type: DataTypes.INTEGER,
-        //     autoIncrement: true,
-        //     allowNull: false,
-        //     unique: true,
-        // },
+       
         name: {
             type: DataTypes.STRING,
             allowNull: false,

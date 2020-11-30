@@ -91,28 +91,25 @@ render(){
             // style="margin-top: 10px;"
 
           >
-            <span
-              className="glyphicon glyphicon-exclamation-sign"
-              aria-hidden="true"
-            ></span>
-            <span className="sr-only">Error:</span>{' '}
-            <span className="msg"></span>
+     
+           
           </div>
           <button
             type="submit"
+
             // style="margin-top: 15px;"
             onClick={() => {
               this.handleSignUp();
               this.redirectToProfile();
             }}
 
-          >
+          >  
             Sign Up
           </button>
+
         </form>
       </div>
     </div>
-
   );
 }
 }

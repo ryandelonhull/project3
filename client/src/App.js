@@ -3,19 +3,29 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Battle from './components/Battle/Battle';
 import LoginSignUP from './pages/LoginSignUP';
 import Navbar from './components/Navbar/Navbar';
-
 import Contact from './pages/Contact';
 import Profile from './pages/Profile';
 import Jumbo from './components/Jumbo/Jumbo';
+import Login from './components/Redir/Loginbttn';
+import './App.css'
+
+
 
 class App extends Component {
   render() {
     return (
       <Router>
         <div className="container">
+          <div  className="container">
           <Navbar />
-
+          </div>
+          <div  className="container">
           <Jumbo />
+          </div>
+          <div  className="container">
+          <Login />
+          </div>
+     
 
           {/* Switch paths for the URL */}
           <Switch>

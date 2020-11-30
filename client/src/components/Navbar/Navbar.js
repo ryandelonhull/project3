@@ -7,16 +7,16 @@ function Navbar(props) {
    <div>
      
       <nav className="navbar fixed-top navbar-expand-lg">
-      <img src="https://i.ibb.co/VMjK21c/projectxlogo150x51.png" alt ="project x"/>
+      <img src="https://i.ibb.co/VMjK21c/projectxlogo150x51.png" alt='logo'/>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon"></span>
   </button>
   <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div className="navbar-nav">
-      <a className="nav-link active mr-sm-2" href="/">Home <span className="sr-only">(current)</span></a>
-      <a className="nav-link" href="/App">Features</a>
-      <a className="nav-link" href="/App">Pricing</a>
-      <a className="nav-link disabled" href="/App" tabindex="-1" aria-disabled="true">Disabled</a>
+      <a className="nav-link active mr-sm-2" href="#">Home <span className="sr-only">(current)</span></a>
+      <a className="nav-link" href="#">Features</a>
+      <a className="nav-link" href="#">Pricing</a>
+      <a className="nav-link disabled" href="#" tabIndex="-1" aria-disabled="true">Disabled</a>
     </div>
   </div>
       {/* <ul className="nav">

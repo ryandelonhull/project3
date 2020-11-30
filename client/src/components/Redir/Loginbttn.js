@@ -1,25 +1,19 @@
 import React from 'react';
-import './bttn.css'
-
+import './bttn.css';
 
 const Login = () => {
-    return (
-        
+  return (
+    <div>
+      <div id="forbutton">
         <div>
-           <div id="forbutton">
-       
-        <div>
-   
-           {/* <img src="https://i.ibb.co/PhV3Jwx/project-Xjumbo.png" className="img-fluid" /> */}
-           <a  href="/App" id= "stompit" role="button">SIGN IN / SIGN UP</a>
-            
-           
+          {/* <img src="https://i.ibb.co/PhV3Jwx/project-Xjumbo.png" className="img-fluid" /> */}
+          <a href="#signUp" id="stompit" role="button">
+            SIGN IN / SIGN UP
+          </a>
         </div>
-       
-        </div>
-        </div>
-        
-    );
-}
+      </div>
+    </div>
+  );
+};
 
 export default Login;

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Battle.css";
-import axios from "axios";
+
 //set variables for attack
 //are attacks going to be randomly set === variable with attack name associated with character?
 //how are building attack buttons?
@@ -117,10 +117,6 @@ class Battle extends Component {
 
     }
 
-//need a function to link attack variables to buttons
-//need a function to display userAttacks named attacks as buttons link those bad boys up
-//need to write battle results into the database as they happen
-//reminder when game is over we need to clear game data/ and character status data (on the databases)
 
 
     render() {
@@ -134,10 +130,10 @@ class Battle extends Component {
                 <h2>Life'll Kill Ya</h2>
                 {/* <button onClick={this.startBattle}>Start Battle</button> */}
                 <div>
-                    <img src={playerCharacter.image}></img>
+                    <img src={playerCharacter.image} alt="user character "></img>
                 </div>
                 <div>
-                    <img src={cpuCharacter.image}></img>
+                    <img src={cpuCharacter.image} alt="computer character " ></img>
                 </div>
                 {this.state.inPlay? (this.attackButtons()): ""};
 

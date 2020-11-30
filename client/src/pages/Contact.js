@@ -15,6 +15,8 @@ class Contact extends Component {
             <h3 className="card-title">Contact</h3>
             <hr className="my-4" />
             <h5>Jennifer Henry</h5>
+            {/* <img src="https://i.ibb.co/bzpd6T5/Jenn.png" />  */}
+            <img alt="Jenn" className="photo" src={"https://i.ibb.co/bzpd6T5/Jenn.png" } />
             <p>
               Email: jenhenry1995@gmail.com
             </p>
@@ -28,6 +30,8 @@ class Contact extends Component {
             
               <hr className="my-4" />
             <h5>Ry Hull</h5>
+            {/* <img src="https://i.ibb.co/rpNZKm8/Ry.png" />   */}
+            <img alt="Ry" className="photo" src={"https://i.ibb.co/rpNZKm8/Ry.png" } />
             <p>
               Email: Ryandelonhull@gmail.com
             </p>
@@ -43,6 +47,8 @@ class Contact extends Component {
          
             <hr/>
             <h5>Rachael Kelm-Southworth</h5>
+            {/* <img src="https://i.ibb.co/6ZNT2TW/Rachel.png" />  */}
+            <img alt="rachael" className="photo" src={"https://i.ibb.co/6ZNT2TW/Rachel.png"} />
             <p>
               Email: rkelmsouthworth@gmail.com
             </p>
@@ -59,6 +65,8 @@ class Contact extends Component {
      
             <hr className="my-4" />
             <h5>Earnest Wesson</h5>
+            {/* <img src="https://i.ibb.co/mRBQYDD/WESS.png" />  */}
+            <img alt="wess" className="photo" src={"https://i.ibb.co/mRBQYDD/WESS.png"} />
             <p>
               Email: ernestwesson86@gmail.com
             </p>
@@ -82,3 +90,4 @@ class Contact extends Component {
 }
 
 export default Contact;
+

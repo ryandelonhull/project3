@@ -18,9 +18,7 @@ class SignUp extends Component {
   }
 
 
-  redirectToProfile = () => {
-   window.location.href = '/Profile'
-  }
+
 
   //changes the state based on the input 
   addUsername = (event) => {
@@ -33,16 +31,6 @@ class SignUp extends Component {
     this.setState({password: event.target.value})
   }
 
-
-   handleSignUp = (event) => {
-    event.preventDefault();
-    API.saveUserData({
-      username: this.state.username,
-      email: this.state.email,
-      password: this.state.password
-    })
-    console.log('CLICKED')
-      }
 render(){
   return (
     <div className="text container" id='signup'>
@@ -96,19 +84,6 @@ render(){
            
           </div>
           <SignUpButton/>
-          {/* <button
-            type="submit"
-
-            // style="margin-top: 15px;"
-            onClick={() => {
-              this.handleSignUp();
-              this.redirectToProfile();
-            }}
-
-          >  
-            Sign Up
-          </button> */}
-
         </form>
       </div>
     </div>

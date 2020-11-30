@@ -11,7 +11,7 @@ const Login = () => {
         <div>
    
            {/* <img src="https://i.ibb.co/PhV3Jwx/project-Xjumbo.png" className="img-fluid" /> */}
-           <a  href="#" id= "stompit" role="button">SIGN IN / SIGN UP</a>
+           <a  href="/App" id= "stompit" role="button">SIGN IN / SIGN UP</a>
             
            
         </div>

@@ -17,9 +17,6 @@ class SignUp extends Component {
     }
   }
 
-
-
-
   //changes the state based on the input 
   addUsername = (event) => {
     this.setState({username: event.target.value})
@@ -31,6 +28,16 @@ class SignUp extends Component {
     this.setState({password: event.target.value})
   }
 
+  handleSignUp = (event) => {
+    event.preventDefault();
+    API.saveUserData({
+      username: this.state.username,
+      email: this.state.email,
+      password: this.state.password
+    })
+    console.log('CLICKED')
+      }
+      
 render(){
   return (
     <div className="text container" id='signup'>

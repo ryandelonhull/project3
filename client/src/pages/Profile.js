@@ -4,7 +4,6 @@ import axios from "axios";
 // import characters from "../characters.json";
 // components
 
-import Navbar from '../components/Navbar/Navbar';
 
 import Leaderboard from '../components/Leaderboard/leaderboard';
 import Userdata from '../components/Userdata/userdata';

@@ -45,6 +45,8 @@ class SignUp extends Component {
 
 render(){
   return (
+
+
     <div className="ui text container">
       <div className="ui inverted divider"></div>
       <div className="ui inverted segment" id="mainContainer">
@@ -123,6 +125,7 @@ render(){
         </form>
       </div>
     </div>
+
   );
 }
 

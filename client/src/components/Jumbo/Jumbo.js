@@ -7,7 +7,7 @@ const Jumbo = () => {
         <div>
            <div className="jumbotron">
            {/* <img src="https://i.ibb.co/PhV3Jwx/project-Xjumbo.png" /> */}
-            <a className="btn btn-danger btn-lg" href="#" role="button">SIGN IN</a>
+            <a className="btn btn-danger btn-lg" href="#" role="button">SIGN IN / SIGN UP</a>
             
             </div> 
         </div>

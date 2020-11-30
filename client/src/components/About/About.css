@@ -1,0 +1,15 @@
+
+.About {
+    /* batman obama jumbotron */
+    background-image: url("https://i.ibb.co/jJJbFfq/Purple-and-Peach-Photo-Freelance-Writer-Portfolio-Website.png");
+    /* project x jumbotron */
+    /* background-image: url("https://i.ibb.co/m4Qn5hK/project-x-jumbo.png"); */
+    background-repeat: no-repeat, repeat;
+    background-position: center;
+    background-size: 107%;
+    
+    height: 520px;
+    width: 1110px
+  }
+
+

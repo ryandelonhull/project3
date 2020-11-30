@@ -13,15 +13,6 @@
 module.exports = function(sequelize, DataTypes) {
     var Characters = sequelize.define("Characters", {
     
-        // name cannot be null and should be unique
-        //DO WE NEED AN ID--PROBABLY NOT
-        // id: {
-        //     //make it auto??
-        //     type: DataTypes.INTEGER,
-        //     autoIncrement: true,
-        //     allowNull: false,
-        //     unique: true,
-        // },
         name: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -36,14 +27,16 @@ module.exports = function(sequelize, DataTypes) {
             // }
         },
     
-        attacks: {
+        attack: {
             type: DataTypes.STRING,
             allowNull: false,
             // validate: {
             //     len: [8, 30]
             // }
         },
-    
+        // createdAt: {
+
+        // }
         hitpoints: {
             type: DataTypes.STRING,
             allowNull: false,

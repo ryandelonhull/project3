@@ -7,7 +7,7 @@ function Login() {
 
       <div className="form-group">
 
-        <label for="username">
+        <label form="username">
 
           <h4> Username </h4>
         </label>
@@ -37,15 +37,9 @@ function Login() {
         />
       </div>
 
-      <div id="alert" className="alert alert-danger" role="alert">
-        <span
-          className="glyphicon glyphicon-exclamation-sign"
-          aria-hidden="true"
-        ></span>
-        <span className="sr-only">Error:</span> <span className="msg"></span>
-      </div>
-
-      <button type="submit" className="btn btn-secondary">
+     
+     
+      <button type="submit" >
         Login
       </button>
     </div>

@@ -4,9 +4,10 @@ var db = require("../models");
 module.exports = function(app) {
     //need a route that deletes data
 
-    app.get("/api/attack/", function(req, res){
-        db.Attack.findAll().then(function(attack){
-            res.json(attack);
+    //find all attacks for my own personal enjoyment
+app.get("/api/attack/", function(req, res){
+        db.Attack.findAll().then(function(attacks){
+            res.json(attacks);
         }).catch(err => {res.json(err)});
     });
 //find the attacks during the battle
@@ -30,7 +31,7 @@ app.get("/api/attack/:id", function(req, res){
         });
     });
 //update game status
-    app.put("/api/game", function(req, res) {
+    app.put("/api/game/", function(req, res) {
         db.Game.update(req.body,
           {
             where: {

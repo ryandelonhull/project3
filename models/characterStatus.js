@@ -48,9 +48,9 @@ CharacterStatus.associate = function(models) {
     CharacterStatus.belongsTo(models.Game, {foreignKey: 'GameId' 
         // onDelete: "cascade"
     });
-    CharacterStatus.hasMany(models.Attack, {
-        // onDelete: "cascade"
-    });
+    // CharacterStatus.hasMany(models.Attack, {
+    //     // onDelete: "cascade"
+    // });
 };
 return CharacterStatus;
 };

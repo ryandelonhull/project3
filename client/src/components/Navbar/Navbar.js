@@ -21,7 +21,7 @@ function Navbar(props) {
   </div>
       {/* <ul className="nav">
         <li className="nav-item">
-          <a className="nav-link active" href="#">
+          <a className="nav-link active" href="#Profile">
             About
           </a>
 

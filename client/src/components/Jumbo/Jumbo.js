@@ -1,17 +1,17 @@
 import React from 'react';
-import './Jumbo.css'
-
+import './Jumbo.css';
 
 const Jumbo = () => {
-    return (
-        <div>
-           <div className="jumbotron">
-           {/* <img src="https://i.ibb.co/PhV3Jwx/project-Xjumbo.png" /> */}
-            <a className="btn btn-danger btn-lg" href="#" role="button">SIGN IN / SIGN UP</a>
-            
-            </div> 
-        </div>
-    );
-}
+  return (
+    <div>
+      <div className="jumbotron">
+        {/* <img src="https://i.ibb.co/PhV3Jwx/project-Xjumbo.png" /> */}
+        <a className="btn btn-danger btn-lg" href="#signup" role="button">
+          SIGN IN / SIGN UP
+        </a>
+      </div>
+    </div>
+  );
+};
 
 export default Jumbo;

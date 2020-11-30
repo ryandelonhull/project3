@@ -1,6 +1,5 @@
 import React from 'react';
-import './Jumbo.css'
-
+import './Jumbo.css';
 
 const Jumbo = () => {
     return (
@@ -17,5 +16,6 @@ const Jumbo = () => {
         
     );
 }
+
 
 export default Jumbo;

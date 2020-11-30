@@ -10,6 +10,7 @@ import Login from './components/Redir/Loginbttn';
 import './App.css'
 
 
+
 class App extends Component {
   render() {
     return (
@@ -26,15 +27,16 @@ class App extends Component {
           </div>
      
 
+          {/* Switch paths for the URL */}
           <Switch>
+
             <Route path="/" exact component={LoginSignUP} />
             <Route path="/Profile" component={Profile} />
-          {/*<Route path="/Signup" component={Signup} /> */}
-          <Route path="/Contact" component={Contact} />
-          {/* <Route path="/About" component={About} /> */}
-          {/* <Route path="/User" component={User} /> */}
-
-          <Route path="/Battle" component={Battle} />
+            {/*<Route path="/Signup" component={Signup} /> */}
+            <Route path="/Contact" component={Contact} />
+            {/* <Route path="/About" component={About} /> */}
+            {/* <Route path="/User" component={User} /> */}
+            <Route path="/Battle" component={Battle} />
 
           </Switch>
         </div>

@@ -2,15 +2,8 @@ import React from 'react';
 
 import './Navbar.css';
 
-
-
-
-function Navbar() {
-  return (
-   
-   
-   
-   
+function Navbar(props) {
+  return ( 
    <div>
      
       <nav className="navbar fixed-top navbar-expand-lg">
@@ -57,9 +50,7 @@ function Navbar() {
       
       </div>
       </nav>
-      </div>
-  
-
+    </div>
   );
 }
 

@@ -44,7 +44,7 @@ class SignUp extends Component {
       }
 render(){
   return (
-    <div className="text container">
+    <div className="text container" id='signup'>
       {/* <div className="ui inverted divider"></div> */}
       <div className="inverted segment" id="mainContainer">
         <h2>Sign Up</h2>
@@ -96,24 +96,20 @@ render(){
           </div>
           <button
             type="submit"
-          
+
             // style="margin-top: 15px;"
             onClick={() => {
               this.handleSignUp();
               this.redirectToProfile();
             }}
 
-          >
-            
+          >  
             Sign Up
           </button>
-         
-          
+
         </form>
       </div>
-      
     </div>
-
   );
 }
 }

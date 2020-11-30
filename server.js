@@ -11,9 +11,12 @@ var PORT = process.env.PORT || 8080;
 var db = require("./models"); 
 
 
+var cors = require('cors');
+
 // Creating express app and configuring middleware needed for authentication
 var app = express();
 
+app.use(cors());
 // var corsOptions = {
 //     origin: "http://localhost:8081"
 //   };

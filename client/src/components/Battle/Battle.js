@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Battle.css";
-import axios from "axios";
+
 //set variables for attack
 //are attacks going to be randomly set === variable with attack name associated with character?
 //how are building attack buttons?
@@ -134,10 +134,10 @@ class Battle extends Component {
                 <h2>Life'll Kill Ya</h2>
                 {/* <button onClick={this.startBattle}>Start Battle</button> */}
                 <div>
-                    <img src={playerCharacter.image}></img>
+                    <img src={playerCharacter.image} alt="user character image"></img>
                 </div>
                 <div>
-                    <img src={cpuCharacter.image}></img>
+                    <img src={cpuCharacter.image} alt="computer character image" ></img>
                 </div>
                 {this.state.inPlay? (this.attackButtons()): ""};
 

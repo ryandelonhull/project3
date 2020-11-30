@@ -1,12 +1,10 @@
 import React from 'react';
-
 function Login() {
   return (
     <div className="login">
       <h2>Login</h2>
-
       <div className="form-group">
-        <label form="username">
+        <label for="username">
           <h4> Username </h4>
         </label>
         <input
@@ -17,7 +15,6 @@ function Login() {
           placeholder="Username"
         />
       </div>
-
       <div
         className="form-group"
         // style="margin-top: 10px"
@@ -32,20 +29,17 @@ function Login() {
           placeholder="Password"
         />
       </div>
-
-      <div id="alert" className="alert alert-danger" role="alert">
-        <span
+      <div >
+              <button type="submit">
+        Login
+      </button>
+        {/* <span
           className="glyphicon glyphicon-exclamation-sign"
           aria-hidden="true"
         ></span>
-        <span className="sr-only">Error:</span> <span className="msg"></span>
+        <span className="sr-only">Error:</span> <span className="msg"></span> */}
       </div>
-
-      <button type="submit" className="btn btn-secondary">
-        Login
-      </button>
     </div>
   );
 }
-
 export default Login;

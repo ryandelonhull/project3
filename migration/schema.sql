@@ -7,11 +7,16 @@ CREATE TABLE Characters
 	id int NOT NULL AUTO_INCREMENT,
 	name varchar(255) NOT NULL unique,
 	image varchar(255) NOT NULL unique,
+	hitPoints integer,
+	createdAt varchar(255),
+	updatedAt varchar(255),
+	UserId varchar(255),
+	
+
     attack  integer NOT NULL,
     
 	PRIMARY KEY (id)
 );
-
 
 Insert into Characters (name, image, attack)
 VALUES("Batman","./Images-char/batperson.png", "1");
@@ -23,7 +28,7 @@ VALUES("Barack Obama","./Images-char/obama.png", "3");
 Insert into Characters (name, image, attack)
 VALUES("Ninja","./Images-char/ninja.png", "4");
 Insert into Characters (name, image, attack)
-VALUES("LA DRIVER","none", "5");
+VALUES("LA DRIVER","./Images-char/LADrivers.png", "5");
 Insert into Characters (name, image, attack)
 VALUES("Stationary Exercise Bike","./Images-char/statbike.png", "6");
 Insert into Characters (name, image, attack)

@@ -3,16 +3,17 @@ import './page.css';
 import axios from "axios";
 // import characters from "../characters.json";
 // components
+
 import Navbar from '../components/Navbar/Navbar';
+
 import Leaderboard from '../components/Leaderboard/leaderboard';
 import Userdata from '../components/Userdata/userdata';
 import Charcards from '../components/CharCards/Charcards';
 import Battle from "../components/Battle/Battle";
 
 
-
-
 const gameStates = {INITIAL: 1, CHOOSE_CHARACTER: 2, PLAYING: 3};
+
 
 
 class Profile extends Component {
@@ -52,6 +53,7 @@ class Profile extends Component {
     const characterChoice = this.characterChoice;
     const selectCharacter = this.selectCharacter;
     return (
+
         <div>
             <div className="wrapper p-3" id="Profile">
                
@@ -75,6 +77,7 @@ class Profile extends Component {
                 </div>
             </div>
         </div>
+
     );
   }
 }

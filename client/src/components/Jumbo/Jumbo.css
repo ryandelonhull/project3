@@ -2,22 +2,37 @@
 
 
 
-.jumbotron {
-  /* batman obama jumbotron */
-  background-image: url("https://i.ibb.co/PhV3Jwx/project-Xjumbo.png");
-  /* project x jumbotron */
-  /* background-image: url("https://i.ibb.co/m4Qn5hK/project-x-jumbo.png"); */
+.jumbotron{
+  /* background-image: url("https://i.ibb.co/PhV3Jwx/project-Xjumbo.png"); */
   background-repeat: no-repeat, repeat;
   background-position: center;
   background-size: 101%;
-  
-  height: 520px;
-  width: 1110px
+  min-height: 90%;
+  min-width: 90%;
+  margin-left: 10%;
+  margin-top: 10%;
+  background-position: bottom;
+ /* background-position: inherit; */
+  /* width: 100%; */
+  /* margin: 15px; */
+  /* height: 520px;
+  width: 1110px; */
+  background-color: black;
+
+}
+
+
+#jumboimg {
+  min-height: 120%;
+  margin-top: -7%;
+  margin-left: -5%;
+  min-width: 110%;
+  /* height: 520px;
+  width: 1110px; */
 }
 
 .btn {
   font-weight: bold;
   margin-top: 350px;
-  margin-left: 400px;
+  margin-left: 445px;
 }
-

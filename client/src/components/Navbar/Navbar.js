@@ -13,18 +13,29 @@ function Navbar() {
    
    <div>
      
-      <nav className="navbar">
+      <nav className="navbar fixed-top navbar-expand-lg">
       <img src="https://i.ibb.co/VMjK21c/projectxlogo150x51.png"/>
-      <ul className="nav">
+      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span className="navbar-toggler-icon"></span>
+  </button>
+  <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div className="navbar-nav">
+      <a className="nav-link active mr-sm-2" href="#">Home <span className="sr-only">(current)</span></a>
+      <a className="nav-link" href="#">Features</a>
+      <a className="nav-link" href="#">Pricing</a>
+      <a className="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+    </div>
+  </div>
+      {/* <ul className="nav">
         <li className="nav-item">
           <a className="nav-link active" href="#">
             About
           </a>
 
         </li>
-        <li className="nav-item">
+        <li className="nav-item"> */}
           {/* /I just added profile here for now can change it later */}
-          <a className="nav-link" href="#Profile">
+          {/* <a className="nav-link" href="#Profile">
             Profile
           </a>
         </li>
@@ -35,7 +46,7 @@ function Navbar() {
 
          
         </li>
-      </ul>
+      </ul> */}
       <div className="App">
         {/* <img src={require("./projectxlogo.png")} alt="Navbar Image" /> */}
         {/* <img src="https://i.ibb.co/VMjK21c/projectxlogo150x51.png" /> */}

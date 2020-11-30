@@ -3,10 +3,14 @@ import './About.css'
 
 function About() {
     return(
-        <div className="About">
+        <div className="row-1"> 
+        <div>
+        <div className="jumbotron img-fluid" >
+                 <img src="https://i.ibb.co/jJJbFfq/Purple-and-Peach-Photo-Freelance-Writer-Portfolio-Website.png" className="img-fluid" id="jumboimg" />
+   
             
-            <p> Here is where we are going to place the about</p>
-            
+        </div>
+        </div>
         </div>
     )
 }

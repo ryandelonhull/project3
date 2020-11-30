@@ -6,7 +6,7 @@ function About() {
         <div className="row-1"> 
         <div>
         <div className="jumbotron img-fluid" >
-                 <img src="https://i.ibb.co/jJJbFfq/Purple-and-Peach-Photo-Freelance-Writer-Portfolio-Website.png" className="img-fluid" id="jumboimg" />
+                 <img src="https://i.ibb.co/jJJbFfq/Purple-and-Peach-Photo-Freelance-Writer-Portfolio-Website.png" alt="photoX" className="img-fluid" id="jumboimg" />
             
         </div>
         </div>

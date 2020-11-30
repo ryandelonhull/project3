@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './page.css';
+// import './page.css';
 import axios from "axios";
-// import characters from "../characters.json";
+import characters from "../characters.json";
 // components
 
 import Navbar from '../components/Navbar/Navbar';
@@ -29,7 +29,7 @@ class Profile extends Component {
   }
 
   componentDidMount(){
-   axios.get('/api/characters')
+   axios.get('./characters.json')
    .then((response)=>{
      this.setState({characters: response.data});
    })

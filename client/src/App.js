@@ -23,10 +23,10 @@ class App extends Component {
           <Battle/>
 
           <Switch>
-            {/* <Route path="/" exact component={LoginSignUP} />
-            <Route path="/Profile" component={Profile} /> */}
+            <Route path="/" exact component={LoginSignUP} />
+            <Route path="/Profile" component={Profile} />
           {/*<Route path="/Signup" component={Signup} /> */}
-          <Route path="/" component={Contact} />
+          <Route path="/Contact" component={Contact} />
           {/* <Route path="/About" component={About} /> */}
           {/* <Route path="/User" component={User} /> */}
 

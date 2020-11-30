@@ -15,7 +15,7 @@ var db = require("./models");
 // Creating express app and configuring middleware needed for authentication
 var app = express();
 var corsOptions = {
-    origin: "http://localhost:8081"
+    origin: "http://localhost:8080"
   };
   
   app.use(cors(corsOptions));
@@ -40,7 +40,7 @@ require("./routes/battle-routes.js")(app);
 require("./routes/api-routes.js")(app);
 require("./routes/character-routes.js")(app);
 require("./routes/profile-api-routes.js")(app);
-require("./routes/character-routes.js")(app);
+
 
 
 

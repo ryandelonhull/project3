@@ -108,12 +108,9 @@ render(){
             }}
 
           >
-              <button
-            type="submit"
-             >
-            Sign Up
+        
           </button>
-          </div>
+        
         </form>
       </div>
     </div>

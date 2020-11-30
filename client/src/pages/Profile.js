@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './page.css';
 import axios from "axios";
-import characters from "../characters.json";
+// import characters from "../characters.json";
 // components
 import Navbar from '../components/Navbar/Navbar';
 import Leaderboard from '../components/Leaderboard/leaderboard';
@@ -23,16 +23,17 @@ class Profile extends Component {
       gameState: gameStates.INITIAL,
       character: {},
       cpuCharacter: {},
-      characters: characters
+      characters: []
     }
   }
 
-  //componentDidMount(){
-  //  axios.get('../../characters.json')
-  //  .then((response)=>{
-  //    this.setState({characters: response.data});
-  //  })
-  //}
+  componentDidMount(){
+   axios.get('/api/characters')
+   .then((response)=>{
+     this.setState({characters: response.data});
+   })
+   console.log(this.state.characters);
+  }
 
   characterChoice = () =>{
     if(this.state.gameState === gameStates.INITIAL){
@@ -42,7 +43,7 @@ class Profile extends Component {
   }
 
   selectCharacter = (character) =>{
-    let randomIndex = Math.floor(Math.random() * characters.length);
+    let randomIndex = Math.floor(Math.random() * this.state.characters.length);
     this.setState({character: character, cpuCharacter: this.state.characters[randomIndex], gameState: gameStates.PLAYING});
   }
 
@@ -63,7 +64,7 @@ class Profile extends Component {
                       {/* <Charcards /> */}
 
                   </div>
-                  {this.state.gameState == gameStates.INITIAL && <button onClick={characterChoice}>Start Battle</button>}
+                  {this.state.gameState === gameStates.INITIAL && <button onClick={characterChoice}>Start Battle</button>}
                   {
                     this.state.gameState === gameStates.CHOOSE_CHARACTER && 
                     <Charcards characters={this.state.characters} selectCharacter={selectCharacter} />

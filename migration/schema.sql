@@ -7,6 +7,12 @@ CREATE TABLE Characters
 	id int NOT NULL AUTO_INCREMENT,
 	name varchar(255) NOT NULL unique,
 	image varchar(255) NOT NULL unique,
+	hitPoints integer,
+	createdAt varchar(255),
+	updatedAt varchar(255),
+	UserId varchar(255),
+	
+
     attack  integer NOT NULL,
     
 	PRIMARY KEY (id)

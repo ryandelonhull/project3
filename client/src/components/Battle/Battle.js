@@ -120,7 +120,7 @@ class Battle extends Component {
 
         return (
             <div>
-                <h2>Life'll kill ya</h2>
+                <h2>Life'll Kill Ya</h2>
                 {/* <button onClick={this.startBattle}>Start Battle</button> */}
                 <div>
                     <img src={playerCharacter.image}></img>

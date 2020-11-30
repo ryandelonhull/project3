@@ -4,16 +4,21 @@
         "name": "Batman",
         "attacks": {
             "one": {
-                "name": "Bat Mobile",
-                "type": "Blunt Force"
+                "name": "Bat Mobile"
             },
             "Two": {
-                "name": "Crying",
-                "type": "Psychological"
+                "name": "BAT DANCE"
+            },
+            "Three": {
+                "name": "Brooding andd Smouldering"
+            },
+            "Four": {
+                "name": "Daddy Issues"
+            },
+            "Five": {
+                "name": "Ask Alfred"
             }
         },
-        "strongAgainst": ["Blunt Force", "Funny Costumes"],
-        "weaknesses": ["Pretty", "Psychological"],
         "image": "https://media2.giphy.com/media/26vUCH220kcToAYPS/giphy.gif"
     },
     {

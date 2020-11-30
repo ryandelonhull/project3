@@ -19,7 +19,6 @@ class LoginSignUp extends Component {
           </div>
           <div className="signUp">
             <SignUp />
-
           </div>
         </div>
       </div>

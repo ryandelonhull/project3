@@ -2,6 +2,8 @@
 import React, {Component} from 'react';
 import './SignUp.css';
 import API from '../../utils/API'
+import { withRouter } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom'
 
 class SignUp extends Component {
   constructor(props){
@@ -13,6 +15,10 @@ class SignUp extends Component {
     }
   }
 
+  redirectToProfile = () => {
+    const { history } = this.props;
+    if(history) history.push('/Profile')
+  }
 
   //changes the state based on the input 
   addUsername = (event) => {
@@ -25,12 +31,6 @@ class SignUp extends Component {
     this.setState({password: event.target.value})
   }
 
-
-  singUp = () => {
-
-
-  }
-
    handleSignUp = (event) => {
     event.preventDefault();
     API.saveUserData({
@@ -39,11 +39,11 @@ class SignUp extends Component {
       password: this.state.password
     })
     console.log('CLICKED')
+    
   }
 
 
 render(){
-
   return (
     <div className="ui text container">
       <div className="ui inverted divider"></div>
@@ -113,7 +113,10 @@ render(){
             type="submit"
             className="btn btn-secondary"
             // style="margin-top: 15px;"
-            onClick={ this.handleSignUp }
+            onClick={() => {
+              this.handleSignUp();
+              this.redirectToProfile();
+            }}
           >
             Sign Up
           </button>
@@ -126,4 +129,4 @@ render(){
 }
 
 
-export default SignUp;
+export default withRouter(SignUp);

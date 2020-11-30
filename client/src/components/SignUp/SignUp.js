@@ -44,7 +44,7 @@ class SignUp extends Component {
       }
 render(){
   return (
-    <div className="text container">
+    <div className="text container" id='signup'>
       {/* <div className="ui inverted divider"></div> */}
       <div className="inverted segment" id="mainContainer">
         <h2>Sign Up</h2>
@@ -91,30 +91,32 @@ render(){
             // style="margin-top: 10px;"
 
           >
-            <span
-              className="glyphicon glyphicon-exclamation-sign"
-              aria-hidden="true"
-            ></span>
-            <span className="sr-only">Error:</span>{' '}
-            <span className="msg"></span>
+     
+           
           </div>
           <button
             type="submit"
-            className="btn btn-secondary"
+
             // style="margin-top: 15px;"
             onClick={() => {
               this.handleSignUp();
               this.redirectToProfile();
             }}
 
+<<<<<<< HEAD
           >
         
           </button>
         
+=======
+          >  
+            Sign Up
+          </button>
+
+>>>>>>> 6c914e182e0e20738afc39a26639416efe2d95d3
         </form>
       </div>
     </div>
-
   );
 }
 }

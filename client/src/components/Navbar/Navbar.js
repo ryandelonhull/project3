@@ -14,7 +14,7 @@ function Navbar() {
    <div>
      
       <nav className="navbar">
-      <img src="https://i.ibb.co/VMjK21c/projectxlogo150x51.png"/>
+      <img src="https://i.ibb.co/VMjK21c/projectxlogo150x51.png" alt="project x"/>
       <ul className="nav">
         <li className="nav-item">
           <a className="nav-link active" href="#">

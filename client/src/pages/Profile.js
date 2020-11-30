@@ -54,14 +54,13 @@ class Profile extends Component {
     return (
         <div>
             <div className="wrapper p-3" id="Profile">
-                <Navbar />
+               
                 <div>
                   <div className="userdata">
                     <Userdata />
                   </div>
                   <div className="leaderboard">
                       {/* <Leaderboard /> */}
-                      {/* <Charcards /> */}
 
                   </div>
                   {this.state.gameState === gameStates.INITIAL && <button onClick={characterChoice}>Start Battle</button>}

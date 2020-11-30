@@ -1,4 +1,5 @@
 import React from 'react';
+import "./charcards.css";
 // import { mapFinderOptions } from 'sequelize/types/lib/utils';
 
 
@@ -14,21 +15,21 @@ function Charcards(props) {
 //   }
 console.log("props", props);
 const characterDiv =  props.characters.map( (character, index)=>{
-    return (<div onClick={()=> {props.selectCharacter(character)}}>
-      <img alt={character.name} src={character.image} />
-      <div className="card" id={character.id}>
-        <div className="card-body">
-          <h5 className="card-title">{character.name}</h5>
-        
-          <p className="card-text">{character.attack}</p>
-          {/* <button className="btn" onClick={handleClick}>Save</button> */}
+    return (
+        <div className="charCard" onClick={()=> {props.selectCharacter(character)}}>
+          <img alt={character.name} src={character.image} className="imgCard"/>
+          <div className="card">
+            <div className="card-body">
+              <h5 className="card-title">{character.name}</h5>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>);
+    );
   });
 
   return (
     <div className="wrapper">
+      <h3>CHOOSE YOUR CHAMPION</h3>
       {characterDiv}
     </div>
   );

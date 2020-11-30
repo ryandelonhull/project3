@@ -28,7 +28,7 @@ VALUES("Barack Obama","./Images-char/obama.png", "3");
 Insert into Characters (name, image, attack)
 VALUES("Ninja","./Images-char/ninja.png", "4");
 Insert into Characters (name, image, attack)
-VALUES("LA DRIVER","none", "5");
+VALUES("LA DRIVER","./Images-char/LADrivers.png", "5");
 Insert into Characters (name, image, attack)
 VALUES("Stationary Exercise Bike","./Images-char/statbike.png", "6");
 Insert into Characters (name, image, attack)

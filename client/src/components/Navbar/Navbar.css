@@ -1,0 +1,34 @@
+img {
+    width: 150px;
+    height: 51px;
+    margin-left: 5px;
+}
+
+
+nav {
+    width: 100%;
+    height: 10%;
+    background-color: black;
+    
+
+}
+
+.navbar {
+height: 70px;
+  
+}
+
+
+/* .nav-item {
+    margin-left: 240px;
+    align-items: end;
+} */
+
+.nav-link {
+    margin-right: flex-end;
+   justify-content: flex-end;
+}
+
+a.nav-link.active {
+    margin-left: 650px;
+}

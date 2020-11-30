@@ -1,0 +1,23 @@
+
+
+
+
+.jumbotron {
+  /* batman obama jumbotron */
+  background-image: url("https://i.ibb.co/PhV3Jwx/project-Xjumbo.png");
+  /* project x jumbotron */
+  /* background-image: url("https://i.ibb.co/m4Qn5hK/project-x-jumbo.png"); */
+  background-repeat: no-repeat, repeat;
+  background-position: center;
+  background-size: 101%;
+  
+  height: 520px;
+  width: 1110px
+}
+
+.btn {
+  font-weight: bold;
+  margin-top: 350px;
+  margin-left: 400px;
+}
+

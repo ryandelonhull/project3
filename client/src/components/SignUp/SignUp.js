@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
 import './SignUp.css';
 
+import API from '../../utils/API'
+import { withRouter } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom'
+
 class SignUp extends Component {
   constructor(props){
     super(props);
@@ -11,6 +15,11 @@ class SignUp extends Component {
     }
   }
 
+
+  redirectToProfile = () => {
+    const { history } = this.props;
+    if(history) history.push('/Profile')
+  }
 
   //changes the state based on the input 
   addUsername = (event) => {
@@ -24,23 +33,22 @@ class SignUp extends Component {
   }
 
 
-  singUp = () => {
-
-
-  }
-
-  handleSignUp = () => {
-    
-  }
-
-
+   handleSignUp = (event) => {
+    event.preventDefault();
+    API.saveUserData({
+      username: this.state.username,
+      email: this.state.email,
+      password: this.state.password
+    })
+    console.log('CLICKED')
+      }
 render(){
   return (
-    <div className="ui text container">
-      <div className="ui inverted divider"></div>
-      <div className="ui inverted segment" id="mainContainer">
+    <div className="text container">
+      {/* <div className="ui inverted divider"></div> */}
+      <div className="inverted segment" id="mainContainer">
         <h2>Sign Up</h2>
-        <div className="ui inverted divider"></div>
+        {/* <div className="ui inverted divider"></div> */}
         <form className="signup">
           <div className="form-group">
             <label form="username">
@@ -80,10 +88,8 @@ render(){
           </div>
           <div
             // style="display: none"
-            id="alert"
-            className="alert alert-danger"
-            role="alert"
             // style="margin-top: 10px;"
+
           >
             <span
               className="glyphicon glyphicon-exclamation-sign"
@@ -96,14 +102,24 @@ render(){
             type="submit"
             className="btn btn-secondary"
             // style="margin-top: 15px;"
+            onClick={() => {
+              this.handleSignUp();
+              this.redirectToProfile();
+            }}
+
           >
+              <button
+            type="submit"
+             >
             Sign Up
           </button>
+          </div>
         </form>
       </div>
     </div>
+
   );
 }
 }
+export default withRouter(SignUp);
 
-export default SignUp;

@@ -22,7 +22,7 @@ class Profile extends Component {
                 <Userdata />
           </div>
           <div className="leaderboard">
-            {/* <Leaderboard /> */}
+            <Leaderboard />
             <Charcards />
 
           </div>

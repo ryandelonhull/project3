@@ -18,6 +18,7 @@ class Battle extends Component {
         message: ""
     };
 
+
     startBattle = () =>{
         this.setState({userAttack: "", cpuAttack: "",inPlay: true, userHealth: 7, cpuHealth: 7} );
     }
@@ -31,6 +32,7 @@ class Battle extends Component {
     attackButtons = () =>{
         return (
         <div>
+
             <button onClick={ () => this.attack("x", 0)}>X HOOK</button>
             <button onClick={ () => this.attack("y", 1)}>Y HOOK</button>
             <button onClick={ () => this.attack("z", 2)}>Z HOOK</button>
@@ -38,6 +40,7 @@ class Battle extends Component {
             <button onClick={ () => this.attack("b", 4)}>B HOOK</button>
         </div>);
     }
+
 
    checkWinner = () =>{
        const {cpuHealth, userHealth} = this.state;
@@ -53,7 +56,9 @@ class Battle extends Component {
     attackRound = () => {
         //how are we using cpuAttack/userAttack in this context? 
         //how can userAttack be equal to cpuAttack is that userAttack and cpuAttack health???
+
         //if userAttack is referring to userAttack attack, it should be called userAttack and cpuAttack 
+
         const { userAttack, cpuAttack, userHealth, cpuHealth } = this.state;
         const { checkWinner } = this;
 
@@ -75,7 +80,9 @@ class Battle extends Component {
             (userAttack === "a" && cpuAttack === "x") ||
             (userAttack === "b" && cpuAttack === "y")
         ) {
+
             this.setState( { cpuHealth: cpuHealth-2, message: "A LEGENDARY STRIKE! MINUS TWO TO YOUR OPPONENT!"}, checkWinner);
+
         } else if (
             (userAttack === "x" && cpuAttack === "a") ||
             (userAttack === "y" && cpuAttack === "b") ||
@@ -83,7 +90,9 @@ class Battle extends Component {
             (userAttack === "a" && cpuAttack === "y") ||
             (userAttack === "b" && cpuAttack === "z")
         ) {
+
             this.setState({userHealth: userHealth-1, message: "YOUR ATTACK HAS BEEN FOILED! MINUS ONE TO YOU!"}, checkWinner);
+
         } else if (
             (userAttack === "x" && cpuAttack === "b") ||
             (userAttack === "y" && cpuAttack === "x") ||
@@ -91,7 +100,9 @@ class Battle extends Component {
             (userAttack === "a" && cpuAttack === "z") ||
             (userAttack === "b" && cpuAttack === "a")
         ) {
+
             this.setState({userHealth: userHealth-2, message: "A STUNNING WALLOP BY YOUR OPPONENT! MINUS TWO TO YOU!"}, checkWinner);
+
         }
 
     }
@@ -112,9 +123,10 @@ class Battle extends Component {
                 <h2>Life'll kill ya</h2>
                 <button onClick={this.startBattle}>Start Battle</button>
 
+
                 {this.state.inPlay? (this.attackButtons()): ""};
 
-                
+
             </div>
         )
     }

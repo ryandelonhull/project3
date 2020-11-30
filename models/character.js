@@ -36,7 +36,7 @@ module.exports = function(sequelize, DataTypes) {
             // }
         },
     
-        attacks: {
+        attack: {
             type: DataTypes.STRING,
             allowNull: false,
             // validate: {
@@ -44,14 +44,14 @@ module.exports = function(sequelize, DataTypes) {
             // }
         },
     
-        hitpoints: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            defaultValue: 20,
-            validate: {
-                len: [0, 10]
-            }
-        }
+        // hitpoints: {
+        //     type: DataTypes.STRING,
+        //     allowNull: false,
+        //     defaultValue: 20,
+        //     validate: {
+        //         len: [0, 10]
+        //     }
+        // }
     });
   
 

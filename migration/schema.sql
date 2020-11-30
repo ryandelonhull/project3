@@ -12,6 +12,7 @@ CREATE TABLE Characters
 	PRIMARY KEY (id)
 );
 
+
 Insert into Characters (name, image, attack)
 VALUES("Batman","./Images-char/batperson.png", "1");
 Insert into Characters (name, image, attack)

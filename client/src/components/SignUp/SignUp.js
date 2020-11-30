@@ -1,5 +1,10 @@
 import React, {Component} from 'react';
 import './SignUp.css';
+
+import API from '../../utils/API'
+import { withRouter } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom'
+
 class SignUp extends Component {
   constructor(props){
     super(props);
@@ -9,6 +14,13 @@ class SignUp extends Component {
       password: ''
     }
   }
+
+
+  redirectToProfile = () => {
+    const { history } = this.props;
+    if(history) history.push('/Profile')
+  }
+
   //changes the state based on the input 
   addUsername = (event) => {
     this.setState({username: event.target.value})
@@ -19,10 +31,17 @@ class SignUp extends Component {
   addPassword = (event) => {
     this.setState({password: event.target.value})
   }
-  singUp = () => {
-  }
-  handleSignUp = () => {
-  }
+
+
+   handleSignUp = (event) => {
+    event.preventDefault();
+    API.saveUserData({
+      username: this.state.username,
+      email: this.state.email,
+      password: this.state.password
+    })
+    console.log('CLICKED')
+      }
 render(){
   return (
     <div className="text container">
@@ -70,6 +89,24 @@ render(){
           <div
             // style="display: none"
             // style="margin-top: 10px;"
+
+          >
+            <span
+              className="glyphicon glyphicon-exclamation-sign"
+              aria-hidden="true"
+            ></span>
+            <span className="sr-only">Error:</span>{' '}
+            <span className="msg"></span>
+          </div>
+          <button
+            type="submit"
+            className="btn btn-secondary"
+            // style="margin-top: 15px;"
+            onClick={() => {
+              this.handleSignUp();
+              this.redirectToProfile();
+            }}
+
           >
               <button
             type="submit"
@@ -80,7 +117,9 @@ render(){
         </form>
       </div>
     </div>
+
   );
 }
 }
-export default SignUp;
+export default withRouter(SignUp);
+

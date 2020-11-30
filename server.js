@@ -14,14 +14,17 @@ var db = require("./models");
 // Creating express app and configuring middleware needed for authentication
 var app = express();
 
+// var corsOptions = {
+//     origin: "http://localhost:8081"
+//   };
   
   
+//   // parse requests of content-type - application/json
+//   app.use(bodyParser.json());
   
-  // parse requests of content-type - application/json
-  
-  
-  // parse requests of content-type - application/x-www-form-urlencoded
-  
+//   // parse requests of content-type - application/x-www-form-urlencoded
+//   app.use(bodyParser.urlencoded({ extended: true }));
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));

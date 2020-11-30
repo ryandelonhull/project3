@@ -5,6 +5,8 @@ import API from '../../utils/API'
 import { withRouter } from 'react-router-dom';
 // import { useHistory } from 'react-router-dom'
 
+import SignUpButton from '../Router/Router'
+
 class SignUp extends Component {
   constructor(props){
     super(props);
@@ -17,8 +19,7 @@ class SignUp extends Component {
 
 
   redirectToProfile = () => {
-    const { history } = this.props;
-    if(history) history.push('/Profile')
+   window.location.href = '/Profile'
   }
 
   //changes the state based on the input 
@@ -94,7 +95,8 @@ render(){
      
            
           </div>
-          <button
+          <SignUpButton/>
+          {/* <button
             type="submit"
 
             // style="margin-top: 15px;"
@@ -105,7 +107,7 @@ render(){
 
           >  
             Sign Up
-          </button>
+          </button> */}
 
         </form>
       </div>

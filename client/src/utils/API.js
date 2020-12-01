@@ -23,5 +23,10 @@ export default {
         .catch(function(err){
             console.log(err)
         })
+    },
+    checkUserData: function(data){
+        console.log(data);
+        return axios
+        .get('/api/signup')
     }
 }

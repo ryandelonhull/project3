@@ -1,22 +1,23 @@
 img {
-    width: auto;
-    height: 51px;
+
+    height: 50px;
     margin-left: 5px;
 }
 
 
-nav {
-    /* width: 100%; */
+ nav {
     height: 10%;
     /* background-color: black; */
     background-color: black;
-    
+}
 
+ul{
+    text-align: right;
 }
 
 .navbar {
 height: 70px;
-  
+
 }
 
 
@@ -25,11 +26,11 @@ height: 70px;
     align-items: end;
 } */
 
-.nav-link {
-    margin-right: flex-end;
-   justify-content: flex-end;
+/* .nav-link {
+    margin-right: auto;
+   justify-content: right;
 }
 
 a.nav-link.active {
     margin-left: 650px;
-}
+} */

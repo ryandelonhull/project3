@@ -42,4 +42,11 @@ div.card-row {
   border: solid;
   border-color: red;
   width: 100%;
+  
+  margin-right: 0px;
+}
+
+div.card-body {
+  margin-right: 35px;
+  
 }

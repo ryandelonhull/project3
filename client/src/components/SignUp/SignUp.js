@@ -5,6 +5,8 @@ import API from '../../utils/API'
 import { withRouter } from 'react-router-dom';
 // import { useHistory } from 'react-router-dom'
 
+import SignUpButton from '../Router/Router'
+
 class SignUp extends Component {
   constructor(props){
     super(props);
@@ -13,12 +15,6 @@ class SignUp extends Component {
       email: '',
       password: ''
     }
-  }
-
-
-  redirectToProfile = () => {
-    const { history } = this.props;
-    if(history) history.push('/Profile')
   }
 
   //changes the state based on the input 
@@ -32,8 +28,7 @@ class SignUp extends Component {
     this.setState({password: event.target.value})
   }
 
-
-   handleSignUp = (event) => {
+  handleSignUp = (event) => {
     event.preventDefault();
     API.saveUserData({
       username: this.state.username,
@@ -42,6 +37,7 @@ class SignUp extends Component {
     })
     console.log('CLICKED')
       }
+      
 render(){
   return (
     <div className="text container" id='signup'>
@@ -94,19 +90,7 @@ render(){
      
            
           </div>
-          <button
-            type="submit"
-
-            // style="margin-top: 15px;"
-            onClick={() => {
-              this.handleSignUp();
-              this.redirectToProfile();
-            }}
-
-          >  
-            Sign Up
-          </button>
-
+          <SignUpButton/>
         </form>
       </div>
     </div>

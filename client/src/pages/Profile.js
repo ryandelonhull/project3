@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './page.css';
 import axios from "axios";
 // import characters from "../characters.json";
-import Userdata from '../components/Userdata/userdata';
+import Userdata from '../components/Userdata/Userdata';
 import Charcards from '../components/CharCards/Charcards';
 import Battle from "../components/Battle/Battle";
 

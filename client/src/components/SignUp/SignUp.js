@@ -28,6 +28,7 @@ class SignUp extends Component {
     this.setState({password: event.target.value})
   }
 
+  //what happens when you click sign up
   handleSignUp = (event) => {
     event.preventDefault();
     API.saveUserData({
@@ -37,6 +38,7 @@ class SignUp extends Component {
     })
     console.log('CLICKED')
       }
+  
       
 render(){
   return (
@@ -87,8 +89,6 @@ render(){
             // style="margin-top: 10px;"
 
           >
-     
-           
           </div>
           <SignUpButton/>
         </form>

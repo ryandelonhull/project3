@@ -74,6 +74,7 @@ class Profile extends Component {
                       <Leaderboard />
 
                   </div>
+                  <div>
                   {this.state.gameState === gameStates.INITIAL && <button onClick={characterChoice}>Start Battle</button>}
                   {
                     this.state.gameState === gameStates.CHOOSE_CHARACTER && 
@@ -83,6 +84,7 @@ class Profile extends Component {
                     this.state.gameState === gameStates.PLAYING && 
                     <Battle cpuAttacks={this.state.cpuAttacks} characterAttacks={this.state.characterAttacks} playerCharacter = {this.state.character} cpuCharacter = {this.state.cpuCharacter}/>
                   }
+                  </div>
                 </div>
             </div>
         </div>

@@ -25,7 +25,7 @@ class App extends Component {
           <div  className="container">
           <Login />
           </div>
-     
+         
 
           {/* Switch paths for the URL */}
           <Switch>

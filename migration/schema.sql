@@ -75,7 +75,7 @@ VALUES("Leak Water", "2");
 Insert into Attack (name, CharacterId)
 VALUES("Make Clones", "2");
 Insert into Attack (name, CharacterId)
-VALUES("shrivel", "2");
+VALUES("Shrivel Defense", "2");
 Insert into Attack (name, CharacterId)
 VALUES("Growth Spurt", "2");
 
@@ -110,7 +110,7 @@ VALUES("Surpise Turn", "5");
 Insert into Attack (name, CharacterId)
 VALUES("Change 3 lanes at once", "5");
 Insert into Attack (name, CharacterId)
-VALUES("Changes Lanes into You", "5");
+VALUES("Shouting at Phone While Driving", "5");
 
 Insert into Attack (name, CharacterId)
 VALUES("Butt Cramps", "6");
@@ -119,7 +119,7 @@ VALUES("Toe Stub", "6");
 Insert into Attack (name, CharacterId)
 VALUES("Dehydration", "6");
 Insert into Attack (name, CharacterId)
-VALUES("Wack your Pet with the Pedals", "6");
+VALUES("Whack your Pet with the Pedals", "6");
 Insert into Attack (name, CharacterId)
 VALUES("Fall Off", "6");
 
@@ -130,7 +130,7 @@ VALUES("Too Good to Resist", "7");
 Insert into Attack (name, CharacterId)
 VALUES("Not Enough Bun Son", "7");
 Insert into Attack (name, CharacterId)
-VALUES("Can't have Just One", "7");
+VALUES("Can't Have Just One", "7");
 Insert into Attack (name, CharacterId)
 VALUES("Food Poisoning", "7");
 

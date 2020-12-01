@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import './page.css';
+// import './page.css';
 import axios from "axios";
-// import characters from "../characters.json";
+import characters from "../characters.json";
+import attacks from "../attacks.json";
 import Userdata from '../components/Userdata/Userdata';
 import Charcards from '../components/CharCards/Charcards';
 import Battle from "../components/Battle/Battle";
@@ -19,20 +20,26 @@ class Profile extends Component {
       gameState: gameStates.INITIAL,
       character: {},
       cpuCharacter: {},
-      characters: []
+      characters: characters,
+      characterAttacks: [],
+      cpuAttacks:[]
     }
   }
 
+  // componentDidMount(){
+  //  axios.get('./characters.json')
+  //  .then((response)=>{
+  //    this.setState({characters: response.data});
+  //  })
+  //  console.log(this.state.characters);
+  // }
   componentDidMount(){
-   axios.get('/api/characters')
-   .then((response)=>{
-     this.setState({characters: response.data});
-   })
-   console.log(this.state.characters);
+
   }
 
   characterChoice = () =>{
     if(this.state.gameState === gameStates.INITIAL){
+
 
       this.setState({gameState: gameStates.CHOOSE_CHARACTER});
     }
@@ -40,7 +47,14 @@ class Profile extends Component {
 
   selectCharacter = (character) =>{
     let randomIndex = Math.floor(Math.random() * this.state.characters.length);
-    this.setState({character: character, cpuCharacter: this.state.characters[randomIndex], gameState: gameStates.PLAYING});
+    const tempAttacks = attacks.filter( (attack)=>{
+      return attack.CharacterId == character.id
+    })
+    const tempCpuAttacks = attacks.filter( (attack)=>{
+      return attack.CharacterId = this.state.characters[randomIndex].CharacterId
+    })
+
+    this.setState({characterAttacks: [...tempAttacks],cpuAttacks: [...tempCpuAttacks], character: character, cpuCharacter: this.state.characters[randomIndex], gameState: gameStates.PLAYING});
   }
 
   render() {
@@ -67,7 +81,7 @@ class Profile extends Component {
                   }
                   {
                     this.state.gameState === gameStates.PLAYING && 
-                    <Battle playerCharacter = {this.state.character} cpuCharacter = {this.state.cpuCharacter}/>
+                    <Battle cpuAttacks={this.state.cpuAttacks} characterAttacks={this.state.characterAttacks} playerCharacter = {this.state.character} cpuCharacter = {this.state.cpuCharacter}/>
                   }
                 </div>
             </div>

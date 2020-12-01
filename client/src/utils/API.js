@@ -19,12 +19,14 @@ export default {
         return axios
         .get('/api/signup')
     },
-
+//we need to update user data when they win
+//also need it in the backend routes 
 
     saveWinner: function(data){
-        return axios.get('./api/user', data)
+        return axios.get('/api/users/', data)
         .then(function(response){
-            console.log(response)
+            return response.data;
+            console.log(response.data)
         })
         .catch(function(err){
             console.log(err)

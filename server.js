@@ -45,8 +45,6 @@ require("./routes/profile-api-routes.js")(app);
 require("./routes/character-routes.js")(app);
 
 
-
-app.get("api/characters", (req,res) => res.send());
 // Syncing our database and logging a message to the user upon success
 // listens to the PORT
 db.sequelize.sync({force:false}).then(function() {

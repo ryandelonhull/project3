@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import './page.css';
-import axios from "axios";
+import Leaderboard from "../components/Leaderboard/Leaderboard"
 import characters from "../characters.json";
 import attacks from "../attacks.json";
 import Userdata from '../components/Userdata/Userdata';
@@ -68,7 +68,7 @@ class Profile extends Component {
                
                 <div>
                   <div className="userdata">
-                    <Userdata />
+                  
                   </div>
                   <div className="leaderboard">
                       <Leaderboard />

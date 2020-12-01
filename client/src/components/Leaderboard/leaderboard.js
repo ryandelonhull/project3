@@ -69,13 +69,9 @@ sorting = heading => {
         if (this.state.order === "ascend") {
             if (a[heading]=== undefined) {
                 return 1
-            } else if (b[heading] === undefined) {
-                return -1
-            } else if (heading === "wins") {
-               console.log(a[heading].wins)
-                return a[heading].wins.localeCompare(b[heading].wins)
+      
             } else {
-               console.log("age")
+            
                 return a[heading] -b[heading]
             }
         } else {
@@ -124,16 +120,13 @@ renderHeader() {
                
     <div className="wrapper">
       {/* <img  /> */}
-      <div className="card" >
+      <div className="card" style={{backgroundColor: "black"}} >
+        <h1>Leaderboard</h1>
         <div className="card-body">
-          <h5 className="card-title">Leaderboard</h5>
-          <table id='leaderboard' className="table">
+        
+          <table id='leaderboard' className="table" style={{color: "white"}}>
             <thead>
-                <tr>
-                    <th scope="col">Username</th>
-                    <th scope="col">Wins</th>
-                    <th scope="col">Losses</th>
-                </tr>
+            {this.renderHeader()}
             </thead>
             <tbody>
                  {this.renderLeaderTable()}

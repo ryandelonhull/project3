@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "./Battle.css";
+import Axios from "axios";
+import API from '../../utils/API';
 
 
 //set variables for attack
@@ -59,9 +61,11 @@ class Battle extends Component {
        const {cpuHealth, userHealth, playerCharacter, cpuCharacter} = this.state;
     if (cpuHealth <= 0 && userHealth > 0){
         this.setState({winner: "Player", message: `${playerCharacter.name} wins`});
+        //API.saveWinner({user: })
     }
     else if(userHealth <= 0 && cpuHealth > 0){
         this.setState({winner:  "cpu", message: `${cpuCharacter.name} wins`});
+        //API.saveWinner({user: })
     }
 
    }

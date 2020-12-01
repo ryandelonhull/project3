@@ -7,10 +7,7 @@
    
 }
 
-.wrapper {
-    padding: 1%;
-    margin: 1%;
-}
+
 
 .imgCard {
     height: 220px;
@@ -24,7 +21,10 @@
     background-color: black;
 }
 
-
-card {
-    
+.wrapper {
+    width: 98%
+}
+.card {
+    width: 90%;
+ 
 }

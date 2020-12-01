@@ -1,8 +1,9 @@
 .wrapper {
-  display: flex;
+
   border: solid;
   border-color: red;
   color: white;
+  max-width:98%;
   
 }
 

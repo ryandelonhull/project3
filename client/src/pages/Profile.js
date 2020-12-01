@@ -6,7 +6,6 @@ import attacks from "../attacks.json";
 import Userdata from '../components/Userdata/Userdata';
 import Charcards from '../components/CharCards/Charcards';
 import Battle from "../components/Battle/Battle";
-import Leaderboard from '../components/Leaderboard/Leaderboard'
 
 const gameStates = {INITIAL: 1, CHOOSE_CHARACTER: 2, PLAYING: 3};
 

@@ -79,8 +79,6 @@ sorting = heading => {
                 return 1
             } else if (b[heading] === undefined) {
                 return -1
-            } else if (heading === "wins") {
-                return b[heading].wins.localeCompare(a[heading].wins)
             } else {
                //this returns age
                 return b[heading] -a[heading]
@@ -107,7 +105,7 @@ renderHeader() {
             
            >
               {name}
-              <span> (sort)</span>
+              {/* <span> (sort)</span> */}
           </th>
      )        
   }))

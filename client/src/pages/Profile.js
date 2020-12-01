@@ -7,7 +7,6 @@ import Userdata from '../components/Userdata/Userdata';
 import Charcards from '../components/CharCards/Charcards';
 import Battle from "../components/Battle/Battle";
 
-
 const gameStates = {INITIAL: 1, CHOOSE_CHARACTER: 2, PLAYING: 3};
 
 

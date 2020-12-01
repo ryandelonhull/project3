@@ -22,15 +22,16 @@ module.exports = function(app) {
     });
 
     // when the user signs up, save their credentials into the user database
-    app.post("/api/signup", function(req, res) {
+    app.post("/api/users", function(req, res) {
         db.User.create({
                 username: req.body.username,
                 email: req.body.email,
                 password: req.body.password
             })
             // after that redirect to the login 
-            .then(function() {
-                res.redirect(307, "/api/login");
+            .then(function(things) {
+                console.log(things)
+                // res.redirect(307, "/api/login");
             }, function(err) {
                 res.status(401).json({ msg: "Invalid email or password. Password must be 8 characters long" });
             });

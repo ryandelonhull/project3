@@ -29,8 +29,7 @@ class SignUp extends Component {
   }
 
   //what happens when you click sign up
-  handleSignUp = (event) => {
-    event.preventDefault();
+  handleSignUp = () => {
     API.saveUserData({
       username: this.state.username,
       email: this.state.email,
@@ -84,13 +83,8 @@ render(){
               onChange={this.addPassword}
             />
           </div>
-          <div
-            // style="display: none"
-            // style="margin-top: 10px;"
-
-          >
-          </div>
-          <SignUpButton/>
+          <SignUpButton
+          handleSignUp = {this.handleSignUp}/>
         </form>
       </div>
     </div>

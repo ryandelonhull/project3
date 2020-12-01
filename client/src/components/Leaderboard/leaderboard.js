@@ -103,7 +103,7 @@ renderHeader() {
             
            >
               {name}
-              {/* <span>(sort)</span> */}
+              {/* <span> (sort)</span> */}
           </th>
      )        
   }))

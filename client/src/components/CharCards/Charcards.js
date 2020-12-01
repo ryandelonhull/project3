@@ -16,11 +16,13 @@ function Charcards(props) {
 console.log("props", props);
 const characterDiv =  props.characters.map( (character, index)=>{
     return (
-        <div className="charCard" onClick={()=> {props.selectCharacter(character)}}>
-          <img alt={character.name} src={character.image} className="imgCard"/>
-          <div className="card">
-            <div className="card-body">
-              <h5 className="card-title">{character.name}</h5>
+        <div className="col-4">
+          <div className="charCard" key={`char-${index}`} onClick={()=> {props.selectCharacter(character)}}>
+            <img alt={character.name} src={character.image} className="imgCard"/>
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title char-title">{character.name}</h5>
+              </div>
             </div>
           </div>
         </div>
@@ -29,8 +31,10 @@ const characterDiv =  props.characters.map( (character, index)=>{
 
   return (
     <div className="wrapper">
-      <h3>CHOOSE YOUR CHAMPION</h3>
-      {characterDiv}
+        <div className="row">
+          <div className="offset-mid-3 col-9"><h3>Choose Your Champion</h3></div>
+          {characterDiv}
+        </div>
     </div>
   );
 }

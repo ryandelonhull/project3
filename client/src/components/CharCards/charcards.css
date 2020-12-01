@@ -1,9 +1,13 @@
 .charCard {
-    height: 220px;
+    height: 300px;
     width: 180px;
 }
 
 .imgCard {
     height: 220px;
     width: 180px;
+}
+
+.card-title.char-title {
+    color: black;
 }

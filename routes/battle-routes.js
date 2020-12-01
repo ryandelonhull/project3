@@ -5,7 +5,9 @@ module.exports = function(app) {
     //need a route that deletes data
 
     app.get("/api/attack/", function(req, res){
-        db.Attack.findAll({where:{name:"BAT DANCE"}}).then(function(attack){
+        console.log("chirp chrip chirp");
+        db.Attack.findAll({}).then(function(attack){
+            console.log(attack);
             res.json(attack);
         }).catch(err => {res.json(err)});
     });

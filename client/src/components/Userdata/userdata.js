@@ -14,7 +14,7 @@ class Userdata extends Component {
 
         return (
             <div>
-                <h2>Life'll kill ya</h2>
+                <h2>Life'll kill Ya</h2>
             
             </div>
         )

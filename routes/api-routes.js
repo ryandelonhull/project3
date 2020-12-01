@@ -19,19 +19,19 @@ module.exports = function(app) {
     // Otherwise the user will be sent an error
     app.post("/api/login", passport.authenticate("local"), function(req, res) {
         res.json(req.user);
-    });
+      });
 
     // when the user signs up, save their credentials into the user database
     app.post("/api/users", function(req, res) {
         db.User.create({
                 username: req.body.username,
-                email: req.body.email,
+                email: req.body.email,   
                 password: req.body.password
             })
             // after that redirect to the login 
             .then(function(things) {
                 console.log(things)
-                // res.redirect(307, "/api/login");
+                res.redirect(307, "/api/login");
             }, function(err) {
                 res.status(401).json({ msg: "Invalid email or password. Password must be 8 characters long" });
             });
@@ -52,7 +52,6 @@ module.exports = function(app) {
             // Otherwise send back the user's email and id
             res.json({
                 username: req.user.username,
-                email: req.user.email,
                 id: req.user.id
             });
         };

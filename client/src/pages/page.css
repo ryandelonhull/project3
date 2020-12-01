@@ -30,5 +30,10 @@ h3, h5, p {
 }
 
 div.card-row {
-  margin-left: 190px;
+  margin-right: 0px;
+}
+
+div.card-body {
+  margin-right: 35px;
+  
 }

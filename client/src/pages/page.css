@@ -30,6 +30,19 @@ h3, h5, p {
 }
 
 div.card-row {
+  margin-left: 190px;
+}
+
+.contact{
+  text-align: center;
+  color: white;
+}
+
+.stylin{
+  border: solid;
+  border-color: red;
+  width: 100%;
+  
   margin-right: 0px;
 }
 

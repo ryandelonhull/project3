@@ -7,3 +7,7 @@
     height: 220px;
     width: 180px;
 }
+
+.card-title.char-title {
+    color: black;
+}

@@ -17,15 +17,15 @@ class App extends Component {
       <Router>
         <div className="container">
           <div  className="container">
-          {/* <Navbar />
+          <Navbar />
           </div>
           <div  className="container">
           <Jumbo />
           </div>
           <div  className="container">
-          <Login /> */}
+          <Login />
           </div>
-          <Profile/>
+         
 
           {/* Switch paths for the URL */}
           <Switch>

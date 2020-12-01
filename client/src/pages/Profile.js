@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 // import './page.css';
 import axios from "axios";
 import characters from "../characters.json";
-import characterAttacks from "../attacks.json";
+import attacks from "../attacks.json";
 import Userdata from '../components/Userdata/Userdata';
 import Charcards from '../components/CharCards/Charcards';
 import Battle from "../components/Battle/Battle";
@@ -54,7 +54,7 @@ class Profile extends Component {
       return attack.CharacterId = this.state.characters[randomIndex].CharacterId
     })
 
-    this.setState({characterAttacks: [...tempAttack],cpuAttacks: [...tempCpuAttacks], character: character, cpuCharacter: this.state.characters[randomIndex], gameState: gameStates.PLAYING});
+    this.setState({characterAttacks: [...tempAttacks],cpuAttacks: [...tempCpuAttacks], character: character, cpuCharacter: this.state.characters[randomIndex], gameState: gameStates.PLAYING});
   }
 
   render() {

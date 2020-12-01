@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./Battle.css";
 
+
 //set variables for attack
 //are attacks going to be randomly set === variable with attack name associated with character?
 //how are building attack buttons?
@@ -23,7 +24,9 @@ class Battle extends Component {
             inPlay: true,
             message: "",
             playerCharacter: props.playerCharacter,
-            cpuCharacter: props.cpuCharacter
+            cpuCharacter: props.cpuCharacter,
+            cpuAttacks: props.cpuAttacks,
+            characterAttacks: props.characterAttacks
         };
 
     }
@@ -43,22 +46,22 @@ class Battle extends Component {
         return (
         <div>
 
-            <button onClick={ () => this.attack("x", 0)}>X HOOK</button>
-            <button onClick={ () => this.attack("y", 1)}>Y HOOK</button>
-            <button onClick={ () => this.attack("z", 2)}>Z HOOK</button>
-            <button onClick={ () => this.attack("a", 3)}>A HOOK</button>
-            <button onClick={ () => this.attack("b", 4)}>B HOOK</button>
+            <button onClick={ () => this.attack("x", 0)}>{this.state.characterAttacks[0].name}</button>
+            <button onClick={ () => this.attack("y", 1)}>{this.state.characterAttacks[1].name}</button>
+            <button onClick={ () => this.attack("z", 2)}>{this.state.characterAttacks[2].name}</button>
+            <button onClick={ () => this.attack("a", 3)}>{this.state.characterAttacks[3].name}</button>
+            <button onClick={ () => this.attack("b", 4)}>{this.state.characterAttacks[4].name}</button>
         </div>);
     }
 
 
    checkWinner = () =>{
-       const {cpuHealth, userHealth} = this.state;
+       const {cpuHealth, userHealth, playerCharacter, cpuCharacter} = this.state;
     if (cpuHealth <= 0 && userHealth > 0){
-        this.setState({winner: "Player", message: "Player wins"});
+        this.setState({winner: "Player", message: `${playerCharacter.name} wins`});
     }
     else if(userHealth <= 0 && cpuHealth > 0){
-        this.setState({winner:  "cpu", message: "Computer wins"});
+        this.setState({winner:  "cpu", message: `${cpuCharacter.name} wins`});
     }
 
    }
@@ -123,19 +126,27 @@ class Battle extends Component {
 
         // const { inPlay } = this.state;
         // const  { attackButtons } = this.attackButtons;
-        const {cpuCharacter, playerCharacter} = this.state;
+        const {cpuCharacter, playerCharacter, userHealth, cpuHealth, message} = this.state;
 
         return (
             <div>
-                <h2>Life'll Kill Ya</h2>
                 {/* <button onClick={this.startBattle}>Start Battle</button> */}
+                <div>
+                    {message}
+                </div>
                 <div>
                     <img src={playerCharacter.image} alt="user character "></img>
                 </div>
                 <div>
+                    <h5>YOUR HEALTH: {userHealth}</h5>
+                </div>
+                <div>
                     <img src={cpuCharacter.image} alt="computer character " ></img>
                 </div>
-                {this.state.inPlay? (this.attackButtons()): ""};
+                <div>
+                    <h5>OPPONENT HEALTH: {cpuHealth}</h5>
+                </div>
+                {this.state.inPlay? (this.attackButtons()): ""}
 
 
             </div>

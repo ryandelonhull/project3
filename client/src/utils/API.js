@@ -1,5 +1,5 @@
 import axios from 'axios';
-import Userdata from '../components/Userdata/Userdata';
+
 
 
 export default {
@@ -28,7 +28,7 @@ export default {
         return axios.get('/api/users/', data)
         .then(function(response){
             return response.data;
-            console.log(response.data)
+      
         })
         .catch(function(err){
             console.log(err)

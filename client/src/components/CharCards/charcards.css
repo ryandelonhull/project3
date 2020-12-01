@@ -1,13 +1,30 @@
 .charCard {
     height: 300px;
-    width: 180px;
+    width: 220px;
+    background-color: rgb(0, 0, 0);
+    margin: 10px;
+   
+   
 }
+
+
 
 .imgCard {
     height: 220px;
     width: 180px;
+    background-color: rgb(0, 0, 0);
+    opacity: 0.90;
 }
 
 .card-title.char-title {
-    color: black;
+    color: white;
+    background-color: black;
+}
+
+.wrapper {
+    width: 98%
+}
+.card {
+    width: 90%;
+ 
 }

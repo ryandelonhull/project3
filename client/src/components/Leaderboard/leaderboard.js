@@ -91,7 +91,7 @@ renderHeader() {
     
   return (this.headings.map((heading, index) => {
    
-     const { name, width } = heading
+     const { name } = heading
      console.log(name);
      return(   
           <th scope="col"

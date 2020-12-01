@@ -32,7 +32,7 @@ const characterDiv =  props.characters.map( (character, index)=>{
   return (
     <div className="wrapper">
         <div className="row">
-          <div className="offset-mid-3 col-9"><h3>Choose Your Champion</h3></div>
+          <div className="offset-mid-3 col-9" id="banner"><h3>Choose Your Champion</h3></div>
           {characterDiv}
         </div>
     </div>

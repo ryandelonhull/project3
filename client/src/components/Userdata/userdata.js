@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import "./Userdata.css";
 
 class Userdata extends Component {
     state = {
@@ -13,7 +13,7 @@ class Userdata extends Component {
     render() {
 
         return (
-            <div>
+            <div className="userdata">
                 <h2>Life'll kill Ya</h2>
             
             </div>

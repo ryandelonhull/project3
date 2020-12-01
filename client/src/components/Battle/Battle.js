@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import "./Battle.css";
 import Axios from "axios";
 import API from '../../utils/API';
-
+import winnerImage from "../winner.png";
+import gameOver from "../gameover.png";
 
 //set variables for attack
 //are attacks going to be randomly set === variable with attack name associated with character?
@@ -40,32 +41,37 @@ class Battle extends Component {
 
     attack = (event, attackIndex) =>{
         this.setState({userAttack: attack[attackIndex], cpuAttack: attack[Math.floor(Math.random() * attack.length)]},
+            
             this.attackRound
         );
    }
 
     attackButtons = () =>{
         return (
-        <div>
+        <div className="buttons">
 
-            <button onClick={ () => this.attack("x", 0)}>{this.state.characterAttacks[0].name}</button>
-            <button onClick={ () => this.attack("y", 1)}>{this.state.characterAttacks[1].name}</button>
-            <button onClick={ () => this.attack("z", 2)}>{this.state.characterAttacks[2].name}</button>
-            <button onClick={ () => this.attack("a", 3)}>{this.state.characterAttacks[3].name}</button>
-            <button onClick={ () => this.attack("b", 4)}>{this.state.characterAttacks[4].name}</button>
+            <button className="button" onClick={ () => this.attack("x", 0)}>{this.state.characterAttacks[0].name}</button>
+            <button className="button" onClick={ () => this.attack("y", 1)}>{this.state.characterAttacks[1].name}</button>
+            <button className="button" onClick={ () => this.attack("z", 2)}>{this.state.characterAttacks[2].name}</button>
+            <button className="button" onClick={ () => this.attack("a", 3)}>{this.state.characterAttacks[3].name}</button>
+            <button className="button" onClick={ () => this.attack("b", 4)}>{this.state.characterAttacks[4].name}</button>
         </div>);
     }
+
+    
 
 
    checkWinner = () =>{
        const {cpuHealth, userHealth, playerCharacter, cpuCharacter} = this.state;
     if (cpuHealth <= 0 && userHealth > 0){
-        this.setState({winner: "Player", message: `${playerCharacter.name} wins`});
+        this.setState({winner: "Player", message: `${playerCharacter.name} wins`}, (<div><img src={winnerImage} alt="winner" id="winner"></img></div>));
         //API.saveWinner({user: })
+        
     }
     else if(userHealth <= 0 && cpuHealth > 0){
-        this.setState({winner:  "cpu", message: `${cpuCharacter.name} wins`});
+        this.setState({winner:  "cpu", message: `${cpuCharacter.name} wins`}, (<div><img src={gameOver} alt="gameOver" id="gameOver"></img></div>));
         //API.saveWinner({user: })
+        
     }
 
    }
@@ -79,9 +85,8 @@ class Battle extends Component {
         const { userAttack, cpuAttack, userHealth, cpuHealth } = this.state;
         const { checkWinner } = this;
 
-        if (userAttack === cpuAttack) {
-            
-            return "This round is a draw partner";
+        if (userAttack === cpuAttack) {  
+            this.setState( {message: "This round is a draw partner"});
         } else if (
             (userAttack === "x" && cpuAttack === "y") ||
             (userAttack === "y" && cpuAttack === "z") ||
@@ -130,29 +135,33 @@ class Battle extends Component {
 
         // const { inPlay } = this.state;
         // const  { attackButtons } = this.attackButtons;
-        const {cpuCharacter, playerCharacter, userHealth, cpuHealth, message} = this.state;
+        const {cpuCharacter, playerCharacter, userHealth, cpuHealth, cpuAttacks, message} = this.state;
 
         return (
             <div>
-                {/* <button onClick={this.startBattle}>Start Battle</button> */}
                 <div>
                     {message}
                 </div>
-                <div>
-                    <img src={playerCharacter.image} alt="user character "></img>
+                <div className="user-corner">
+                    <div>
+                        <img className="user-img" src={playerCharacter.image} alt="user character"></img>
+                    </div>
+                    <div>
+                        <h5>{playerCharacter.name} Health: {userHealth}</h5>
+                    </div>
+                </div>
+                <div className="cpu-corner">
+                    <div>
+                        <img className="cpu-img" src={cpuCharacter.image} alt="computer character"></img>
+                    </div>
+                    <div>
+                        <h5>{cpuCharacter.name} Health: {cpuHealth}</h5>
+                        <h4>{this.state.cpuAttack.name}</h4>
+                    </div> 
                 </div>
                 <div>
-                    <h5>YOUR HEALTH: {userHealth}</h5>
+                    {this.state.inPlay? (this.attackButtons()): ""}
                 </div>
-                <div>
-                    <img src={cpuCharacter.image} alt="computer character " ></img>
-                </div>
-                <div>
-                    <h5>OPPONENT HEALTH: {cpuHealth}</h5>
-                </div>
-                {this.state.inPlay? (this.attackButtons()): ""}
-
-
             </div>
         )
     }

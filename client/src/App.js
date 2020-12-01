@@ -15,10 +15,8 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div className="container">
-          <div  className="container">
+        <div>
           <Navbar />
-          </div>
           <div  className="container">
           <Jumbo />
           </div>

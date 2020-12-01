@@ -6,6 +6,7 @@ class Leaderboard extends Component {
     super(props)
     this.state = {
      userData: [],
+     order: "ascend",
 
     };
  }
@@ -34,6 +35,7 @@ class Leaderboard extends Component {
   }
 
   renderLeaderTable() {
+
     return this.state.userData.map((userData, index) => {
         const { id, username, wins, losses} = userData
         return (
@@ -50,8 +52,70 @@ class Leaderboard extends Component {
     })
 }
 
+headings = [
+  { name: "Username"}, 
+  { name: "Wins"},
+  { name: "Losses"},  
+]
 
+sorting = heading => {
 
+    if (this.state.order === "descend") {
+        this.setState({order: "ascend" })
+    } else {
+        this.setState({order: "descend"})}
+    const compare = (a,b) => {
+     console.log(a[heading])
+        if (this.state.order === "ascend") {
+            if (a[heading]=== undefined) {
+                return 1
+            } else if (b[heading] === undefined) {
+                return -1
+            } else if (heading === "wins") {
+               console.log(a[heading].wins)
+                return a[heading].wins.localeCompare(b[heading].wins)
+            } else {
+               console.log("age")
+                return a[heading] -b[heading]
+            }
+        } else {
+            if (a[heading]=== undefined) {
+                return 1
+            } else if (b[heading] === undefined) {
+                return -1
+            } else if (heading === "wins") {
+                return b[heading].wins.localeCompare(a[heading].wins)
+            } else {
+               //this returns age
+                return b[heading] -a[heading]
+            }
+        }
+    }
+    const sortedEmployees = this.state.userData.sort( compare );
+    this.setState({userData: sortedEmployees})
+      
+}
+
+renderHeader() {
+    
+  return (this.headings.map((heading, index) => {
+     const { name, width } = heading
+     console.log(name);
+     return(   
+          <th scope="col"
+          
+            // checked={this.state.sorted}
+            onClick={() => {this.sorting(name.toLowerCase())}}
+            className="react-switch-checkbox"
+            id={`react-switch-new`}
+            
+           >
+              {name}
+              <span> (sort)</span>
+          </th>
+     )        
+  }))
+}
 
     render() {
 

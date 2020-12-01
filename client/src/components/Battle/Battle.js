@@ -41,9 +41,9 @@ class Battle extends Component {
 
     attack = (event, attackIndex) =>{
         this.setState({userAttack: attack[attackIndex], cpuAttack: attack[Math.floor(Math.random() * attack.length)]},
-            
             this.attackRound
         );
+        
    }
 
     attackButtons = () =>{
@@ -58,18 +58,23 @@ class Battle extends Component {
         </div>);
     }
 
+
     
 
 
    checkWinner = () =>{
        const {cpuHealth, userHealth, playerCharacter, cpuCharacter} = this.state;
     if (cpuHealth <= 0 && userHealth > 0){
-        this.setState({winner: "Player", message: `${playerCharacter.name} wins`}, (<div><img src={winnerImage} alt="winner" id="winner"></img></div>));
+        this.setState({winner: "Player", message: `${playerCharacter.name} wins`}, 
+        // (<div><img src={winnerImage} alt="winner" id="winner"></img></div>) 
+        );
         //API.saveWinner({user: })
         
     }
     else if(userHealth <= 0 && cpuHealth > 0){
-        this.setState({winner:  "cpu", message: `${cpuCharacter.name} wins`}, (<div><img src={gameOver} alt="gameOver" id="gameOver"></img></div>));
+        this.setState({winner:  "cpu", message: `${cpuCharacter.name} wins`}, 
+        // (<div><img src={gameOver} alt="gameOver" id="gameOver"></img></div>)
+        );
         //API.saveWinner({user: })
         
     }
@@ -77,11 +82,6 @@ class Battle extends Component {
    }
 
     attackRound = () => {
-        //how are we using cpuAttack/userAttack in this context? 
-        //how can userAttack be equal to cpuAttack is that userAttack and cpuAttack health???
-
-        //if userAttack is referring to userAttack attack, it should be called userAttack and cpuAttack 
-
         const { userAttack, cpuAttack, userHealth, cpuHealth } = this.state;
         const { checkWinner } = this;
 
@@ -124,7 +124,7 @@ class Battle extends Component {
         ) {
 
             this.setState({userHealth: userHealth-2, message: "A STUNNING WALLOP BY YOUR OPPONENT! MINUS TWO TO YOU!"}, checkWinner);
-
+            // console.log(cpuAttack);
         }
 
     }

@@ -35,8 +35,7 @@ class Leaderboard extends Component {
   }
 
   renderLeaderTable() {
-
-    return this.state.userData.map((userData, index) => {
+    return this.state.userData.slice(0,3).map((userData, index) => {
         const { id, username, wins, losses} = userData
         return (
             
@@ -69,9 +68,7 @@ sorting = heading => {
         if (this.state.order === "ascend") {
             if (a[heading]=== undefined) {
                 return 1
-      
             } else {
-            
                 return a[heading] -b[heading]
             }
         } else {
@@ -79,8 +76,6 @@ sorting = heading => {
                 return 1
             } else if (b[heading] === undefined) {
                 return -1
-            } else if (heading === "wins") {
-                return b[heading].wins.localeCompare(a[heading].wins)
             } else {
                //this returns age
                 return b[heading] -a[heading]
@@ -95,7 +90,8 @@ sorting = heading => {
 renderHeader() {
     
   return (this.headings.map((heading, index) => {
-     const { name, width } = heading
+   
+     const { name } = heading
      console.log(name);
      return(   
           <th scope="col"
@@ -107,7 +103,7 @@ renderHeader() {
             
            >
               {name}
-              <span> (sort)</span>
+              {/* <span>(sort)</span> */}
           </th>
      )        
   }))
@@ -132,6 +128,7 @@ renderHeader() {
                  {this.renderLeaderTable()}
            </tbody>
            </table>
+           <span><p>Click On Wins and Losses to Sort</p></span>
         </div>
       </div>
     </div>

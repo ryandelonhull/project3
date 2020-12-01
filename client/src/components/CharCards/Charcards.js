@@ -16,23 +16,39 @@ function Charcards(props) {
 console.log("props", props);
 const characterDiv =  props.characters.map( (character, index)=>{
     return (
-        <div className="col-4">
+      <div className="main" id ="Portfolio">
+      <div className="container col-sm-10 col-md-8 col-lg-8>">
+        
+              <div className="col-4">
           <div className="charCard" key={`char-${index}`} onClick={()=> {props.selectCharacter(character)}}>
             <img alt={character.name} src={character.image} className="imgCard"/>
-            <div className="card">
-              <div className="card-body">
-                <h5 className="card-title char-title">{character.name}</h5>
-              </div>
-            </div>
-          </div>
+            <h5 className="card-title char-title">{character.name}</h5>
+              
+        
+  
+          </div>  
         </div>
+       </div>
+    </div>  
+
+
+
+
+    
     );
   });
 
   return (
     <div className="wrapper">
+       <div>
+          <span><h3>Choose Your Champion</h3></span>
+        </div>
+      <div id="forchoosing">
+       
+      </div>
+        <div className="col-m-1">
+       </div>
         <div className="row">
-          <div className="offset-mid-3 col-9"><h3>Choose Your Champion</h3></div>
           {characterDiv}
         </div>
     </div>

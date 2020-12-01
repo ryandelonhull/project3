@@ -6,7 +6,7 @@ import attacks from "../attacks.json";
 import Userdata from '../components/Userdata/Userdata';
 import Charcards from '../components/CharCards/Charcards';
 import Battle from "../components/Battle/Battle";
-import Leaderboard from '../components/Leaderboard/Leaderboard'
+
 
 const gameStates = {INITIAL: 1, CHOOSE_CHARACTER: 2, PLAYING: 3};
 
@@ -48,7 +48,7 @@ class Profile extends Component {
   selectCharacter = (character) =>{
     let randomIndex = Math.floor(Math.random() * this.state.characters.length);
     const tempAttacks = attacks.filter( (attack)=>{
-      return attack.CharacterId == character.id
+      return attack.CharacterId === character.id
     })
     const tempCpuAttacks = attacks.filter( (attack)=>{
       return attack.CharacterId = this.state.characters[randomIndex].CharacterId
@@ -65,16 +65,20 @@ class Profile extends Component {
 
         <div>
             <div className="wrapper p-3" id="Profile">
-               
-                <div>
+            <div className="row m-1" >
+            <div className="card  col-md-6 p-1" style={{backgroundColor: "black"}}>
                   <div className="userdata">
-                  
+                  <Userdata />
                   </div>
+                  </div>
+                  <div className="card  col-md-6 p-1" style={{backgroundColor: "black"}}>
                   <div className="leaderboard">
                       <Leaderboard />
-
+                      {this.state.gameState === gameStates.INITIAL && <button onClick={characterChoice}>Start Battle</button>}
                   </div>
-                  {this.state.gameState === gameStates.INITIAL && <button onClick={characterChoice}>Start Battle</button>}
+                  </div>
+                  <div>
+                  <div className="row m-1" >
                   {
                     this.state.gameState === gameStates.CHOOSE_CHARACTER && 
                     <Charcards characters={this.state.characters} selectCharacter={selectCharacter} />
@@ -83,10 +87,11 @@ class Profile extends Component {
                     this.state.gameState === gameStates.PLAYING && 
                     <Battle cpuAttacks={this.state.cpuAttacks} characterAttacks={this.state.characterAttacks} playerCharacter = {this.state.character} cpuCharacter = {this.state.cpuCharacter}/>
                   }
+                  </div>
                 </div>
             </div>
         </div>
-
+        </div>
     );
   }
 }

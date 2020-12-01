@@ -14,11 +14,18 @@ module.exports = function (app) {
       res.json(dbchar);
     });
   });
-  app.get('/api/user'),
-    function (req, res) {
-      db.User.findAll({
-      }).then(function (dbuser) {
-        res.json(dbuser);
-      });
-    };
+
+  app.get("/api/users/", function(req, res) {
+    db.User.findAll().then(function(characterData) {
+        res.json(characterData);
+    }).catch(err => {res.json(err)});
+});
+
+  // app.get('/api/user'),
+  //   function (req, res) {
+  //     db.User.findAll({
+  //     }).then(function (dbuser) {
+  //       res.json(dbuser);
+  //     });
+  //   };
 };

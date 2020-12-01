@@ -1,14 +1,14 @@
 import axios from 'axios';
-import Userdata from '../components/Userdata/Userdata';
+
 
 
 export default {
     saveUserData: function(data) {
         console.log(data);
         return axios
-        .post('/api/signup', data)
+        .post('/api/users', data)
         .then(function(response){
-            console.log(response)
+            console.log(response);
         })
         .catch(function(err){
             console.log(err)
@@ -16,15 +16,19 @@ export default {
     },
     checkUserData: function(data){
         console.log(data);
-        return axios
-        .get('/api/signup')
+        return axios.get('/api/users/',data)
+        .then(function(response){
+            return response.data
+        })
     },
-
+//we need to update user data when they win
+//also need it in the backend routes 
 
     saveWinner: function(data){
-        return axios.get('./api/user', data)
+        return axios.get('/api/users/', data)
         .then(function(response){
-            console.log(response)
+            return response.data;
+      
         })
         .catch(function(err){
             console.log(err)

@@ -1,8 +1,9 @@
 .wrapper {
-  display: flex;
+
   border: solid;
   border-color: red;
   color: white;
+  max-width:98%;
   
 }
 
@@ -30,10 +31,46 @@ h3, h5, p {
 }
 
 div.card-row {
+  margin-left: 190px;
+}
+
+.contact{
+  text-align: center;
+  color: white;
+}
+
+.stylin{
+  border: solid;
+  border-color: red;
+  width: 100%;
+  
   margin-right: 0px;
 }
 
 div.card-body {
   margin-right: 35px;
   
+}
+
+
+
+
+
+#forprofile {
+
+  background-repeat: no-repeat, repeat;
+  background-position: center;
+  background-size: 101%;
+  min-height: 90%;
+ background-position: inherit;
+  /* width: 100%; */
+  margin-top: 4%;
+  margin-bottom: 4%;
+  margin-left: 40%;
+  min-width: 90%;
+  /* margin: 30px; */
+  /* height: 120px; */
+  /* width: 1110px; */
+  /* background-color: black; */
+
 }

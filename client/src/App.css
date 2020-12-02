@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+
+button{
+  /* min-width: 90%; */
+  background-repeat: no-repeat, repeat;
+  background-position: center;
+  background-size: 101%;
+  min-height: 90%;
+  background-position: inherit;
+  font-weight: bold;
+  margin: center;
+  color: white;
+  background-color: rgb(184, 86, 86);
+  padding: 1%;
+  border-radius: inherit;
+  border-color: ivory;
+  border-width: 3px;
+  min-width: 200px;
+  max-width: 200px;
+}

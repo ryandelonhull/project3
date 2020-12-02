@@ -14,14 +14,9 @@ class LoginSignUp extends Component {
         <Loginbttn />
         <About />
         {/* Login sign up components go here */}
-        <div className="wrapper p-3">
-          
-          <div className="login">
+        <div className="wrapper loginSignUp p-3">
             <Login />
-          </div>
-          <div className="signUp">
             <SignUp />
-          </div>
         </div>
       </div>
     );

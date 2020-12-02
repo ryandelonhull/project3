@@ -55,18 +55,16 @@ class Profile extends Component {
 
         <div>
             <div className="wrapper p-3" id="Profile">
-            <div className="row m-1" >
-            <div className="card  col-md-6 p-1" style={{backgroundColor: "black"}}>
+           
                   <div className="userdata">
                   {/* <Userdata /> */}
                   </div>
-                  </div>
-                  <div className="card  col-md-6 p-1" style={{backgroundColor: "black"}}>
+                
                   <div className="leaderboard">
                       <Leaderboard />
                       {this.state.gameState === gameStates.INITIAL && <button onClick={characterChoice}>Start Battle</button>}
                   </div>
-                  </div>
+                
                   <div>
                   <div className="row m-1" >
                   {
@@ -81,7 +79,7 @@ class Profile extends Component {
                 </div>
             </div>
         </div>
-        </div>
+      
     );
   }
 }

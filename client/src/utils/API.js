@@ -3,17 +3,17 @@ import axios from 'axios';
 
 
 export default {
-    saveUserGame: function(data) {
-        console.log(data);
-        return axios
-        .post('/api/games', data)
-        .then(function(response){
-            console.log(response);
-        })
-        .catch(function(err){
-            console.log(err)
-        })
-    },
+    // saveUserGame: function(data) {
+    //     console.log(data);
+    //     return axios
+    //     .post('/api/games', data)
+    //     .then(function(response){
+    //         console.log(response);
+    //     })
+    //     .catch(function(err){
+    //         console.log(err)
+    //     })
+    // },
 
 
     saveUserData: function(data) {
@@ -41,6 +41,17 @@ export default {
         return axios.get('/api/users/', data)
         .then(function(response){
             return response.data;
+      
+        })
+        .catch(function(err){
+            console.log(err)
+        })
+    },
+    updateStats: function(data){
+        return axios.put('/api/users/', data)
+        .then(function(response){
+            // return response.data;
+            console.log(response.data)
       
         })
         .catch(function(err){

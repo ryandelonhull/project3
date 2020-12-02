@@ -39,7 +39,8 @@ class Battle extends Component {
 
     attack = (event, attackIndex) =>{
         this.setState({userAttack: attack[attackIndex], cpuAttack: attack[Math.floor(Math.random() * attack.length)]},
-            this.attackRound
+        //this.attackRound needs to not have params don't add them because it won't work    
+        this.attackRound
         );
    }
 
@@ -60,11 +61,11 @@ class Battle extends Component {
        const {cpuHealth, userHealth, playerCharacter, cpuCharacter} = this.state;
     if (cpuHealth <= 0 && userHealth > 0){
         this.setState({winner: "Player", message: `${playerCharacter.name} wins`});
-        //API.saveWinner({user: })
+        //API.updateStats({user: })
     }
     else if(userHealth <= 0 && cpuHealth > 0){
         this.setState({winner:  "cpu", message: `${cpuCharacter.name} wins`});
-        //API.saveWinner({user: })
+        //API.updateStats({user: })
     }
 
    }

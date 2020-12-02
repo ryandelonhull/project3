@@ -3,7 +3,24 @@ var db = require("../models");
 // Routes For Game/Battle/Character Status
 module.exports = function(app) {
     //need a route that deletes data
+    app.put("/api/user/", function(req, res) {
+        db.User.update({
+            where: {
+                userId: req.body.id
+              }
+            })
+            .then(function(dbGame) {
+              res.json(dbGame);
+        //    wins: req.body.wins,
 
+
+            // userId: req.body.userId,
+            // userScore: req.body.userScore,
+            // computerScore: req.body.computerScore
+        }).catch(err => {res.json(err)});
+    })
+
+    //for when we have people 
     app.get("/api/attacks/", function(req, res){
         console.log("chirp chrip chirp");
         db.Attack.findAll({}).then(function(attack){
@@ -51,11 +68,11 @@ module.exports = function(app) {
     });
 
     // this route grabs the data for all the character status
-    app.get("/api/characterStatus/:id", function(req, res) {
-        db.CharacterStatus.findAll().then(function(characterData) {
-            res.json(characterData);
-        }).catch(err => {res.json(err)});
-    });
+    // app.get("/api/characterStatus/:id", function(req, res) {
+    //     db.CharacterStatus.findAll().then(function(characterData) {
+    //         res.json(characterData);
+    //     }).catch(err => {res.json(err)});
+    // });
 
 //     //update the character status during the game play
 //     app.put("/api/characterStatus/", function(req, res) {
@@ -86,16 +103,5 @@ module.exports = function(app) {
 //     //       });
 //     //   });
 
-// //    // when user clicks the save button, saves the  data into the database
-// //    app.post("/api/user/:id/", function(req, res) {
-// //     db.Char.create({
-// //         // id:req.name.id,
-// //         name: req.body.name,
-// //         attacks: req.body.attacks,
-// //         hitpoints: req.body.hitpoints,
-// //         image: req.body.image
-// //     }).then(function(dbChar) {
-// //         res.json(dbChar);
-// //     });
-// // });
+
 }

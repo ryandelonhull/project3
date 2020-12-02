@@ -1,4 +1,7 @@
 var db = require("../models");
+//this is for adding characters to the database if and when we want to allow users to add characters
+
+
 
 // Routes For Character saving/viewing
 module.exports = function(app) {

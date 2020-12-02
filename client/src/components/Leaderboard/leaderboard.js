@@ -115,7 +115,7 @@ renderHeader() {
         return (
             <div>
                
-    <div className="wrapper">
+  
       {/* <img  /> */}
       <div className="card" style={{backgroundColor: "black"}} >
         <h1>Leaderboard</h1>
@@ -134,7 +134,7 @@ renderHeader() {
       </div>
     </div>
             
-            </div>
+          
         )
     }
 }

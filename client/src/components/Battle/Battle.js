@@ -18,12 +18,8 @@ class Battle extends Component {
         super(props);
 
         this.state = {
-            username: "",
-            userData: [],
             userAttack: -1,
-            cpuAttack: -1,
-            wins: 0,
-            losses: 0,
+            cpuAttack: -1,    
             userHealth: 7,
             cpuHealth: 7,
             winner: "",
@@ -70,23 +66,24 @@ class Battle extends Component {
     }
 
     attack = (event, attackIndex) =>{
-        this.setState({userAttack: attack[attackIndex], cpuAttack: attack[Math.floor(Math.random() * attack.length)]},
-        //this.attackRound needs to not have params don't add them because it won't work    
-        this.attackRound
-        );
+        this.setState({userAttack: attackIndex, cpuAttack: Math.floor(Math.random() * attack.length)},
+            this.attackRound
+        );   
    }
 
     attackButtons = () =>{
         return (
         <div>
-
-            <button onClick={ () => this.attack("x", 0)}>{this.state.characterAttacks[0].name}</button>
-            <button onClick={ () => this.attack("y", 1)}>{this.state.characterAttacks[1].name}</button>
-            <button onClick={ () => this.attack("z", 2)}>{this.state.characterAttacks[2].name}</button>
-            <button onClick={ () => this.attack("a", 3)}>{this.state.characterAttacks[3].name}</button>
-            <button onClick={ () => this.attack("b", 4)}>{this.state.characterAttacks[4].name}</button>
+            <button className="button" onClick={ () => this.attack("x", 0)}>{this.state.characterAttacks[0].name}</button>
+            <button className="button" onClick={ () => this.attack("y", 1)}>{this.state.characterAttacks[1].name}</button>
+            <button className="button" onClick={ () => this.attack("z", 2)}>{this.state.characterAttacks[2].name}</button>
+            <button className="button" onClick={ () => this.attack("a", 3)}>{this.state.characterAttacks[3].name}</button>
+            <button className="button" onClick={ () => this.attack("b", 4)}>{this.state.characterAttacks[4].name}</button>
         </div>);
     }
+
+
+    
 
 
    checkWinner = () =>{
@@ -96,16 +93,13 @@ class Battle extends Component {
     console.log(results)
        const {cpuHealth, userHealth, playerCharacter, cpuCharacter} = this.state;
     if (cpuHealth <= 0 && userHealth > 0){
-        this.setState({winner: "Player", message: `${playerCharacter.name} wins`});
-
-        this.winPasser();
-        
-     
+        this.setState({inPlay: false, winner: "Player", message: `${playerCharacter.name} wins`});
+        // API.saveWinner({userId: this.state.userId, wonOrLost: 1});
         
     }
     else if(userHealth <= 0 && cpuHealth > 0){
-        this.setState({winner:  "cpu", message: `${cpuCharacter.name} wins`});
-        this.lossPasser();
+        this.setState({inPlay: false, winner:  "cpu", message: `${cpuCharacter.name} wins`});
+        // API.saveWinner({userId: this.state.userId, wonOrLost: 0}); 
     }
 
    }
@@ -145,17 +139,13 @@ lossPasser() {
 }
 
     attackRound = () => {
-        //how are we using cpuAttack/userAttack in this context? 
-        //how can userAttack be equal to cpuAttack is that userAttack and cpuAttack health???
+        let { userAttack, cpuAttack, userHealth, cpuHealth } = this.state;
+        let { checkWinner } = this;
+        userAttack = attack[userAttack];
+        cpuAttack = attack[cpuAttack];
 
-        //if userAttack is referring to userAttack attack, it should be called userAttack and cpuAttack 
-
-        const { userAttack, cpuAttack, userHealth, cpuHealth } = this.state;
-        const { checkWinner } = this;
-
-        if (userAttack === cpuAttack) {
-            
-            return "This round is a draw partner";
+        if (userAttack === cpuAttack) {  
+            this.setState( {message: "This round is a draw partner"});
         } else if (
             (userAttack === "x" && cpuAttack === "y") ||
             (userAttack === "y" && cpuAttack === "z") ||
@@ -193,7 +183,7 @@ lossPasser() {
         ) {
 
             this.setState({userHealth: userHealth-2, message: "A STUNNING WALLOP BY YOUR OPPONENT! MINUS TWO TO YOU!"}, checkWinner);
-
+            // console.log(cpuAttack);
         }
 
     }
@@ -204,29 +194,39 @@ lossPasser() {
 
         // const { inPlay } = this.state;
         // const  { attackButtons } = this.attackButtons;
-        const {cpuCharacter, playerCharacter, userHealth, cpuHealth, message} = this.state;
+        const {cpuCharacter, cpuAttacks, playerCharacter, userHealth, cpuHealth, message, winner, cpuAttack} = this.state;
 
+        console.log("cpu attacks and index ", cpuAttacks, cpuAttack);
         return (
             <div>
-                {/* <button onClick={this.startBattle}>Start Battle</button> */}
                 <div>
                     {message}
-                </div>
-                <div>
-                    <img src={playerCharacter.image} alt="user character "></img>
-                </div>
-                <div>
-                    <h5>YOUR HEALTH: {userHealth}</h5>
-                </div>
-                <div>
-                    <img src={cpuCharacter.image} alt="computer character " ></img>
-                </div>
-                <div>
-                    <h5>OPPONENT HEALTH: {cpuHealth}</h5>
-                </div>
-                {this.state.inPlay? (this.attackButtons()): ""}
+                    { (winner  === "cpu" || winner === "Player") &&
+                        (<div className="winLoseImg">
+                            {winner === 'cpu' && <img src='./Images-char/youLose.png' id="img" alt='loser'/>}
+                            {winner === 'Player' && <img src='./Images-char/youWin.png' id="img" alt='winner'/>}
+                        </div>)               
+                    }
 
-
+                </div>
+                <div className="user-corner">
+                    <div>
+                        <img className="user-img" src={playerCharacter.image} alt="user character"></img>
+                    </div>
+                    <div>
+                        <h5>{playerCharacter.name} Health: {userHealth}</h5>
+                    </div>
+                </div>
+                <div className="cpu-corner">
+                    <div>
+                        <img className="cpu-img" src={cpuCharacter.image} alt="computer character"></img>
+                    </div>
+                    <div>
+                        <h5>{cpuCharacter.name} Health: {cpuHealth}</h5>
+                        <h4>Attack:{cpuAttack > -1 && cpuAttacks[cpuAttack].name}</h4>
+                    </div> 
+                </div>
+                    {this.state.inPlay? (this.attackButtons()): ""}
             </div>
         )
     }

@@ -11,6 +11,7 @@ function Navbar(props) {
   const handleContactClick = () => {
     history.push('/Contact');
   };
+  
 
   return (
     <div>
@@ -37,7 +38,7 @@ function Navbar(props) {
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#signup">
+            <a className="nav-link" href="#signup" onClick={handleHomeClick}>
               Sign Up/Sign In
             </a>
           </li>

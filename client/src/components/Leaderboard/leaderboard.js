@@ -37,7 +37,7 @@ class Leaderboard extends Component {
 
   renderLeaderTable() {
     return this.state.userData.slice(0,3).map((userData, index) => {
-        const { id, username, wins, losses} = userData
+        const {username, wins, losses} = userData
         return (
             
       <tr key={`leaderboard-${index}`} >
@@ -91,7 +91,8 @@ sorting = heading => {
 renderHeader() {
 
   return (this.headings.map((heading, index) => {
-   
+    
+    
      const { name } = heading
   
      return(   
@@ -101,7 +102,7 @@ renderHeader() {
             onClick={() => {this.sorting(name.toLowerCase())}}
             className="react-switch-checkbox"
             id={`react-switch-new`}
-            
+            key={`header-key${index}`}
            >
               {name}
               {/* <span> (sort)</span> */}

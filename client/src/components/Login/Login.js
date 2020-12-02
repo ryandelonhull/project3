@@ -33,7 +33,9 @@ class Login extends Component {
       password: this.state.password,
       id: this.state.id,
       wins: this.state.wins,
-      losses:this.state.losses
+      losses:this.state.losses,
+      createdAt:this.state.createdAt,
+      updatedAt:this.state.updatedAt
     }
     
         

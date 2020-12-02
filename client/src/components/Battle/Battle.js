@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Login from '../Login/Login';
 import "./Battle.css";
-import '../../utils/API'
+import API from '../../utils/API';
 
 
 
@@ -19,12 +19,13 @@ class Battle extends Component {
 
         this.state = {
             username: "",
+            userData: [],
             userAttack: "",
             cpuAttack: "",
             wins: 0,
             losses: 0,
             userHealth: 7,
-            cpuHealth: 7,
+            cpuHealth: 0,
             winner: "",
             inPlay: true,
             message: "",
@@ -36,6 +37,32 @@ class Battle extends Component {
 
     }
    
+    componentDidMount = () => {
+        API.saveWinner().then(response => {
+            console.log("Your Component Did mount");
+            console.log(response);
+            const saveTemp = [];
+            for (let i = 0; i <response.length ; i++){
+                console.log(response[i])
+                let saveRecord = {
+                    id:response[i].id,
+                    username:response[i].username,
+                    email:response[i].email,
+                    wins:response[i].wins,
+                    losses:response[i].losses,
+                  
+                
+                };
+                   saveTemp.push(saveRecord);
+            }
+            this.setState({ userData: saveTemp});
+            console.log(this.state.userData)
+         
+    
+        })
+    }
+
+
 
     startBattle = () =>{
         this.setState({userAttack: "", cpuAttack: "",inPlay: true, userHealth: 7, cpuHealth: 7} );
@@ -62,15 +89,18 @@ class Battle extends Component {
 
 
    checkWinner = () =>{
+    const  user = localStorage.getItem("user") 
+    console.log(localStorage.getItem("user"));
+    const results = this.state.userData.filter(username => username.username === user);
+    console.log(results)
        const {cpuHealth, userHealth, playerCharacter, cpuCharacter} = this.state;
     if (cpuHealth <= 0 && userHealth > 0){
         this.setState({winner: "Player", message: `${playerCharacter.name} wins`});
-        //Rachael's test don't take anything below here too serious
-        // var wins = 20;
-        // wins = wins +1;
-        //  winPasser();
 
-        //API.updateStats({user: })
+        this.winPasser();
+        
+     
+        
     }
     else if(userHealth <= 0 && cpuHealth > 0){
         this.setState({winner:  "cpu", message: `${cpuCharacter.name} wins`});
@@ -78,9 +108,23 @@ class Battle extends Component {
     }
 
    }
-// winPasser(wins) {
-//     this.setState({wins: wins})
-// }
+winPasser() {
+    const  user = localStorage.getItem("user") 
+    console.log(localStorage.getItem("user"));
+    const results = this.state.userData.filter(username => username.username === user);
+    console.log(results)
+
+    this.setState({wins: (this.state.wins + 1)})
+    let tempres = results
+    tempres[0].wins=this.state.wins
+
+    this.setState({userData : tempres})
+    
+        // .then(this.setState({books: this.state.books}))
+    API.updateStats(tempres[0])
+    console.log(tempres)
+        
+}
 
     attackRound = () => {
         //how are we using cpuAttack/userAttack in this context? 

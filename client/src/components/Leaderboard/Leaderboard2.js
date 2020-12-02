@@ -1,23 +1,20 @@
 import React, { Component } from 'react';
 import API from '../../utils/API';
-import Login from '../Login/Login';
 
-class Userdata extends Component {
+class Leaderboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: '',
       userData: [],
       order: 'ascend',
     };
   }
   componentDidMount = () => {
     API.saveWinner().then((response) => {
-      console.log('Your Component Did mount');
-      console.log(response);
+      //   console.log("Your Component Did mount");
+      //   console.log(response);
       const saveTemp = [];
       for (let i = 0; i < response.length; i++) {
-        console.log(response[i]);
         let saveRecord = {
           id: response[i].id,
           username: response[i].username,
@@ -28,22 +25,15 @@ class Userdata extends Component {
         saveTemp.push(saveRecord);
       }
       this.setState({ userData: saveTemp });
-      console.log(this.state.userData);
+      //   console.log(this.state.userData)
     });
   };
 
   renderLeaderTable() {
-    const user = localStorage.getItem('user');
-    console.log(localStorage.getItem('user'));
-    const results = this.state.userData.filter(
-      (username) => username.username === user
-    );
-    console.log(results);
-    // localStorage.setItem("user", results)
-    return results.map((userData, index) => {
-      const { id, username, wins, losses } = userData;
+    return this.state.userData.slice(0, 3).map((userData, index) => {
+      const { username, wins, losses } = userData;
       return (
-        <tr key={id}>
+        <tr key={`leaderboard-${index}`}>
           {/* <td><img className="img-responsive" src={imageLinks} alt="folks"/></td> */}
           <td>{username}</td>
           <td>{wins}</td>
@@ -87,20 +77,21 @@ class Userdata extends Component {
   renderHeader() {
     return this.headings.map((heading, index) => {
       const { name } = heading;
-      console.log(name);
+
       return (
         <th
           scope="col"
-          key={`user-data-headings-${index}`}
+          key={`leaderboard-${index}`}
           // checked={this.state.sorted}
           onClick={() => {
             this.sorting(name.toLowerCase());
           }}
           className="react-switch-checkbox"
           id={`react-switch-new`}
+          key={`header-key${index}`}
         >
           {name}
-          {/* <span>(sort)</span> */}
+          {/* <span> (sort)</span> */}
         </th>
       );
     });
@@ -111,7 +102,7 @@ class Userdata extends Component {
       <div>
         {/* <img  /> */}
         <div className="card" style={{ backgroundColor: 'black' }}>
-          <h1>Your Stats</h1>
+          <h1>Leaderboard</h1>
           <div className="card-body">
             <table
               id="leaderboard"
@@ -121,6 +112,7 @@ class Userdata extends Component {
               <thead>
                 <tr>{this.renderHeader()}</tr>
               </thead>
+
               <tbody>{this.renderLeaderTable()}</tbody>
             </table>
             <span>
@@ -133,4 +125,4 @@ class Userdata extends Component {
   }
 }
 
-export default Userdata;
+export default Leaderboard;

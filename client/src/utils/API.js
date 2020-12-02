@@ -47,22 +47,21 @@ export default {
             console.log(err)
         })
     },
-    updateStats: function (data) {
-        axios({
-          method: "PUT",
-          url: "/api/users",
-          data: data
-        })
-          .then(function() {
-            console.log(data)
-          });
-      },
+    // updateStats: function (data) {
+    //     axios({
+    //       method: "PUT",
+    //       url: "/api/users",
+    //       data: data
+    //     })
+    //       .then(function() {
+    //         console.log(data)
+    //       });
+    //   },
     updateStats: function(id){
         axios.put('/api/users/', id)
         .then(function(response){
             // return response.data;
-            console.log(response)
-      
+           
         })
         .catch(function(err){
             console.log(err)

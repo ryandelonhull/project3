@@ -104,7 +104,7 @@ class Battle extends Component {
     }
     else if(userHealth <= 0 && cpuHealth > 0){
         this.setState({winner:  "cpu", message: `${cpuCharacter.name} wins`});
-        //API.updateStats({user: })
+        this.lossPasser();
     }
 
    }
@@ -124,6 +124,23 @@ winPasser() {
     API.updateStats(tempres[0])
     console.log(tempres)
         
+}
+
+lossPasser() {
+    const  user = localStorage.getItem("user") 
+    console.log(localStorage.getItem("user"));
+    const results = this.state.userData.filter(username => username.username === user);
+    console.log(results)
+
+    this.setState({wins: (this.state.losses + 1)})
+    let tempres = results
+    tempres[0].wins=this.state.losses
+
+    this.setState({userData : tempres})
+    
+        // .then(this.setState({books: this.state.books}))
+    API.updateStats(tempres[0])
+    console.log(tempres)
 }
 
     attackRound = () => {

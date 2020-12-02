@@ -6,10 +6,7 @@ import Navbar from './components/Navbar/Navbar';
 import Contact from './pages/Contact';
 import Profile from './pages/Profile';
 import Jumbo from './components/Jumbo/Jumbo';
-import Login from './components/Redir/Loginbttn';
-import './App.css'
-
-
+import './App.css';
 
 class App extends Component {
   render() {
@@ -17,17 +14,13 @@ class App extends Component {
       <Router>
         <div>
           <Navbar />
-          <div  className="container">
-          <Jumbo />
+          <div className="container">
+            <Jumbo />
           </div>
-          <div  className="container">
-          <Login />
-          </div>
-         
+          <div className="container"></div>
 
           {/* Switch paths for the URL */}
           <Switch>
-
             <Route path="/" exact component={LoginSignUP} />
             <Route path="/Profile" component={Profile} />
             {/*<Route path="/Signup" component={Signup} /> */}
@@ -35,7 +28,6 @@ class App extends Component {
             {/* <Route path="/About" component={About} /> */}
             {/* <Route path="/User" component={User} /> */}
             <Route path="/Battle" component={Battle} />
-
           </Switch>
         </div>
       </Router>

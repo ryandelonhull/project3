@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./Battle.css";
-import Axios from "axios";
-import API from '../../utils/API';
+// import Axios from "axios";
+// import API from '../../utils/API';
 
 
 //set variables for attack
@@ -64,15 +64,15 @@ class Battle extends Component {
 
 
    checkWinner = () =>{
-       const {cpuHealth, userHealth, playerCharacter, cpuCharacter, wins, losses} = this.state;
+       const {cpuHealth, userHealth, playerCharacter, cpuCharacter} = this.state;
     if (cpuHealth <= 0 && userHealth > 0){
         this.setState({inPlay: false, winner: "Player", message: `${playerCharacter.name} wins`});
-        API.saveWinner({userId: this.state.userId, wonOrLost: 1});
+        // API.saveWinner({userId: this.state.userId, wonOrLost: 1});
         
     }
     else if(userHealth <= 0 && cpuHealth > 0){
         this.setState({inPlay: false, winner:  "cpu", message: `${cpuCharacter.name} wins`});
-        API.saveWinner({userId: this.state.userId, wonOrLost: 0}); 
+        // API.saveWinner({userId: this.state.userId, wonOrLost: 0}); 
     }
 
    }
@@ -140,10 +140,10 @@ class Battle extends Component {
             <div>
                 <div>
                     {message}
-                    { (winner  == 'cpu' || winner == "Player") &&
+                    { (winner  === "cpu" || winner === "Player") &&
                         (<div className="winLoseImg">
-                            {winner == 'cpu' && <img src='./Images-char/youLose.png' id="img" alt='loser'/>}
-                            {winner == 'Player' && <img src='./Images-char/youWin.png' id="img" alt='winner'/>}
+                            {winner === 'cpu' && <img src='./Images-char/youLose.png' id="img" alt='loser'/>}
+                            {winner === 'Player' && <img src='./Images-char/youWin.png' id="img" alt='winner'/>}
                         </div>)               
                     }
 

@@ -36,7 +36,7 @@ class Leaderboard extends Component {
 
   renderLeaderTable() {
     return this.state.userData.slice(0,3).map((userData, index) => {
-        const { id, username, wins, losses} = userData
+        const {username, wins, losses} = userData
         return (
             
       <tr key={`leaderboard-${index}`} >

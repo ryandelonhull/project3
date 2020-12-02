@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import Leaderboard from "../components/Leaderboard/Leaderboard"
 import characters from "../characters.json";
 import attacks from "../attacks.json";
-import Userdata from '../components/Userdata/Userdata';
+// import Userdata from '../components/Userdata/Userdata';
 import Charcards from '../components/CharCards/Charcards';
 import Battle from "../components/Battle/Battle";
 
@@ -49,12 +49,12 @@ class Profile extends Component {
   selectCharacter = (character) =>{
     let randomIndex = Math.floor(Math.random() * this.state.characters.length);
     const tempAttacks = attacks.filter( (attack)=>{
-      return attack.CharacterId == character.id
+      return attack.CharacterId === character.id
     })
     // console.log("randomIndex", randomIndex);
     
     const tempCpuAttacks = attacks.filter( (attack)=>{
-      return attack.CharacterId == this.state.characters[randomIndex].id
+      return attack.CharacterId === this.state.characters[randomIndex].id
     })
 
     // console.log("all attacks ", attacks);
@@ -74,7 +74,7 @@ class Profile extends Component {
                
                 <div>
                   <div className="userdata">
-                  <Userdata/>
+                  {/* <Userdata/> */}
                   </div>
                   <div className="leaderboard">
                       <Leaderboard />

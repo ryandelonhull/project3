@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import './page.css';
-import Leaderboard from '../components/Leaderboard/Leaderboard';
+import Leaderboard from '../components/Leaderboard/Leaderboard2';
 import characters from '../characters.json';
 import attacks from '../attacks.json';
 import Charcards from '../components/CharCards/Charcards';

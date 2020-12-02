@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import API from '../../utils/API';
-import Userdata from '../Userdata/Userdata';
-import Battle from "../Battle/Battle"
 
 class Login extends Component {
   constructor(props) {

@@ -39,7 +39,7 @@ class Leaderboard extends Component {
         const { id, username, wins, losses} = userData
         return (
             
-      <tr key={id} >
+      <tr key={`leaderboard-${index}`} >
       {/* <td><img className="img-responsive" src={imageLinks} alt="folks"/></td> */}
       <td>{username}</td>
       <td>{wins}</td>
@@ -90,7 +90,8 @@ sorting = heading => {
 renderHeader() {
     
   return (this.headings.map((heading, index) => {
-   
+    
+    
      const { name } = heading
      console.log(name);
      return(   
@@ -100,7 +101,7 @@ renderHeader() {
             onClick={() => {this.sorting(name.toLowerCase())}}
             className="react-switch-checkbox"
             id={`react-switch-new`}
-            
+            key={`header-key${index}`}
            >
               {name}
               {/* <span> (sort)</span> */}
@@ -121,9 +122,11 @@ renderHeader() {
         <div className="card-body">
         
           <table id='leaderboard' className="table" style={{color: "white"}}>
-            <thead>
-            {this.renderHeader()}
-            </thead>
+              <thead>
+              <tr>
+                {this.renderHeader()}
+                </tr>
+                </thead>
             <tbody>
                  {this.renderLeaderTable()}
            </tbody>

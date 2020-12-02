@@ -39,7 +39,7 @@ class Userdata extends Component {
         const { id, username, wins, losses} = userData
         return (
             
-      <tr key={id} >
+      <tr key={`user-data-${index}`} >
       {/* <td><img className="img-responsive" src={imageLinks} alt="folks"/></td> */}
       <td>{username}</td>
       <td>{wins}</td>
@@ -95,6 +95,7 @@ renderHeader() {
      console.log(name);
      return(   
           <th scope="col"
+            key={`user-data-headings-${index}`}
           
             // checked={this.state.sorted}
             onClick={() => {this.sorting(name.toLowerCase())}}
@@ -102,8 +103,10 @@ renderHeader() {
             id={`react-switch-new`}
             
            >
-              {name}
-              {/* <span>(sort)</span> */}
+              
+                {name}
+                {/* <span>(sort)</span> */}
+              
           </th>
      )        
   }))
@@ -122,7 +125,10 @@ renderHeader() {
         
           <table id='leaderboard' className="table" style={{color: "white"}}>
             <thead>
-            {this.renderHeader()}
+                <tr>
+                    {this.renderHeader()}
+                </tr>
+            
             </thead>
             <tbody>
                  {this.renderLeaderTable()}

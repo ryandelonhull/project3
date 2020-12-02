@@ -25,7 +25,7 @@ export default {
 //also need it in the backend routes 
 
     saveWinner: function(data){
-        return axios.get('/api/users/', data)
+        return axios.post('/api/savewinner/', data)
         .then(function(response){
             return response.data;
       

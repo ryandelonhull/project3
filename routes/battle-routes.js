@@ -11,6 +11,16 @@ module.exports = function(app) {
             res.json(attack);
         }).catch(err => {res.json(err)});
     });
+
+    // app.post("/api/users", function(req, res){
+    //     console.log("Updating winner nnnnn" + req.body);
+        // db.leaderBoard.findAll({userId: req.body.userId})
+        // .then(function(leader){
+        //     let wins = req.body.winOrLose == 1 ? leaderBoard.wins + 1 : leaderBoard.wins;
+        //     let losses = req.body.winOrLoser == 0 ? leaderBoard.losses + 1 : leaderBoard.losses;
+        //     db.leader.update( //wins and losses.)
+        // )})
+    //})
 //find the attacks during the battle
 // app.get("/api/attack/:id", function(req, res){
 //     db.Attack.findOne().then(function(attack){

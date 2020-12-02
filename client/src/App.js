@@ -17,6 +17,7 @@ class App extends Component {
           <div className="container">
             <Jumbo />
           </div>
+
           <div className="container"></div>
 
           {/* Switch paths for the URL */}

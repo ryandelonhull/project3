@@ -16,7 +16,7 @@ function Charcards(props) {
 console.log("props", props);
 const characterDiv =  props.characters.map( (character, index)=>{
     return (
-      <div className="main" id ="Portfolio">
+      <div className="main" key={`charcard-${index}`} id ="Portfolio">
       <div className="container col-sm-10 col-md-8 col-lg-8>">
         
               <div className="col-4">

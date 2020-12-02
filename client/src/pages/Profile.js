@@ -23,7 +23,7 @@ class Profile extends Component {
       cpuCharacter: {},
       characters: characters,
       characterAttacks: [],
-      cpuAttacks:[]
+      cpuAttacks:[],
     }
   }
 

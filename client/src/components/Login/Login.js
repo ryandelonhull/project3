@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import API from '../../utils/API';
+import Userdata from '../Userdata/Userdata';
+import Battle from "../Battle/Battle"
 
 class Login extends Component {
   constructor(props) {
@@ -9,6 +11,7 @@ class Login extends Component {
       password: '',
     };
   }
+ 
 
   //what happens when you click login
   loginData = () => {
@@ -27,9 +30,19 @@ class Login extends Component {
     event.preventDefault();
     let userData = {
       username: this.state.username,
-      password: this.state.password
+      password: this.state.password,
+      id: this.state.id,
+      wins: this.state.wins,
+      losses:this.state.losses,
+      createdAt:this.state.createdAt,
+      updatedAt:this.state.updatedAt
     }
- 
+    
+        
+            localStorage.setItem("user", userData.username)
+       
+
+
     if (!userData.username || !userData.password){
       return
     };
@@ -37,15 +50,19 @@ class Login extends Component {
   };
 
   loginUser = (username, password) => {
-    API.checkUserData('/api/login', {
+    API.checkUserData( {
       username: username,
       password: password
     }).then(() => {
+      // this.setState({username:username});
       window.location.replace('/Profile')
-    }).cathc(function(err){
+    }).catch(function(err){
+      //add validation here
       console.log(err)
-    })
+    })      
   }
+
+ 
 
   render() {
     return (
@@ -80,6 +97,7 @@ class Login extends Component {
           />
         </div>
         <div>
+     
           <button type="submit" onClick={this.handleLoginClick}>
             Login
           </button>

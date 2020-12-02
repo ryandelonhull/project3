@@ -39,7 +39,7 @@ app.use(passport.session());
 
 // Requiring our routes
 
-require("./routes/battle-routes.js")(app);
+
 require("./routes/api-routes.js")(app);
 require("./routes/profile-api-routes.js")(app);
 require("./routes/character-routes.js")(app);

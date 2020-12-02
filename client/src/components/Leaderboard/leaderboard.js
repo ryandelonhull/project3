@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import API from '../../utils/API';
+import Login from '../Login/Login'
 
 class Leaderboard extends Component {
   constructor(props) {
@@ -12,11 +13,11 @@ class Leaderboard extends Component {
  }
     componentDidMount = () => {
       API.saveWinner().then(response => {
-          console.log("Your Component Did mount");
-          console.log(response);
+        //   console.log("Your Component Did mount");
+        //   console.log(response);
           const saveTemp = [];
           for (let i = 0; i <response.length ; i++){
-              console.log(response[i])
+           
               let saveRecord = {
                   id:response[i].id,
                   username:response[i].username,
@@ -28,10 +29,10 @@ class Leaderboard extends Component {
                  saveTemp.push(saveRecord);
           }
           this.setState({ userData: saveTemp});
-          console.log(this.state.userData)
+        //   console.log(this.state.userData)
        
   
-      })
+      });
   }
 
   renderLeaderTable() {
@@ -88,15 +89,15 @@ sorting = heading => {
 }
 
 renderHeader() {
-    
+
   return (this.headings.map((heading, index) => {
     
     
      const { name } = heading
-     console.log(name);
+  
      return(   
           <th scope="col"
-          
+            key={`leaderboard-${index}`}
             // checked={this.state.sorted}
             onClick={() => {this.sorting(name.toLowerCase())}}
             className="react-switch-checkbox"
@@ -115,20 +116,22 @@ renderHeader() {
         return (
             <div>
                
-    <div className="wrapper">
+  
       {/* <img  /> */}
       <div className="card" style={{backgroundColor: "black"}} >
         <h1>Leaderboard</h1>
         <div className="card-body">
         
           <table id='leaderboard' className="table" style={{color: "white"}}>
-              <thead>
-              <tr>
-                {this.renderHeader()}
-                </tr>
-                </thead>
+            <thead>
+                <tr>
+            {this.renderHeader()}
+            </tr>
+            </thead>
+            
             <tbody>
                  {this.renderLeaderTable()}
+                 
            </tbody>
            </table>
            <span><p>Click On Wins and Losses to Sort</p></span>
@@ -136,7 +139,7 @@ renderHeader() {
       </div>
     </div>
             
-            </div>
+          
         )
     }
 }

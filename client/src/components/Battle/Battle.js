@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+import Login from '../Login/Login';
 import "./Battle.css";
+import API from '../../utils/API';
 
 
 
@@ -17,23 +19,46 @@ class Battle extends Component {
 
         this.state = {
             userAttack: -1,
-            cpuAttack: -1,
-    
+            cpuAttack: -1,    
             userHealth: 7,
             cpuHealth: 7,
             winner: "",
-            // wins: 0,
-            // losses: 0,
             inPlay: true,
             message: "",
             playerCharacter: props.playerCharacter,
             cpuCharacter: props.cpuCharacter,
             cpuAttacks: props.cpuAttacks,
-            characterAttacks: props.characterAttacks,
-            userId: 1
+            characterAttacks: props.characterAttacks
+            
         };
 
     }
+   
+    componentDidMount = () => {
+        API.saveWinner().then(response => {
+            console.log("Your Component Did mount");
+            console.log(response);
+            const saveTemp = [];
+            for (let i = 0; i <response.length ; i++){
+                console.log(response[i])
+                let saveRecord = {
+                    id:response[i].id,
+                    username:response[i].username,
+                    email:response[i].email,
+                    wins:response[i].wins,
+                    losses:response[i].losses,
+                  
+                
+                };
+                   saveTemp.push(saveRecord);
+            }
+            this.setState({ userData: saveTemp});
+            console.log(this.state.userData)
+         
+    
+        })
+    }
+
 
 
     startBattle = () =>{
@@ -49,7 +74,6 @@ class Battle extends Component {
     attackButtons = () =>{
         return (
         <div>
-
             <button className="button" onClick={ () => this.attack("x", 0)}>{this.state.characterAttacks[0].name}</button>
             <button className="button" onClick={ () => this.attack("y", 1)}>{this.state.characterAttacks[1].name}</button>
             <button className="button" onClick={ () => this.attack("z", 2)}>{this.state.characterAttacks[2].name}</button>
@@ -63,6 +87,10 @@ class Battle extends Component {
 
 
    checkWinner = () =>{
+    const  user = localStorage.getItem("user") 
+    console.log(localStorage.getItem("user"));
+    const results = this.state.userData.filter(username => username.username === user);
+    console.log(results)
        const {cpuHealth, userHealth, playerCharacter, cpuCharacter} = this.state;
     if (cpuHealth <= 0 && userHealth > 0){
         this.setState({inPlay: false, winner: "Player", message: `${playerCharacter.name} wins`});
@@ -75,6 +103,40 @@ class Battle extends Component {
     }
 
    }
+winPasser() {
+    const  user = localStorage.getItem("user") 
+    console.log(localStorage.getItem("user"));
+    const results = this.state.userData.filter(username => username.username === user);
+    console.log(results)
+
+    this.setState({wins: (this.state.wins + 1)})
+    let tempres = results
+    tempres[0].wins=this.state.wins
+
+    this.setState({userData : tempres})
+    
+        // .then(this.setState({books: this.state.books}))
+    API.updateStats(tempres[0])
+    console.log(tempres)
+        
+}
+
+lossPasser() {
+    const  user = localStorage.getItem("user") 
+    console.log(localStorage.getItem("user"));
+    const results = this.state.userData.filter(username => username.username === user);
+    console.log(results)
+
+    this.setState({wins: (this.state.losses + 1)})
+    let tempres = results
+    tempres[0].wins=this.state.losses
+
+    this.setState({userData : tempres})
+    
+        // .then(this.setState({books: this.state.books}))
+    API.updateStats(tempres[0])
+    console.log(tempres)
+}
 
     attackRound = () => {
         let { userAttack, cpuAttack, userHealth, cpuHealth } = this.state;
@@ -127,13 +189,10 @@ class Battle extends Component {
     }
 
 
-
     render() {
-
         // const { inPlay } = this.state;
         // const  { attackButtons } = this.attackButtons;
         const {cpuCharacter, cpuAttacks, playerCharacter, userHealth, cpuHealth, message, winner, cpuAttack} = this.state;
-
         console.log("cpu attacks and index ", cpuAttacks, cpuAttack);
         return (
             <div>

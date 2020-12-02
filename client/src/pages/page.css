@@ -6,7 +6,14 @@
   max-width:98%;
   
 }
-
+.leaderboard {
+  width: 100%;
+  color: white;
+}
+.userdata {
+  width: 100%;
+  color: white;
+}
 .login {
   width: 100%;
   color: white;

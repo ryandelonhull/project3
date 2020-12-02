@@ -8,15 +8,28 @@ module.exports = function(sequelize, DataTypes) {
             allowNull: false,
          
         },
-        charId: {
-            type: DataTypes.INTEGER,
-            allowNull: false
-           
-            // validate: {
-            //     isEmail: true
-            // }
+        username: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            unique: true,
         },
-    //post route
+        email: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            unique: true,
+            validate: {
+                isEmail: true
+            },
+
+    //     charId: {
+    //         type: DataTypes.INTEGER,
+    //         allowNull: false
+           
+    //         // validate: {
+    //         //     isEmail: true
+    //         // }
+    //     },
+    // //post route
         computerCharacterId: {
             type: DataTypes.INTEGER,
             allowNull: false,
@@ -25,12 +38,12 @@ module.exports = function(sequelize, DataTypes) {
             // }
         },
     
-        hitpoints: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [0, 10]
-            }
+    //     hitpoints: {
+    //         type: DataTypes.STRING,
+    //         allowNull: false,
+    //         validate: {
+    //             len: [0, 10]
+    //         }
         }
     });
   
@@ -43,6 +56,7 @@ Game.associate = function(models) {
     // Game.hasMany(models.CharacterStatus, {foreignKey: 'GameId'})
 
     Game.belongsTo(models.User, {
+        foreignKey: 'UserId'
         // foreignKey: {
         //     allowNull: false
         // }

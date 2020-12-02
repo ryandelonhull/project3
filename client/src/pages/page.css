@@ -59,10 +59,6 @@ div.card-body {
   
 }
 
-
-
-
-
 #forprofile {
 
   background-repeat: no-repeat, repeat;
@@ -80,4 +76,8 @@ div.card-body {
   /* width: 1110px; */
   /* background-color: black; */
 
+}
+
+.loginSignUp{
+  display: flex;
 }

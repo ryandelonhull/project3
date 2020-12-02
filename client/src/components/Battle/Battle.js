@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./Battle.css";
-// import Axios from "axios";
-// import API from '../../utils/API';
+
 
 
 //set variables for attack

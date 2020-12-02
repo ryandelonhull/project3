@@ -42,12 +42,12 @@ class Userdata extends Component {
     console.log(localStorage.getItem("user"));
     const results = this.state.userData.filter(username => username.username === user);
     console.log(results)
-
+    // localStorage.setItem("user", results)
     return results.map((userData, index) => {
         const { id, username, wins, losses} = userData
         return (
             
-      <tr key={id} >
+      <tr key={id}>
       {/* <td><img className="img-responsive" src={imageLinks} alt="folks"/></td> */}
       <td>{username}</td>
       <td>{wins}</td>
@@ -130,7 +130,9 @@ renderHeader() {
         
           <table id='leaderboard' className="table" style={{color: "white"}}>
             <thead>
+                <tr>
             {this.renderHeader()}
+            </tr>
             </thead>
             <tbody>
                  {this.renderLeaderTable()}

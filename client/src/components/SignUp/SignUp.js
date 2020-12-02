@@ -30,6 +30,7 @@ class SignUp extends Component {
 
   //what happens when you click sign up
   handleSignUp = () => {
+    localStorage.setItem("user", this.state.username)
     API.saveUserData({
       username: this.state.username,
       email: this.state.email,

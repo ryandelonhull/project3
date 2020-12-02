@@ -14,6 +14,7 @@ class LoginSignUp extends Component {
         <About />
         {/* Login sign up components go here */}
         <div className="wrapper p-3">
+          
           <div className="login">
             <Login />
           </div>

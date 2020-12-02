@@ -4,7 +4,7 @@ var db = require("../models");
 module.exports = function(app) {
     //need a route that deletes data
 
-    app.get("/api/attack/", function(req, res){
+    app.get("/api/attacks/", function(req, res){
         console.log("chirp chrip chirp");
         db.Attack.findAll({}).then(function(attack){
             console.log(attack);
@@ -20,42 +20,42 @@ module.exports = function(app) {
 // })
 
 //     //starts the game --??
-//     app.post("/api/game/", function(req, res) {
-//         db.Game.create({
-//             // id:req.name.id,
-//             userId: req.body.userId,
-//             charId: req.body.charId,
-//             computerCharacterId: req.body.computerCharacterId,
-//             hitpoints: req.body.hitpoints
-//         }).then(function(dbChar) {
-//             res.json(dbChar);
-//         });
-//     });
-// //update game status
-//     app.put("/api/game", function(req, res) {
-//         db.Game.update(req.body,
-//           {
-//             where: {
-//               id: req.body.id
-//             }
-//           })
-//           .then(function(dbGame) {
-//             res.json(dbGame);
-//           });
-//       });
+    app.post("/api/game/", function(req, res) {
+        db.Game.create({
+            // id:req.name.id,
+            UserId: req.body.userId,
+            username: req.body.username,
+            computerCharacterId: req.body.computerCharacterId,
+            email: req.body.email
+        }).then(function(dbChar) {
+            res.json(dbChar);
+        });
+    });
+//update game status
+    app.put("/api/game", function(req, res) {
+        db.Game.update(req.body,
+          {
+            where: {
+              id: req.body.id
+            }
+          })
+          .then(function(dbGame) {
+            res.json(dbGame);
+          });
+      });
 // //whenever we need the game data, we go here
-//     app.get("/api/game/", function(req, res) {
-//         db.Game.findAll().then(function(gameData) {
-//             res.json(gameData);
-//         }).catch(err => {res.json(err)});
-//     });
+    app.get("/api/games/", function(req, res) {
+        db.Game.findAll().then(function(gameData) {
+            res.json(gameData);
+        }).catch(err => {res.json(err)});
+    });
 
-//     // this route grabs the data for all the character status
-//     app.get("/api/characterStatus/:id", function(req, res) {
-//         db.CharacterStatus.findAll().then(function(characterData) {
-//             res.json(characterData);
-//         }).catch(err => {res.json(err)});
-//     });
+    // this route grabs the data for all the character status
+    app.get("/api/characterStatus/:id", function(req, res) {
+        db.CharacterStatus.findAll().then(function(characterData) {
+            res.json(characterData);
+        }).catch(err => {res.json(err)});
+    });
 
 //     //update the character status during the game play
 //     app.put("/api/characterStatus/", function(req, res) {

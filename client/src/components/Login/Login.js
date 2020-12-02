@@ -9,6 +9,14 @@ class Login extends Component {
       password: '',
     };
   }
+  handleGame = () => {
+    API.saveUserGame({
+      username: this.state.username,
+ 
+    })
+    console.log('userSave')
+      }
+
 
   //what happens when you click login
   loginData = () => {
@@ -27,7 +35,10 @@ class Login extends Component {
     event.preventDefault();
     let userData = {
       username: this.state.username,
-      password: this.state.password
+      password: this.state.password,
+      id: this.state.id,
+      wins: this.state.wins,
+      losses:this.state.losses
     }
  
     if (!userData.username || !userData.password){
@@ -37,12 +48,12 @@ class Login extends Component {
   };
 
   loginUser = (username, password) => {
-    API.checkUserData('/api/login', {
+    API.checkUserData( {
       username: username,
       password: password
     }).then(() => {
       window.location.replace('/Profile')
-    }).cathc(function(err){
+    }).catch(function(err){
       console.log(err)
     })
   }
@@ -52,7 +63,7 @@ class Login extends Component {
       <div className="login">
         <h2>Login</h2>
         <div className="form-group">
-          <label for="username">
+          <label form="username">
             <h4> Username </h4>
           </label>
           <input
@@ -80,6 +91,7 @@ class Login extends Component {
           />
         </div>
         <div>
+     
           <button type="submit" onClick={this.handleLoginClick}>
             Login
           </button>

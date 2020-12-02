@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 // import './page.css';
-import Leaderboard from "../components/Leaderboard/Leaderboard"
+import Leaderboard from "../components/Leaderboard/leaderboard"
 import characters from "../characters.json";
 import attacks from "../attacks.json";
-import Userdata from '../components/Userdata/Userdata';
+import Userdata from '../components/Userdata/userdata';
 import Charcards from '../components/CharCards/Charcards';
 import Battle from "../components/Battle/Battle";
 
@@ -25,17 +25,8 @@ class Profile extends Component {
     }
   }
 
-  // componentDidMount(){
-  //  axios.get('./characters.json')
-  //  .then((response)=>{
-  //    this.setState({characters: response.data});
-  //  })
-  //  console.log(this.state.characters);
-  // }
-  componentDidMount(){
 
-  }
-
+//function for displaying the character 
   characterChoice = () =>{
     if(this.state.gameState === gameStates.INITIAL){
 
@@ -67,7 +58,7 @@ class Profile extends Component {
             <div className="row m-1" >
             <div className="card  col-md-6 p-1" style={{backgroundColor: "black"}}>
                   <div className="userdata">
-                  <Userdata />
+                  {/* <Userdata /> */}
                   </div>
                   </div>
                   <div className="card  col-md-6 p-1" style={{backgroundColor: "black"}}>

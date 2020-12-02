@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import API from '../../utils/API';
+import Login from '../Login/Login'
 
 class Leaderboard extends Component {
   constructor(props) {
@@ -88,7 +89,7 @@ sorting = heading => {
 }
 
 renderHeader() {
-    
+    console.log(Login);
   return (this.headings.map((heading, index) => {
    
      const { name } = heading

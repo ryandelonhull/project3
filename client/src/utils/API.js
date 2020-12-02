@@ -3,6 +3,19 @@ import axios from 'axios';
 
 
 export default {
+    saveUserGame: function(data) {
+        console.log(data);
+        return axios
+        .post('/api/games', data)
+        .then(function(response){
+            console.log(response);
+        })
+        .catch(function(err){
+            console.log(err)
+        })
+    },
+
+
     saveUserData: function(data) {
         console.log(data);
         return axios

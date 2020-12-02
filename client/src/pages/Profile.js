@@ -4,6 +4,7 @@ import Leaderboard from '../components/Leaderboard/Leaderboard2';
 import characters from '../characters.json';
 import attacks from '../attacks.json';
 import Charcards from '../components/CharCards/Charcards';
+import Userdata from '../components/Userdata/Userdata2'
 import Battle from '../components/Battle/Battle';
 
 const gameStates = { INITIAL: 1, CHOOSE_CHARACTER: 2, PLAYING: 3 };
@@ -59,7 +60,7 @@ class Profile extends Component {
       <div>
         <div className="wrapper p-3" id="Profile">
           <div>
-            <div className="userdata">{/* <Userdata/> */}</div>
+            <div className="userdata"><Userdata/></div>
             <div className="leaderboard">
               <Leaderboard />
             </div>

@@ -88,7 +88,7 @@ class Leaderboard extends Component {
           }}
           className="react-switch-checkbox"
           id={`react-switch-new`}
-          key={`header-key${index}`}
+         
         >
           {name}
           {/* <span> (sort)</span> */}

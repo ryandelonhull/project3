@@ -24,8 +24,6 @@ class Userdata extends Component {
           email: response[i].email,
           wins: response[i].wins,
           losses: response[i].losses,
-          createdAt: response[i].createdAt,
-          updatedAt: response[i].updatedAt,
         };
         saveTemp.push(saveRecord);
       }

@@ -189,13 +189,10 @@ lossPasser() {
     }
 
 
-
     render() {
-
         // const { inPlay } = this.state;
         // const  { attackButtons } = this.attackButtons;
         const {cpuCharacter, cpuAttacks, playerCharacter, userHealth, cpuHealth, message, winner, cpuAttack} = this.state;
-
         console.log("cpu attacks and index ", cpuAttacks, cpuAttack);
         return (
             <div>

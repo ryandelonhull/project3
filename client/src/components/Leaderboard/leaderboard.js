@@ -32,7 +32,7 @@ class Leaderboard extends Component {
         //   console.log(this.state.userData)
        
   
-      })
+      });
   }
 
   renderLeaderTable() {

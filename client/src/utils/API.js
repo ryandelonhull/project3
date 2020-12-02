@@ -38,10 +38,10 @@ export default {
 //also need it in the backend routes 
 
     saveWinner: function(data){
+        console.log(data)
         return axios.get('/api/users/', data)
         .then(function(response){
             return response.data;
-      
         })
         .catch(function(err){
             console.log(err)

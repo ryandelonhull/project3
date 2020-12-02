@@ -23,6 +23,30 @@ class Login extends Component {
     this.setState({ password: event.target.value });
   };
 
+  handleLoginClick = (event) => {
+    event.preventDefault();
+    let userData = {
+      username: this.state.username,
+      password: this.state.password
+    }
+ 
+    if (!userData.username || !userData.password){
+      return
+    };
+    this.loginUser(userData.username, userData.password)
+  };
+
+  loginUser = (username, password) => {
+    API.checkUserData('/api/login', {
+      username: username,
+      password: password
+    }).then(() => {
+      window.location.replace('/Profile')
+    }).cathc(function(err){
+      console.log(err)
+    })
+  }
+
   render() {
     return (
       <div className="login">
@@ -56,8 +80,9 @@ class Login extends Component {
           />
         </div>
         <div>
-          <button type="submit"
-          onClick={this.loginData}>Login</button>
+          <button type="submit" onClick={this.handleLoginClick}>
+            Login
+          </button>
           {/* <span
           className="glyphicon glyphicon-exclamation-sign"
           aria-hidden="true"

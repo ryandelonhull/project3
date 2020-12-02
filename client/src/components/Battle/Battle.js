@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+import Login from '../Login/Login';
 import "./Battle.css";
+import '../../utils/API'
 
 
 
@@ -16,9 +18,11 @@ class Battle extends Component {
         super(props);
 
         this.state = {
+            username: "",
             userAttack: "",
             cpuAttack: "",
-    
+            wins: 0,
+            losses: 0,
             userHealth: 7,
             cpuHealth: 7,
             winner: "",
@@ -31,7 +35,7 @@ class Battle extends Component {
         };
 
     }
-
+   
 
     startBattle = () =>{
         this.setState({userAttack: "", cpuAttack: "",inPlay: true, userHealth: 7, cpuHealth: 7} );
@@ -61,6 +65,11 @@ class Battle extends Component {
        const {cpuHealth, userHealth, playerCharacter, cpuCharacter} = this.state;
     if (cpuHealth <= 0 && userHealth > 0){
         this.setState({winner: "Player", message: `${playerCharacter.name} wins`});
+        //Rachael's test don't take anything below here too serious
+        // var wins = 20;
+        // wins = wins +1;
+        //  winPasser();
+
         //API.updateStats({user: })
     }
     else if(userHealth <= 0 && cpuHealth > 0){
@@ -69,6 +78,9 @@ class Battle extends Component {
     }
 
    }
+// winPasser(wins) {
+//     this.setState({wins: wins})
+// }
 
     attackRound = () => {
         //how are we using cpuAttack/userAttack in this context? 

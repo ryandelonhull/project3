@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import API from '../../utils/API';
+import Userdata from '../Userdata/userdata';
+import Battle from "../Battle/Battle"
 
 class Login extends Component {
   constructor(props) {
@@ -9,14 +11,7 @@ class Login extends Component {
       password: '',
     };
   }
-  handleGame = () => {
-    API.saveUserGame({
-      username: this.state.username,
  
-    })
-    console.log('userSave')
-      }
-
 
   //what happens when you click login
   loginData = () => {
@@ -40,7 +35,12 @@ class Login extends Component {
       wins: this.state.wins,
       losses:this.state.losses
     }
- 
+    
+        
+            localStorage.setItem("user", userData.username)
+       
+
+
     if (!userData.username || !userData.password){
       return
     };
@@ -52,11 +52,15 @@ class Login extends Component {
       username: username,
       password: password
     }).then(() => {
+      // this.setState({username:username});
       window.location.replace('/Profile')
     }).catch(function(err){
+      //add validation here
       console.log(err)
-    })
+    })      
   }
+
+ 
 
   render() {
     return (

@@ -13,11 +13,11 @@ class Leaderboard extends Component {
  }
     componentDidMount = () => {
       API.saveWinner().then(response => {
-          console.log("Your Component Did mount");
-          console.log(response);
+        //   console.log("Your Component Did mount");
+        //   console.log(response);
           const saveTemp = [];
           for (let i = 0; i <response.length ; i++){
-              console.log(response[i])
+           
               let saveRecord = {
                   id:response[i].id,
                   username:response[i].username,
@@ -29,7 +29,7 @@ class Leaderboard extends Component {
                  saveTemp.push(saveRecord);
           }
           this.setState({ userData: saveTemp});
-          console.log(this.state.userData)
+        //   console.log(this.state.userData)
        
   
       })
@@ -40,7 +40,7 @@ class Leaderboard extends Component {
         const { id, username, wins, losses} = userData
         return (
             
-      <tr key={id} >
+      <tr key={`leaderboard-${index}`} >
       {/* <td><img className="img-responsive" src={imageLinks} alt="folks"/></td> */}
       <td>{username}</td>
       <td>{wins}</td>
@@ -89,14 +89,14 @@ sorting = heading => {
 }
 
 renderHeader() {
-    console.log(Login);
+
   return (this.headings.map((heading, index) => {
    
      const { name } = heading
-     console.log(name);
+  
      return(   
           <th scope="col"
-          
+            key={`leaderboard-${index}`}
             // checked={this.state.sorted}
             onClick={() => {this.sorting(name.toLowerCase())}}
             className="react-switch-checkbox"
@@ -123,10 +123,14 @@ renderHeader() {
         
           <table id='leaderboard' className="table" style={{color: "white"}}>
             <thead>
+                <tr>
             {this.renderHeader()}
+            </tr>
             </thead>
+            
             <tbody>
                  {this.renderLeaderTable()}
+                 
            </tbody>
            </table>
            <span><p>Click On Wins and Losses to Sort</p></span>

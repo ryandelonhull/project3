@@ -38,10 +38,10 @@ class Profile extends Component {
   selectCharacter = (character) =>{
     let randomIndex = Math.floor(Math.random() * this.state.characters.length);
     const tempAttacks = attacks.filter( (attack)=>{
-      return attack.CharacterId === character.id
+      return attack.CharacterId == character.id
     })
     const tempCpuAttacks = attacks.filter( (attack)=>{
-      return attack.CharacterId = this.state.characters[randomIndex].CharacterId
+      return attack.CharacterId == this.state.characters[randomIndex].CharacterId
     })
 
     this.setState({characterAttacks: [...tempAttacks],cpuAttacks: [...tempCpuAttacks], character: character, cpuCharacter: this.state.characters[randomIndex], gameState: gameStates.PLAYING});
@@ -57,7 +57,7 @@ class Profile extends Component {
             <div className="wrapper p-3" id="Profile">
            
                   <div className="userdata">
-                  {/* <Userdata /> */}
+                  <Userdata />
                   </div>
                 
                   <div className="leaderboard">

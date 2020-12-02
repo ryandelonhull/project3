@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import API from '../../utils/API';
+import Login from '../Login/Login';
 
 class Userdata extends Component {
   constructor(props) {
     super(props)
     this.state = {
+        username: "",
      userData: [],
      order: "ascend",
 
@@ -34,8 +36,14 @@ class Userdata extends Component {
       })
   }
 
+
   renderLeaderTable() {
-    return this.state.userData.slice(0,3).map((userData, index) => {
+    const  user = localStorage.getItem("user") 
+    console.log(localStorage.getItem("user"));
+    const results = this.state.userData.filter(username => username.username === user);
+    console.log(results)
+
+    return results.map((userData, index) => {
         const { id, username, wins, losses} = userData
         return (
             
@@ -114,7 +122,7 @@ renderHeader() {
         return (
             <div>
                
-    <div className="wrapper">
+ 
       {/* <img  /> */}
       <div className="card" style={{backgroundColor: "black"}} >
         <h1>Your Stats</h1>
@@ -133,7 +141,7 @@ renderHeader() {
       </div>
     </div>
             
-            </div>
+           
         )
     }
 }

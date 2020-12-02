@@ -52,7 +52,7 @@ class Login extends Component {
       <div className="login">
         <h2>Login</h2>
         <div className="form-group">
-          <label for="username">
+          <label form="username">
             <h4> Username </h4>
           </label>
           <input

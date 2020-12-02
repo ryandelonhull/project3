@@ -1,0 +1,37 @@
+.user-corner {
+    float: left;
+}
+
+.cpu-corner {
+   margin-left: 80%;
+}
+
+.user-img {
+    height: 270px;
+}
+
+.cpu-img {
+    height: 270px;
+    /* margin-left: 75%; */
+}
+
+.button {
+    inline-size: auto;
+}
+
+.button:hover {background-color: #cc3c3c}
+
+.winLoseImg {
+    height: 350px;
+    ;
+
+}
+
+.winLoseImg img{
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+

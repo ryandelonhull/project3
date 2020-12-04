@@ -38,12 +38,9 @@ require("./routes/character-routes.js")(app);
 
 // Syncing our database and logging a message to the user upon success
 // listens to the PORT
-// db.sequelize.sync({force:false}).then(function() {
-//     app.listen(PORT, function() {
-//         console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
-//     });
-// });
-
-app.listen(process.env.PORT, '0.0.0.0', function () {
-    console.log("App listening on PORT " + PORT);
+db.sequelize.sync({force:false}).then(function() {
+    app.listen(PORT, function() {
+        console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
+    });
 });
+

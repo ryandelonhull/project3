@@ -15,30 +15,16 @@ var db = require("./models");
 
 // Creating express app and configuring middleware needed for authentication
 var app = express();
-
-// app.use(cors());
-// var corsOptions = {
-//     origin: "http://localhost:8081"
-//   };
-  
-  
-//   // parse requests of content-type - application/json
-//   app.use(bodyParser.json());
-  
-//   // parse requests of content-type - application/x-www-form-urlencoded
-//   app.use(bodyParser.urlencoded({ extended: true }));
-
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));
   } else {
-    app.use(express.static('client/public'));
-  }
-
+app.use(express.static('client/public')); }
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+ 
 // We need to use sessions to keep track of our user's login status
 
-app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+app.use(session({ secret: "root", resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -52,8 +38,12 @@ require("./routes/character-routes.js")(app);
 
 // Syncing our database and logging a message to the user upon success
 // listens to the PORT
-db.sequelize.sync({force:false}).then(function() {
-    app.listen(PORT, function() {
-        console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
-    });
+// db.sequelize.sync({force:false}).then(function() {
+//     app.listen(PORT, function() {
+//         console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
+//     });
+// });
+
+app.listen(process.env.PORT, '0.0.0.0', function () {
+    console.log("App listening on PORT " + PORT);
 });
